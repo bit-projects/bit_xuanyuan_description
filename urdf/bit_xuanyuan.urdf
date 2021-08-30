@@ -4,12 +4,18 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="bit_xuanyuan">
+  <link name="base_link"/>
+  <joint name="waist" type="fixed">
+    <parent link="base_link"/>
+    <child link="torso"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
   <link
-    name="base_link">
+    name="torso">
     <inertial>
       <origin
         xyz="0.000550229702140016 0.000245474501299226 0.166981875072049"
-        rpy="0 0 1.5707963267949" />
+        rpy="0 0 0" />
       <mass
         value="26.3712421112853" />
       <inertia
@@ -26,7 +32,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/base_link.STL" />
+          filename="package://bit_xuanyuan_description/meshes/torso.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +46,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/base_link.STL" />
+          filename="package://bit_xuanyuan_description/meshes/torso.STL" />
       </geometry>
     </collision>
   </link>
@@ -88,10 +94,10 @@
     name="R_shoulder_1"
     type="revolute">
     <origin
-      xyz="-0.248151606851778 -0.0263301173710569 0.209000026522007"
-      rpy="1.5707963267949 0 -1.5707963267949" />
+      xyz="0.0263301173710569 -0.248151606851778 0.209000026522007"
+      rpy="1.5707963267949 0 0" />
     <parent
-      link="base_link" />
+      link="torso" />
     <child
       link="R_shoulder_1" />
     <axis
@@ -717,10 +723,10 @@
     name="L_shoulder_1"
     type="revolute">
     <origin
-      xyz="0.248151606851778 -0.0263301173710569 0.208999973477994"
-      rpy="1.5707963267949 0 1.5707963267949" />
+      xyz="0.0263301173710569 0.248151606851778 0.208999973477994"
+      rpy="1.5707963267949 0 3.14159265" />
     <parent
-      link="base_link" />
+      link="torso" />
     <child
       link="L_shoulder_1" />
     <axis
@@ -1346,10 +1352,10 @@
     name="waist_0"
     type="revolute">
     <origin
-      xyz="0.0751588565074892 0 -0.0749999999999999"
-      rpy="1.5707963267949 0 1.5707963267949" />
+      xyz="0 0.0751588565074892 -0.0749999999999999"
+      rpy="1.5707963267949 0 3.14159265" />
     <parent
-      link="base_link" />
+      link="torso" />
     <child
       link="waist_0" />
     <axis

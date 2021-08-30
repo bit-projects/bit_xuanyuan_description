@@ -10,7 +10,7 @@ urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 fixed: false
 default_attitude: [1, 0, 0, 0, 0, 0, 1.1638]
 convexHulls:
-  base_link: [base_link, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/base_link-ch.txt"]
+  torso: [torso, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/torso-ch.txt"]
   L_ankle_1: [L_ankle_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_1-ch.txt"]
   L_ankle_2: [L_ankle_2, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_2-ch.txt"]
   L_ankle_6_axis: [L_ankle_6_axis, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_6_axis-ch.txt"]
@@ -53,33 +53,36 @@ convexHulls:
   R_wrist_6_axis: [R_wrist_6_axis, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/R_wrist_6_axis-ch.txt"]
   waist_0: [waist_0, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/waist_0-ch.txt"]
   waist_1: [waist_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/waist_1-ch.txt"]
-
-
+# Default setting for the collision parameters
+default-col: &default-col
+  iDist: 0.02
+  sDist: 0.005
+  damping: 0
 minimalSelfCollisions:
   # Arm <-> Body collision
   - body1: R_shoulder_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: R_shoulder_3
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: R_elbow_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: R_gripper_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: L_shoulder_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: L_shoulder_3
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: L_elbow_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   - body1: L_gripper_2
-    body2: base_link
+    body2: torso
     <<: *default-col
   # Arm <-> Waist collision
   - body1: R_elbow_2
