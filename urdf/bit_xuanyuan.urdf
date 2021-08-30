@@ -451,7 +451,7 @@
       velocity="3.14" />
   </joint>
   <link
-    name="R_wrist_6 axis">
+    name="R_wrist_6_axis">
     <inertial>
       <origin
         xyz="5.55111512312578E-17 6.93889390390723E-18 -3.17888848580528E-05"
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL" />
       </geometry>
       <material
         name="">
@@ -486,12 +486,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="R_wrist_6 axis"
+    name="R_wrist_6_axis"
     type="fixed">
     <origin
       xyz="0 -0.0545 0.024999999999999"
@@ -499,7 +499,7 @@
     <parent
       link="R_wrist_2" />
     <child
-      link="R_wrist_6 axis" />
+      link="R_wrist_6_axis" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -550,7 +550,7 @@
       xyz="0 0 -0.00550000000000006"
       rpy="0 0 3.14159265358979" />
     <parent
-      link="R_wrist_6 axis" />
+      link="R_wrist_6_axis" />
     <child
       link="R_hand" />
     <axis
@@ -1080,7 +1080,7 @@
       velocity="3.14" />
   </joint>
   <link
-    name="L_wrist_6 axis">
+    name="L_wrist_6_axis">
     <inertial>
       <origin
         xyz="0 3.46944695195361E-18 -0.00953178888485806"
@@ -1101,7 +1101,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL" />
       </geometry>
       <material
         name="">
@@ -1115,12 +1115,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="L_wrist_6 axis"
+    name="L_wrist_6_axis"
     type="fixed">
     <origin
       xyz="0 -0.045 -0.025"
@@ -1128,7 +1128,7 @@
     <parent
       link="L_wrist_2" />
     <child
-      link="L_wrist_6 axis" />
+      link="L_wrist_6_axis" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -1179,7 +1179,7 @@
       xyz="0 0 -0.0150000000000001"
       rpy="0 0 3.14159265358979" />
     <parent
-      link="L_wrist_6 axis" />
+      link="L_wrist_6_axis" />
     <child
       link="L_hand" />
     <axis
@@ -1825,7 +1825,7 @@
       velocity="1.57" />
   </joint>
   <link
-    name="R_ankle_6 axis">
+    name="R_ankle_6_axis">
     <inertial>
       <origin
         xyz="-2.94856181137781E-09 2.55540664952265E-09 0.0105912621593117"
@@ -1846,7 +1846,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL" />
       </geometry>
       <material
         name="">
@@ -1860,12 +1860,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="R_ankle_6 axis"
+    name="R_ankle_6_axis"
     type="fixed">
     <origin
       xyz="0 0.101737731329006 0.0590748593972759"
@@ -1873,7 +1873,7 @@
     <parent
       link="R_ankle_2" />
     <child
-      link="R_ankle_6 axis" />
+      link="R_ankle_6_axis" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -1924,7 +1924,7 @@
       xyz="0 0 -0.00086226867099426"
       rpy="0 0 -3.14159265358979" />
     <parent
-      link="R_ankle_6 axis" />
+      link="R_ankle_6_axis" />
     <child
       link="R_foot" />
     <axis
@@ -2337,7 +2337,7 @@
       velocity="1.57" />
   </joint>
   <link
-    name="L_ankle_6 axis">
+    name="L_ankle_6_axis">
     <inertial>
       <origin
         xyz="2.94864480054891E-09 -2.5554778167701E-09 0.0245751389353789"
@@ -2358,7 +2358,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL" />
       </geometry>
       <material
         name="">
@@ -2372,12 +2372,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_6 axis.STL" />
+          filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="L_ankle_6 axis"
+    name="L_ankle_6_axis"
     type="fixed">
     <origin
       xyz="0 0.115721608105073 0.0590748593972637"
@@ -2385,7 +2385,7 @@
     <parent
       link="L_ankle_2" />
     <child
-      link="L_ankle_6 axis" />
+      link="L_ankle_6_axis" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -2436,7 +2436,7 @@
       xyz="0 0 0.0131216081050727"
       rpy="0 0 3.14159265358979" />
     <parent
-      link="L_ankle_6 axis" />
+      link="L_ankle_6_axis" />
     <child
       link="L_foot" />
     <axis
