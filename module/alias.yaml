@@ -1,0 +1,6 @@
+# This alias means that when we write
+# mc_rbdyn::RobotLoader::get_robot_module("BITXuanyuan");
+# The call gets translated to:
+# mc_rbdyn::RobotLoader::get_robot_module("json", "...");
+# This later call is using the json loader which will read the data in the provided file to construct the RobotModule instance
+BITXuanyuan: [json, "@CMAKE_CURRENT_BINARY_DIR@/module/module.yaml"]

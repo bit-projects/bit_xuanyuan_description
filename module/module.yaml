@@ -1,0 +1,10 @@
+# Where the robot data is located
+# The JSON loader expects the data to be in certain locations relative to this path as described in:
+# https://jrl-umi3218.github.io/mc_rtc/tutorials/advanced/new-robot.html#organization-of-your-robot-description-package
+path: "@CMAKE_CURRENT_SOURCE_DIR@"
+# Name of the RobotModule/Default name of the robot when loaded with this module
+name: bit_xuanyuan
+# Where the URDF is located
+urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
+# Not a fixed based robot
+fixed: false
