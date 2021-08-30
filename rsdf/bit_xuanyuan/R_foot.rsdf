@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="RightFoot">
+  
+  <planar_surface name="RightFoot" link="R_foot">
+    <origin rpy="0.0 -0.0 -1.5707963705062866" xyz="-0.021500004455447197 -0.023878462612628937 -0.020099997520446777" />
+    <points>
+      <point xy="-0.11480000615119934 0.07200000435113907" />
+        <point xy="-0.11479998379945755 -0.07200000435113907" />
+        <point xy="0.11480000615119934 -0.07200000435113907" />
+        <point xy="0.11479999125003815 0.07199998944997787" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+</robot>
