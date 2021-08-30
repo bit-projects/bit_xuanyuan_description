@@ -1,0 +1,14 @@
+<package format="2">
+  <name>bit_xuanyuan_description</name>
+  <version>1.0.0</version>
+  <description>
+    <p>URDF Description package for bit_xuanyuan_description</p>
+  </description>
+  <author>Chenzheng Wang</author>
+  <maintainer email="templaraes@163.com" />
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+    <architecture_independent />
+  </export>
+</package>
