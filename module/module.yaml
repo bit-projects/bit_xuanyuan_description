@@ -8,7 +8,7 @@ name: bit_xuanyuan
 urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
 fixed: false
-
+default_attitude: [1, 0, 0, 0, 0, 0, 1.1638]
 convexHulls:
   base_link: [base_link, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/base_link-ch.txt"]
   L_ankle_1: [L_ankle_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_1-ch.txt"]
@@ -53,3 +53,83 @@ convexHulls:
   R_wrist_6_axis: [R_wrist_6_axis, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/R_wrist_6_axis-ch.txt"]
   waist_0: [waist_0, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/waist_0-ch.txt"]
   waist_1: [waist_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/waist_1-ch.txt"]
+
+
+minimalSelfCollisions:
+  # Arm <-> Body collision
+  - body1: R_shoulder_2
+    body2: base_link
+    <<: *default-col
+  - body1: R_shoulder_3
+    body2: base_link
+    <<: *default-col
+  - body1: R_elbow_2
+    body2: base_link
+    <<: *default-col
+  - body1: R_gripper_2
+    body2: base_link
+    <<: *default-col
+  - body1: L_shoulder_2
+    body2: base_link
+    <<: *default-col
+  - body1: L_shoulder_3
+    body2: base_link
+    <<: *default-col
+  - body1: L_elbow_2
+    body2: base_link
+    <<: *default-col
+  - body1: L_gripper_2
+    body2: base_link
+    <<: *default-col
+  # Arm <-> Waist collision
+  - body1: R_elbow_2
+    body2: waist_1
+    <<: *default-col
+  - body1: R_gripper_2
+    body2: waist_1
+    <<: *default-col
+  - body1: L_elbow_2
+    body2: waist_1
+    <<: *default-col
+  - body1: L_gripper_2
+    body2: waist_1
+    <<: *default-col
+  # Arm <-> Hip collision
+  - body1: R_elbow_2
+    body2: R_hip_1
+    <<: *default-col
+  - body1: R_gripper_2
+    body2: R_hip_1
+    <<: *default-col
+  - body1: L_elbow_2
+    body2: L_hip_1
+    <<: *default-col
+  - body1: L_gripper_2
+    body2: L_hip_1
+    <<: *default-col
+  # Arm <-> Leg collision
+  - body1: R_elbow_2
+    body2: R_hip_3
+    <<: *default-col
+  - body1: R_gripper_2
+    body2: R_hip_3
+    <<: *default-col
+  - body1: L_elbow_2
+    body2: L_hip_3
+    <<: *default-col
+  - body1: L_gripper_2
+    body2: L_hip_3
+    <<: *default-col
+  # Right leg <-> Left leg collision
+  - body1: R_hip_3
+    body2: L_hip_3
+    <<: *default-col
+  - body1: R_knee_1
+    body2: L_knee_1
+    <<: *default-col
+  - body1: R_knee_2
+    body2: L_knee_2
+    <<: *default-col
+  - body1: R_foot
+    body2: L_foot
+    <<: *default-col
