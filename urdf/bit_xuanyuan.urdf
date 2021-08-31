@@ -275,7 +275,7 @@
     <child
       link="R_elbow_1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="0"
       upper="2.255"
@@ -904,7 +904,7 @@
     <child
       link="L_elbow_1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-0.75"
       upper="2.255"
@@ -2161,7 +2161,7 @@
     <child
       link="L_knee_1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-2.7925"
       upper="0.1919"
