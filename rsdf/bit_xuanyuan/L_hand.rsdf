@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<robot name="LeftGripper">
+  
+  <cylindrical_surface name="LeftGripper" link="L_hand" radius="0.01" width="0.07">
+    <origin rpy="0.0 1.57079632679 0.0" xyz="-0.06692838668823242 5.898624658584595e-05 -0.050444595515728" />
+    <material name="plastic" />
+  </cylindrical_surface>
+
+</robot>
