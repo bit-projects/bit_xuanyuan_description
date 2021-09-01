@@ -7,6 +7,15 @@ name: bit_xuanyuan
 # Where the URDF is located
 urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
+stance:
+  R_hip_3: [-0.4]
+  R_knee_1: [-0.8]
+  R_ankle_1: [0.4]
+  L_hip_3: [-0.4]
+  L_knee_1: [-0.8]
+  L_ankle_1: [0.4]
+  L_elbow_1: [1.0]
+  R_elbow_1: [1.0]
 fixed: false
 default_attitude: [1, 0, 0, 0, 0, 0, 1.1638]
 convexHulls:
@@ -114,14 +123,26 @@ minimalSelfCollisions:
   - body1: R_elbow_2
     body2: R_hip_3
     <<: *default-col
+  - body1: R_elbow_2
+    body2: R_knee_2
+    <<: *default-col
   - body1: R_gripper_2
     body2: R_hip_3
+    <<: *default-col
+  - body1: R_gripper_2
+    body2: R_knee_2
     <<: *default-col
   - body1: L_elbow_2
     body2: L_hip_3
     <<: *default-col
+  - body1: L_elbow_2
+    body2: L_knee_2
+    <<: *default-col
   - body1: L_gripper_2
     body2: L_hip_3
+    <<: *default-col
+  - body1: L_gripper_2
+    body2: L_knee_2
     <<: *default-col
   # Right leg <-> Left leg collision
   - body1: R_hip_3
