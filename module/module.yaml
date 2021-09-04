@@ -148,3 +148,35 @@ minimalSelfCollisions:
   - body1: R_foot
     body2: L_foot
     <<: *default-col
+forceSensors:
+  - name: R_ankle_6_axis
+    parentBody: right_leg_ankle_2
+    X_p_f:
+      rotation: [-1.57, -1.57, 0]
+      translation: [0, -0.09, 0]
+  - name: L_ankle_6_axis
+    parentBody: left_leg_ankle_2
+    X_p_f:
+      rotation: [-1.57, -1.57, 0]
+      translation: [0, -0.09, 0]
+  - name: R_wrist_6_axis
+    parentBody: right_wrist_2
+    X_p_f:
+      rotation: [1.57, 1.57, 0]
+      translation: [0, -0.05, 0.025]
+  - name: L_wrist_6_axis
+    parentBody: left_wrist_2
+    X_p_f:
+      rotation: [1.57, 1.57, 0]
+      translation: [0, -0.05, 0.025]
+bodySensors:
+  - name: FloatingBase
+    parentBody: torso
+    X_b_s:
+      rotation: [0, 0, 0]
+      translation: [0, 0, 0]
+  - name: Accelerometer
+    parentBody: torso
+    X_b_s:
+      rotation: [0, 0, 0]
+      translation: [0, 0, 0]
