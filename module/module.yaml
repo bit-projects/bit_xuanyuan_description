@@ -8,7 +8,14 @@ name: bit_xuanyuan
 urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
 fixed: false
-default_attitude: [1, 0, 0, 0, 0, 0, 1.1638]
+default_attitude: [1, 0, 0, 0, 0, 0, 1.105]
+stance:
+  R_hip_3: [0.4]
+  R_knee_1: [-0.8]
+  R_ankle_1: [0.4]
+  L_hip_3: [-0.4]
+  L_knee_1: [-0.8]
+  L_ankle_1: [-0.4]
 convexHulls:
   torso: [torso, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/torso-ch.txt"]
   L_ankle_1: [L_ankle_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_1-ch.txt"]
@@ -149,22 +156,24 @@ minimalSelfCollisions:
     body2: L_foot
     <<: *default-col
 forceSensors:
-  - name: R_ankle_6_axis
-    parentBody: right_leg_ankle_2
+  - name: RightFootForceSensor
+    parentBody: R_foot
+    #parentBody: R_ankle_6_axis
     X_p_f:
-      rotation: [-1.57, -1.57, 0]
-      translation: [0, -0.09, 0]
-  - name: L_ankle_6_axis
-    parentBody: left_leg_ankle_2
+      rotation: [0, 0, 1.57]
+      translation: [0, 0.1, 0]
+  - name: LeftFootForceSensor
+    parentBody: L_foot
+    #parentBody: L_ankle_6_axis
     X_p_f:
-      rotation: [-1.57, -1.57, 0]
-      translation: [0, -0.09, 0]
-  - name: R_wrist_6_axis
+      rotation: [0, 0, -1.57]
+      translation: [0, 0.1, 0]
+  - name: RightHandForceSensor
     parentBody: right_wrist_2
     X_p_f:
       rotation: [1.57, 1.57, 0]
       translation: [0, -0.05, 0.025]
-  - name: L_wrist_6_axis
+  - name: LeftHandForceSensor
     parentBody: left_wrist_2
     X_p_f:
       rotation: [1.57, 1.57, 0]
@@ -180,3 +189,25 @@ bodySensors:
     X_b_s:
       rotation: [0, 0, 0]
       translation: [0, 0, 0]
+lipmStabilizer:
+  leftFootSurface: LeftFoot
+  rightFootSurface: RightFoot
+  torsoBodyName: torso
+  tasks:
+    com:
+      height: 1.0
+      active_joints: ["Root",
+                     "R_hip_1",
+                     "R_hip_2",
+                     "R_hip_3",
+                     "R_knee_1",
+                     "R_knee_2",
+                     "R_ankle_1",
+                     "R_ankle_2",
+                     "L_hip_1",
+                     "L_hip_2",
+                     "L_hip_3",
+                     "L_knee_1",
+                     "L_knee_2",
+                     "L_ankle_1",
+                     "L_ankle_2"]
