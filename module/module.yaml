@@ -160,14 +160,16 @@ forceSensors:
     parentBody: R_foot
     #parentBody: R_ankle_6_axis
     X_p_f:
-      rotation: [0, 0, 1.57]
-      translation: [0, 0.1, 0]
+      rotation: [0, 0, -1.57]
+      #translation: [0.02155, 0.02150, 0.02375]
+      translation: [0, 0, 0]
   - name: LeftFootForceSensor
     parentBody: L_foot
     #parentBody: L_ankle_6_axis
     X_p_f:
       rotation: [0, 0, -1.57]
-      translation: [0, 0.1, 0]
+      #translation: [0.02155, -0.02150, 0.02375]
+      translation: [0, 0, 0]
   - name: RightHandForceSensor
     parentBody: right_wrist_2
     X_p_f:
