@@ -677,7 +677,7 @@
       upper="0.01"
       effort="200"
       velocity="1" />
-	<mimic joint="R_gripper_1" multiplier="1" offset="0" />
+	<mimic joint="R_gripper_1" multiplier="-1" offset="0" />
   </joint>
   <link
     name="L_shoulder_1">
@@ -1306,7 +1306,7 @@
       upper="0.01"
       effort="200"
       velocity="1" />
-	<mimic joint="L_gripper_1" multiplier="1" offset="0" />
+	<mimic joint="L_gripper_1" multiplier="-1" offset="0" />
   </joint>
   <link
     name="waist_0">
