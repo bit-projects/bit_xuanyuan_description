@@ -1364,7 +1364,7 @@
       lower="-0.872"
       upper="0.872"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="waist_1">
@@ -1422,7 +1422,7 @@
       lower="-0.872"
       upper="0.872"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_hip_1">
@@ -1480,7 +1480,7 @@
       lower="-3.14"
       upper="3.14"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_hip_2">
@@ -1538,7 +1538,7 @@
       lower="-0.4188"
       upper="0.4188"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_hip_3">
@@ -1596,7 +1596,7 @@
       lower="-1.57"
       upper="1.57"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_knee_1">
@@ -1654,7 +1654,7 @@
       lower="-2.7925"
       upper="0.1919"
       effort="150"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_knee_2">
@@ -1712,7 +1712,7 @@
       lower="-1.57"
       upper="1.57"
       effort="200"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_ankle_1">
@@ -1770,7 +1770,7 @@
       lower="-0.4014"
       upper="1.5707"
       effort="70"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_ankle_2">
@@ -1828,7 +1828,7 @@
       lower="-0.4886"
       upper="0.4886"
       effort="70"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="R_ankle_6_axis">
@@ -1992,7 +1992,7 @@
       lower="-3.14"
       upper="3.14"
       effort="300"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_hip_2">
@@ -2108,7 +2108,7 @@
       lower="-1.57"
       upper="1.57"
       effort="200"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_knee_1">
@@ -2166,7 +2166,7 @@
       lower="-2.7925"
       upper="0.1919"
       effort="150"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_knee_2">
@@ -2224,7 +2224,7 @@
       lower="-1.57"
       upper="1.57"
       effort="200"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_ankle_1">
@@ -2282,7 +2282,7 @@
       lower="-1.5707"
       upper="0.4014"
       effort="70"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_ankle_2">
@@ -2340,7 +2340,7 @@
       lower="-0.4886"
       upper="0.4886"
       effort="70"
-      velocity="1.57" />
+      velocity="3.1415" />
   </joint>
   <link
     name="L_ankle_6_axis">
