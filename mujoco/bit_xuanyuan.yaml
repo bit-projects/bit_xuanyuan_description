@@ -1,0 +1,2 @@
+xmlModelPath: "@PROJECT_SOURCE_DIR@/mujoco/bit_xuanyuan.xml"
+pdGainsPath: "@PROJECT_SOURCE_DIR@/mujoco/pdgains.dat"

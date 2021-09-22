@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.1)
 
 project(bit_xuanyuan_description VERSION 1.0.0)
@@ -13,6 +12,8 @@ configure_file(module/module.yaml "${CMAKE_CURRENT_BINARY_DIR}/module/module.yam
 configure_file(module/alias.yaml $ENV{HOME}/.config/mc_rtc/aliases/BITXuanyuan.yaml)
 
 configure_file(vrep/tweaks.yaml $ENV{HOME}/.config/mc_rtc/mc_vrep/bit_xuanyuan.yaml)
+
+configure_file(mujoco/bit_xuanyuan.yaml $ENV{HOME}/.config/mc_rtc/mc_mujoco/bit_xuanyuan.yaml)
 
 foreach(dir meshes urdf)
   install(DIRECTORY ${dir}/
