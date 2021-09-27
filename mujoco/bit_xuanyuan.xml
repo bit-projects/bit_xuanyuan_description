@@ -107,9 +107,7 @@
         <mesh name="convex_L_ankle_6_axis" file="convex/L_ankle_6_axis.STL" />
         <mesh name="convex_L_foot" file="convex/L_foot.STL" />
 
-        <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
         <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
-        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
         <material name="matgeom" texture="texgeom" texuniform="true" rgba="0.8 0.6 .4 1"/>
     </asset>
     <contact>
@@ -710,9 +708,8 @@
         <exclude body1="L_ankle_1" body2="L_ankle_2" />
     </contact>
     <worldbody>
-        <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="matplane" condim="3"/>
         <light directional="false" diffuse="0.2 0.2 0.2" specular="0 0 0" pos="0 0 2" dir="0 0 -1" castshadow="false"/>
-        <body name="torso" pos="0 0 1.15">
+        <body name="torso" pos="0 0 1.25">
           <freejoint name="root" />
           <inertial pos="0.000550229702140016 0.000245474501299226 0.166981875072049" quat="1 0 0 0" mass="26.3712421112853" diaginertia="0.284090758604728 0.418241196537563 0.329268995000378" />
           <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.501961 1 0.501961 1" mesh="torso" />
@@ -889,7 +886,7 @@
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="R_foot" />
                                               <!-- Site for sensor -->
-                                              <site name="rf_force"  size="0.01" pos="0.0 0.0 0.0" />
+                                              <site name="rf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
                                       </body>
                                   </body>
@@ -937,7 +934,7 @@
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="L_foot" />
                                               <!-- Site for sensor -->
-                                              <site name="lf_force"  size="0.01" pos="0.0 0.0 0.0" />
+                                              <site name="lf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
                                       </body>
                                   </body>
@@ -988,19 +985,19 @@
     </actuator>
 
     <sensor>
-      <force         name="rf_fsensor"    site="rf_force" />
-      <torque        name="rf_tsensor"    site="rf_force" />
+      <force         name="RightFootForceSensor_fsensor"    site="rf_force" />
+      <torque        name="RightFootForceSensor_tsensor"    site="rf_force" />
 
-      <force         name="lf_fsensor"    site="lf_force" />
-      <torque        name="lf_tsensor"    site="lf_force" />
+      <force         name="LeftFootForceSensor_fsensor"    site="lf_force" />
+      <torque        name="LeftFootForceSensor_tsensor"    site="lf_force" />
 
-      <force         name="rh_fsensor"    site="rh_force" />
-      <torque        name="rh_tsensor"    site="rh_force" />
+      <force         name="RightHandForceSensor_fsensor"    site="rh_force" />
+      <torque        name="RightHandForceSensor_tsensor"    site="rh_force" />
 
-      <force         name="lh_fsensor"    site="lh_force" />
-      <torque        name="lh_tsensor"    site="lh_force" />
+      <force         name="LeftHandForceSensor_fsensor"    site="lh_force" />
+      <torque        name="LeftHandForceSensor_tsensor"    site="lh_force" />
 
-      <gyro name="root_gyro" site="imu" />
-      <accelerometer name="root_accel" site="imu" />
+      <gyro name="Accelerometer_gyro" site="imu" />
+      <accelerometer name="Accelerometer_accelerometer" site="imu" />
     </sensor>
 </mujoco>
