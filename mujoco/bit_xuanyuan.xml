@@ -18,6 +18,12 @@
         <default class="R_foot">
           <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" />
         </default>
+        <default class="L_gripper_1"> <!-- R_gripper_2 -->
+          <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" />
+        </default>
+        <default class="L_gripper_2"> <!-- L_gripper_1 -->
+          <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" />
+        </default>
     </default>
     <visual>
         <map force="0.1" zfar="30"/>
@@ -768,13 +774,13 @@
                                           <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
                                           <joint name="R_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
                                           <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_1" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_gripper_1" />
+                                          <geom class="L_gripper_2" />
                                       </body>
                                       <body name="R_gripper_2" pos="-0.02825 -0.11 0.053" quat="0 0 1 0">
                                           <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
                                           <joint name="R_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
                                           <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_2" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_gripper_2" />
+                                          <geom class="L_gripper_1" />
                                       </body>
                                   </body>
                               </body>
@@ -828,13 +834,13 @@
                                           <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
                                           <joint name="L_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
                                           <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_1" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_gripper_1" />
+                                          <geom class="L_gripper_1" />
                                       </body>
                                       <body name="L_gripper_2" pos="-0.0282495 -0.11 -0.0529998" quat="-1 1.8366e-06 6.74783e-12 -3.67321e-06">
                                           <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
                                           <joint name="L_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
                                           <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_2" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_gripper_2" />
+                                          <geom class="L_gripper_2" />
                                       </body>
                                   </body>
                               </body>
