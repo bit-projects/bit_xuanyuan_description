@@ -752,9 +752,9 @@
                                       <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_wrist_2" />
                                       <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_wrist_2" />
                                       <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_wrist_6_axis" />
-                                      <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="R_wrist_6_axis" />
+                                      <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_R_wrist_6_axis" />
                                       <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hand" />
-                                      <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="R_hand" />
+                                      <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="convex_R_hand" />
                                       <!-- Site for sensor -->
                                       <site name="rh_force"  size="0.01" pos="0.0 0.0 0.0" />
                                       <body name="R_gripper_1" pos="-0.02825 -0.11 -0.003" quat="-1 0 0 0">
@@ -812,9 +812,9 @@
                                       <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_wrist_2" />
                                       <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_wrist_2" />
                                       <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_wrist_6_axis" />
-                                      <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="L_wrist_6_axis" />
+                                      <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_L_wrist_6_axis" />
                                       <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hand" />
-                                      <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" rgba="1 1 1 1" mesh="L_hand" />
+                                      <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" rgba="1 1 1 1" mesh="convex_L_hand" />
                                       <!-- Site for sensor -->
                                       <site name="lh_force"  size="0.01" pos="0.0 0.0 0.0" />
                                       <body name="L_gripper_1" pos="-0.0282495 -0.11 0.00300024" quat="6.74622e-12 -3.67321e-06 1 -1.8366e-06">
@@ -882,9 +882,9 @@
                                               <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_ankle_2" />
                                               <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_ankle_2" />
                                               <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis" />
-                                              <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis" />
+                                              <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_R_ankle_6_axis" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="R_foot" />
+                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="convex_R_foot" />
                                               <!-- Site for sensor -->
                                               <site name="rf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
@@ -930,9 +930,9 @@
                                               <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_ankle_2" />
                                               <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_ankle_2" />
                                               <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis" />
-                                              <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis" />
+                                              <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_L_ankle_6_axis" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="L_foot" />
+                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="convex_L_foot" />
                                               <!-- Site for sensor -->
                                               <site name="lf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
