@@ -11,6 +11,13 @@
         <default class="visual">
           <geom condim="3" material="matgeom" type="mesh" group="1" conaffinity="0" contype="0" />
         </default>
+        <default class="L_foot">
+          <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
+          <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" />
+        </default>
+        <default class="R_foot">
+          <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" />
+        </default>
     </default>
     <visual>
         <map force="0.1" zfar="30"/>
@@ -884,7 +891,7 @@
                                               <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis" />
                                               <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_R_ankle_6_axis" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="convex_R_foot" />
+                                              <geom class="R_foot" />
                                               <!-- Site for sensor -->
                                               <site name="rf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
@@ -932,7 +939,7 @@
                                               <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis" />
                                               <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_L_ankle_6_axis" />
                                               <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" rgba="1 1 1 1" mesh="convex_L_foot" />
+                                              <geom class="L_foot" />
                                               <!-- Site for sensor -->
                                               <site name="lf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0.707107 0.707107 0 0" />
                                           </body>
