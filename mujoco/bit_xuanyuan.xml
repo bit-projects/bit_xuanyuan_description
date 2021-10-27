@@ -13,16 +13,16 @@
         </default>
         <default class="L_foot">
           <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
-          <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" />
+          <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
         </default>
         <default class="R_foot">
-          <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" />
+          <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
         </default>
         <default class="L_gripper_1"> <!-- R_gripper_2 -->
-          <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" />
+          <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
         </default>
         <default class="L_gripper_2"> <!-- L_gripper_1 -->
-          <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" />
+          <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6" />
         </default>
     </default>
     <visual>
