@@ -167,12 +167,12 @@ forceSensors:
       rotation: [0, 0, -1.57]
       translation: [0, 0, 0]
   - name: RightHandForceSensor
-    parentBody: right_wrist_2
+    parentBody: R_wrist_2
     X_p_f:
       rotation: [1.57, 1.57, 0]
       translation: [0, -0.05, 0.025]
   - name: LeftHandForceSensor
-    parentBody: left_wrist_2
+    parentBody: L_wrist_2
     X_p_f:
       rotation: [1.57, 1.57, 0]
       translation: [0, -0.05, 0.025]
