@@ -624,7 +624,7 @@
       lower="-0.01"
       upper="0.01"
       effort="200"
-      velocity="1" />
+      velocity="0.015" />
   </joint>
   <link
     name="R_gripper_2">
@@ -682,7 +682,7 @@
       lower="-0.01"
       upper="0.01"
       effort="200"
-      velocity="1" />
+      velocity="0.015" />
 	<mimic joint="R_gripper_1" multiplier="-1" offset="0" />
   </joint>
   <link
@@ -1253,7 +1253,7 @@
       lower="-0.01"
       upper="0.01"
       effort="200"
-      velocity="1" />
+      velocity="0.015" />
   </joint>
   <link
     name="L_gripper_2">
@@ -1311,7 +1311,7 @@
       lower="-0.01"
       upper="0.01"
       effort="200"
-      velocity="1" />
+      velocity="0.015" />
 	<mimic joint="L_gripper_1" multiplier="-1" offset="0" />
   </joint>
   <link
