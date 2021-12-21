@@ -1,7 +1,7 @@
 <mujoco model="bit_xuanyuan">
     <compiler angle="radian" meshdir="../meshes/" />
     <size njmax="1000" nconmax="1000" nuserdata="1000" nuser_actuator="34"/>
-    <option timestep="0.001" iterations="50" tolerance="1e-10" solver="PGS" jacobian="dense" cone="pyramidal" />
+    <option timestep="0.001" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" impratio="10" />
     <default>
         <joint limited="true" damping="0.2" pos="0 0 0" />
         <motor ctrllimited="false" forcelimited="false"/>
