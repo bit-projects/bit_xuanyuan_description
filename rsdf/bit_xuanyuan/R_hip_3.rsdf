@@ -12,4 +12,15 @@
     <material name="plastic" />
   </planar_surface>
 
+  <planar_surface name="RightHipRoot" link="R_hip_3">
+    <origin rpy="0.1 1.57079632679 0.0" xyz="-0.04902298654913902 0.0 0.06479" />
+    <points>
+      <point xy="0.05 -0.1046132892370224" />
+        <point xy="-0.05 -0.1046132892370224" />
+        <point xy="-0.05 0.01046132743358612" />
+        <point xy="0.05 0.01046132743358612" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
 </robot>
