@@ -559,8 +559,8 @@
     name="R_hand"
     type="fixed">
     <origin
-      xyz="0 0 -0.00550000000000006"
-      rpy="0 0 3.14159265358979" />
+      xyz="-0.05 0 -0.03"
+      rpy="-3.14 1.57 0.0" />
     <parent
       link="R_wrist_6_axis" />
     <child
@@ -1188,8 +1188,8 @@
     name="L_hand"
     type="fixed">
     <origin
-      xyz="0 0 -0.0150000000000001"
-      rpy="0 0 3.14159265358979" />
+      xyz="0.05 0 -0.04"
+      rpy="-3.14 -1.57 0.0" />
     <parent
       link="L_wrist_6_axis" />
     <child
