@@ -1367,7 +1367,7 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.26"
+      lower="-0.7"
       upper="0.26"
       effort="300"
       velocity="2.8" />
@@ -1483,8 +1483,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.65"
-      upper="0.83"
+      lower="-0.64"
+      upper="0.82"
       effort="150"
       velocity="2.3" />
   </joint>
@@ -1657,8 +1657,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-2.7925"
-      upper="0.1919"
+      lower="-2.1"
+      upper="0.01"
       effort="300"
       velocity="2.0" />
   </joint>
@@ -1715,8 +1715,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-1.57"
-      upper="1.57"
+      lower="-0.71"
+      upper="0.71"
       effort="60"
       velocity="7.1" />
   </joint>
@@ -1773,8 +1773,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.4014"
-      upper="0.4014"
+      lower="-0.436"
+      upper="0.436"
       effort="116"
       velocity="4.3" />
   </joint>
@@ -1831,8 +1831,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-0.4014"
-      upper="0.4014"
+      lower="-0.35"
+      upper="0.35"
       effort="70"
       velocity="4.9" />
   </joint>
@@ -1995,8 +1995,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.14"
-      upper="3.14"
+      lower="-0.82"
+      upper="0.64"
       effort="150"
       velocity="2.3" />
   </joint>
@@ -2169,8 +2169,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-2.7925"
-      upper="0.1919"
+      lower="-2.1"
+      upper="0.01"
       effort="300"
       velocity="2.0" />
   </joint>
@@ -2227,8 +2227,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-1.57"
-      upper="1.57"
+      lower="-0.71"
+      upper="0.71"
       effort="65"
       velocity="7.0" />
   </joint>
@@ -2285,8 +2285,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-0.4014"
-      upper="0.4014"
+      lower="-0.436"
+      upper="0.436"
       effort="116"
       velocity="4.3" />
   </joint>
@@ -2343,8 +2343,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-0.4014"
-      upper="0.4014"
+      lower="-0.35"
+      upper="0.35"
       effort="70"
       velocity="4.9" />
   </joint>
