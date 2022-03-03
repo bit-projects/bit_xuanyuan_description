@@ -159,25 +159,25 @@ minimalSelfCollisions:
     <<: *default-col
 forceSensors:
   - name: RightFootForceSensor
-    parentBody: R_foot
+    parentBody: R_ankle_2
     X_p_f:
-      rotation: [0, 0, -1.57]
+      rotation: [ -1.5707963267949, 0, 3.14159265358979]
       translation: [0, 0, 0]
   - name: LeftFootForceSensor
-    parentBody: L_foot
+    parentBody: L_ankle_2
     X_p_f:
-      rotation: [0, 0, -1.57]
+      rotation: [ -1.5707963267949, 0, -3.14159265358979]
       translation: [0, 0, 0]
   - name: RightHandForceSensor
-    parentBody: right_wrist_2
+    parentBody: R_wrist_2
     X_p_f:
-      rotation: [1.57, 1.57, 0]
+      rotation: [0,0, 0]
       translation: [0, -0.05, 0.025]
   - name: LeftHandForceSensor
-    parentBody: left_wrist_2
+    parentBody: L_wrist_2
     X_p_f:
-      rotation: [1.57, 1.57, 0]
-      translation: [0, -0.05, 0.025]
+      rotation: [0,0, 0]
+      translation: [0, 0, 0]
 bodySensors:
   - name: FloatingBase
     parentBody: torso
