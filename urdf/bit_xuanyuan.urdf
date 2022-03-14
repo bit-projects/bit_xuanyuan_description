@@ -736,10 +736,10 @@
     <child
       link="L_shoulder_1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
-      lower="-2.62"
-      upper="0.7"
+      lower="-0.7"
+      upper="2.62"
       effort="150"
       velocity="3.14" />
   </joint>

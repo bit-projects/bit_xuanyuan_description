@@ -11,7 +11,7 @@ urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
 fixed: false
 default_attitude: [1, 0, 0, 0, 0, 0, 1.105]
-stance:
+stance_bk:
   R_hip_3: [0.4]
   R_knee_1: [-0.8]
   R_ankle_1: [0.4]
@@ -64,8 +64,8 @@ convexHulls:
   waist_1: [waist_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/waist_1-ch.txt"]
 # Default setting for the collision parameters
 default-col: &default-col
-  iDist: 0.02
-  sDist: 0.005
+  iDist: 0.1
+  sDist: 0.05
   damping: 0
 minimalSelfCollisions:
   # Arm <-> Body collision
