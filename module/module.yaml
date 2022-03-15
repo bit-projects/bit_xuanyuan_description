@@ -159,14 +159,14 @@ minimalSelfCollisions:
     <<: *default-col
 forceSensors:
   - name: RightFootForceSensor
-    parentBody: R_ankle_2
+    parentBody: R_ankle_6_axis
     X_p_f:
-      rotation: [ -1.5707963267949, 0, 3.14159265358979]
+      rotation: [0.0, 3.14159265358979, 0.0]
       translation: [0, 0, 0]
   - name: LeftFootForceSensor
-    parentBody: L_ankle_2
+    parentBody: L_ankle_6_axis
     X_p_f:
-      rotation: [ -1.5707963267949, 0, -3.14159265358979]
+      rotation: [0.0, 3.14159265358979, 0.0]
       translation: [0, 0, 0]
   - name: RightHandForceSensor
     parentBody: R_wrist_2
