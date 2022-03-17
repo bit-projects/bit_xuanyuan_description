@@ -194,9 +194,9 @@ lipmStabilizer:
   safety_tresholds:
     MAX_AVERAGE_DCM_ERROR: 0.05
     MAX_COP_ADMITTANCE: 0.1
-    MAX_DCM_D_GAIN: 2.0
-    MAX_DCM_I_GAIN: 100.0
-    MAX_DCM_P_GAIN: 20.0
+    MAX_DCM_D_GAIN: 10000.0
+    MAX_DCM_I_GAIN: 10000.0
+    MAX_DCM_P_GAIN: 2000.0
     MAX_COMD_GAIN: 10.0
     MAX_ZMPD_GAIN: 10.0
     MAX_DFZ_ADMITTANCE: 0.0005
@@ -215,26 +215,26 @@ lipmStabilizer:
   rightFootSurface: RightFoot
   torsoBodyName: torso
   admittance:
-    cop: [0.000056033078314342167, 0.000056033078314342167]
-    dfz: 4.84114625608056e-7
-    dfz_damping: 2.6104977240991045
+    cop: [0.0005, 0.0001]
+    dfz: 4e-5
+    dfz_damping: 0 
     maxVel:
       angular: [0.3, 0.3, 0.3]
       linear: [0.1, 0.1, 0.1]
     velFilterGain: 0.8
   zmpcc:
-    comAdmittance: [0.0, 0.0]
+    comAdmittance: [0.002, 0.002]
     maxCoMOffset: 0.05
     integratorLeakRate: 0.1
   dcm_tracking:
     gains:
-      prop: 4.396315941290499
-      integral: 3.8171126961549755
-      deriv: 1.1616853668683496
-      comdError: 1.6391826676135047
-      zmpd: 5.246473509703889
+      prop: 400.0
+      integral: 200.0
+      deriv: 0.0
+      comdError: 1.0
+      zmpd: 0.0
     derivator_time_constant: 1.0
-    integrator_time_constant: 15.0
+    integrator_time_constant: 20.0
   dcm_bias:
     dcmMeasureErrorStd: 0.01
     zmpMeasureErrorStd: 0.05
@@ -260,7 +260,7 @@ lipmStabilizer:
       stiffness: [1000.0, 1000.0, 100.0]
       weight: 1000.0
       dimWeight: [1.0, 1.0, 1.0]
-      height: 1.0
+      height: 1.015
     torso:
       pitch: 0.0
       stiffness: 10.0
