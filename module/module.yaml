@@ -190,24 +190,94 @@ bodySensors:
       rotation: [0, 0, 0]
       translation: [0, 0, 0]
 lipmStabilizer:
+  verbose: true
+  safety_tresholds:
+    MAX_AVERAGE_DCM_ERROR: 0.05
+    MAX_COP_ADMITTANCE: 0.1
+    MAX_DCM_D_GAIN: 2.0
+    MAX_DCM_I_GAIN: 100.0
+    MAX_DCM_P_GAIN: 20.0
+    MAX_COMD_GAIN: 10.0
+    MAX_ZMPD_GAIN: 10.0
+    MAX_DFZ_ADMITTANCE: 0.0005
+    MAX_DFZ_DAMPING: 10.0
+    MAX_FDC_RX_VEL: 0.2
+    MAX_FDC_RY_VEL: 0.2
+    MAX_FDC_RZ_VEL: 0.2
+    MIN_DS_PRESSURE: 15.0
+    MIN_NET_TOTAL_FORCE_ZMP: 1.0
+  fdqp_weights:
+    ankle_torque: 100.0
+    net_wrench: 10000.0
+    pressure: 1.0
+  friction: 0.7
   leftFootSurface: LeftFoot
   rightFootSurface: RightFoot
   torsoBodyName: torso
+  admittance:
+    cop: [0.000056033078314342167, 0.000056033078314342167]
+    dfz: 4.84114625608056e-7
+    dfz_damping: 2.6104977240991045
+    maxVel:
+      angular: [0.3, 0.3, 0.3]
+      linear: [0.1, 0.1, 0.1]
+    velFilterGain: 0.8
+  zmpcc:
+    comAdmittance: [0.0, 0.0]
+    maxCoMOffset: 0.05
+    integratorLeakRate: 0.1
+  dcm_tracking:
+    gains:
+      prop: 4.396315941290499
+      integral: 3.8171126961549755
+      deriv: 1.1616853668683496
+      comdError: 1.6391826676135047
+      zmpd: 5.246473509703889
+    derivator_time_constant: 1.0
+    integrator_time_constant: 15.0
+  dcm_bias:
+    dcmMeasureErrorStd: 0.01
+    zmpMeasureErrorStd: 0.05
+    biasDriftPerSecondStd: 0.02
+    biasLimit: [0.02, 0.02]
+    withDCMBias: false
+    withDCMFilter: false
+  external_wrench:
+    add_expected_com_offset: false
+    subtract_measured_value: false
+    modify_com_error: false
+    modify_zmp_error: false
+    modify_zmp_error_d: false
+    com_offset_err_com_limit: 0.1
+    com_offset_err_zmp_limit: 0.1
+    ext_wrench_sum_cutoff: 0.05
+    com_offset_cutoff: 0.05
+    com_offset_com_cutoff: 1.0
+    derivator_time_constant: 1.0
   tasks:
     com:
+      active_joints: [Root, R_hip_1, R_hip_2, R_hip_3, R_knee_1, R_knee_2, R_ankle_1, R_ankle_2, L_hip_1, L_hip_2, L_hip_3, L_knee_1, L_knee_2, L_ankle_1, L_ankle_2]
+      stiffness: [1000.0, 1000.0, 100.0]
+      weight: 1000.0
+      dimWeight: [1.0, 1.0, 1.0]
       height: 1.0
-      active_joints: ["Root",
-                     "R_hip_1",
-                     "R_hip_2",
-                     "R_hip_3",
-                     "R_knee_1",
-                     "R_knee_2",
-                     "R_ankle_1",
-                     "R_ankle_2",
-                     "L_hip_1",
-                     "L_hip_2",
-                     "L_hip_3",
-                     "L_knee_1",
-                     "L_knee_2",
-                     "L_ankle_1",
-                     "L_ankle_2"]
+    torso:
+      pitch: 0.0
+      stiffness: 10.0
+      weight: 100.0
+      dimWeight: [1.0, 1.0, 1.0]
+    pelvis:
+      stiffness: 10.0
+      weight: 100.0
+      dimWeight: [1.0, 1.0, 1.0]
+    contact:
+      damping:
+        angular: [300.0, 300.0, 300.0]
+        linear: [300.0, 300.0, 300.0]
+      stiffness:
+        angular: [1.0, 1.0, 1.0]
+        linear: [1.0, 1.0, 1.0]
+      weight: 100000.0
+  vdc:
+    frequency: 1.0
+    stiffness: 1000.0
