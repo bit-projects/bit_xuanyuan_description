@@ -9,7 +9,7 @@
   <link name="base_link"/>
   <joint name="waist" type="fixed">
     <parent link="base_link"/>
-    <child link="torso"/>
+    <child link="waist_1"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <link name="torso">
@@ -693,11 +693,17 @@
     </collision>
   </link>
   <joint name="waist_0" type="revolute">
-    <origin xyz="0 0.0751588565074892 -0.0749999999999999" rpy="1.5707963267949 0 3.14159265"/>
-    <parent link="torso"/>
-    <child link="waist_0"/>
-    <axis xyz="0 0 1"/>
+    <origin xyz="0 0.0751588565074892 0.046" rpy="1.5707963267949 0 -3.14159265"/>
+    <parent link="waist_0"/>
+    <child link="torso_tf"/>
+    <axis xyz="0 0 -1"/>
     <limit lower="-0.35" upper="0.08" effort="300" velocity="2.8"/>
+  </joint>
+  <link name="torso_tf" />
+  <joint name="torso_tf" type="fixed">
+    <parent link="torso_tf" />
+    <child link="torso" />
+    <origin xyz="0 0.075 -0.075" rpy="-1.5707963267949 3.14 0" />
   </joint>
   <link name="waist_1">
     <inertial>
@@ -722,9 +728,9 @@
     </collision>
   </link>
   <joint name="waist_1" type="revolute">
-    <origin xyz="0 -0.0460046428794829 -0.0751888646756264" rpy="1.5707963267949 3.1415926535 0"/>
-    <parent link="waist_0"/>
-    <child link="waist_1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="waist_1"/>
+    <child link="waist_0"/>
     <axis xyz="0 0 1"/>
     <limit lower="-0.872" upper="0.872" effort="220" velocity="2.5"/>
   </joint>
@@ -751,7 +757,7 @@
     </collision>
   </link>
   <joint name="R_hip_1" type="revolute">
-    <origin xyz="5.9130214832445E-05 0.0873497468913164 0.0804842516395254" rpy="0 0 1.5707963267949"/>
+    <origin xyz="0 -0.0874524045087781 -0.08049" rpy="-3.14159265358979 0 -1.5707963267949"/>
     <parent link="waist_1"/>
     <child link="R_hip_1"/>
     <axis xyz="0 0 1"/>
@@ -1010,7 +1016,7 @@
     </collision>
   </link>
   <joint name="L_hip_1" type="revolute">
-    <origin xyz="0 -0.0874524045087781 0.0804896286305103" rpy="0 0 1.5707963267949"/>
+    <origin xyz="0 0.0874524045087781 -0.08049" rpy="-3.14159265358979 0 -1.5707963267949"/>
     <parent link="waist_1"/>
     <child link="L_hip_1"/>
     <axis xyz="0 0 1"/>
