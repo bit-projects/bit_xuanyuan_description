@@ -179,12 +179,12 @@ forceSensors:
       rotation: [0,0, 0]
       translation: [0, 0, 0]
 bodySensors:
-  - name: FloatingBase
+  - name: Accelerometer
     parentBody: torso
     X_b_s:
-      rotation: [0, 0, 0]
-      translation: [0, 0, 0]
-  - name: Accelerometer
+      rotation: [3.14159265358979, 0, 0]
+      translation: [-0.05, -0.025, 0.1]
+  - name: FloatingBase
     parentBody: torso
     X_b_s:
       rotation: [0, 0, 0]
@@ -215,32 +215,33 @@ lipmStabilizer:
   rightFootSurface: RightFoot
   torsoBodyName: torso
   admittance:
-    cop: [0.0005, 0.0001]
-    dfz: 4e-5
-    dfz_damping: 0 
+    cop: [0.002, 0.002]
+    dfz: 0.00002
+    dfz_damping: 1.0 
     maxVel:
       angular: [0.3, 0.3, 0.3]
       linear: [0.1, 0.1, 0.1]
     velFilterGain: 0.8
   zmpcc:
-    comAdmittance: [0.002, 0.002]
+    comAdmittance: [0.005, 0.005]
     maxCoMOffset: 0.05
     integratorLeakRate: 0.1
   dcm_tracking:
     gains:
-      prop: 400.0
-      integral: 200.0
-      deriv: 0.0
+      prop: 10.0
+      integral: 10.0
+      deriv: 0.1
       comdError: 1.0
       zmpd: 0.0
     derivator_time_constant: 1.0
-    integrator_time_constant: 20.0
+    integrator_time_constant: 10.0
   dcm_bias:
     dcmMeasureErrorStd: 0.01
     zmpMeasureErrorStd: 0.05
     biasDriftPerSecondStd: 0.02
     biasLimit: [0.02, 0.02]
     withDCMBias: false
+    correctCoMPos: false
     withDCMFilter: false
   external_wrench:
     add_expected_com_offset: false
@@ -256,7 +257,7 @@ lipmStabilizer:
     derivator_time_constant: 1.0
   tasks:
     com:
-      active_joints: [Root, R_hip_1, R_hip_2, R_hip_3, R_knee_1, R_knee_2, R_ankle_1, R_ankle_2, L_hip_1, L_hip_2, L_hip_3, L_knee_1, L_knee_2, L_ankle_1, L_ankle_2]
+      active_joints: [Root, waist_0, waist_1, R_hip_1, R_hip_2, R_hip_3, R_knee_1, R_knee_2, R_ankle_1, R_ankle_2, L_hip_1, L_hip_2, L_hip_3, L_knee_1, L_knee_2, L_ankle_1, L_ankle_2]
       stiffness: [1000.0, 1000.0, 100.0]
       weight: 1000.0
       dimWeight: [1.0, 1.0, 1.0]
