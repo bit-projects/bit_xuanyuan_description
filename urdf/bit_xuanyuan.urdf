@@ -2,13 +2,9 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="bit_xuanyuan">
+<robot name="bit_xuanyuan">
   <mujoco>
-        <compiler
-        meshdir="../meshes/"
-        balanceinertia="true"
-        discardvisual="false" />
+    <compiler meshdir="../meshes/" balanceinertia="true" discardvisual="false"/>
   </mujoco>
   <link name="base_link"/>
   <joint name="waist" type="fixed">
@@ -16,2442 +12,1238 @@
     <child link="torso"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
-  <link
-    name="torso">
+  <link name="torso">
     <inertial>
-      <origin
-        xyz="0.000550229702140016 0.000245474501299226 0.166981875072049"
-        rpy="0 0 0" />
-      <mass
-        value="26.3712421112853" />
-      <inertia
-        ixx="0.284090758604728"
-        ixy="-2.59908693406124E-05"
-        ixz="2.66437673403944E-05"
-        iyy="0.418241196537563"
-        iyz="0.030307582811748"
-        izz="0.329268995000378" />
+      <origin xyz="0.000550229702140016 0.000245474501299226 0.166981875072049" rpy="0 0 0"/>
+      <mass value="26.3712421112853"/>
+      <inertia ixx="0.284090758604728" ixy="-2.59908693406124E-05" ixz="2.66437673403944E-05" iyy="0.418241196537563" iyz="0.030307582811748" izz="0.329268995000378"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/torso.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/torso.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.501960784313725 1 0.501960784313725 1" />
+      <material name="">
+        <color rgba="0.501960784313725 1 0.501960784313725 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/torso.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/torso.STL"/>
       </geometry>
     </collision>
   </link>
-  <link
-    name="R_shoulder_1">
+  <link name="R_shoulder_1">
     <inertial>
-      <origin
-        xyz="-0.00792319948849695 -0.0292048317726363 0.054412932540979"
-        rpy="0 0 0" />
-      <mass
-        value="0.23947003245888" />
-      <inertia
-        ixx="0.000497746487192698"
-        ixy="2.06773646327474E-06"
-        ixz="3.75515171478267E-06"
-        iyy="0.000290016109780882"
-        iyz="9.51652905250094E-05"
-        izz="0.0003891666051929" />
+      <origin xyz="-0.00792319948849695 -0.0292048317726363 0.054412932540979" rpy="0 0 0"/>
+      <mass value="0.23947003245888"/>
+      <inertia ixx="0.000497746487192698" ixy="2.06773646327474E-06" ixz="3.75515171478267E-06" iyy="0.000290016109780882" iyz="9.51652905250094E-05" izz="0.0003891666051929"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_shoulder_1"
-    type="revolute">
-    <origin
-      xyz="0.0263301173710569 -0.248151606851778 0.209000026522007"
-      rpy="1.5707963267949 0 0" />
-    <parent
-      link="torso" />
-    <child
-      link="R_shoulder_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.04607"
-      upper="2.44346"
-      effort="150"
-      velocity="3.14" />
+  <joint name="R_shoulder_1" type="revolute">
+    <origin xyz="0.0263301173710569 -0.248151606851778 0.209000026522007" rpy="1.5707963267949 0 0"/>
+    <parent link="torso"/>
+    <child link="R_shoulder_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.04607" upper="2.44346" effort="150" velocity="3.14"/>
   </joint>
-  <link
-    name="R_shoulder_2">
+  <link name="R_shoulder_2">
     <inertial>
-      <origin
-        xyz="-8.30483662048742E-05 0.078688423454511 0.0143015574660067"
-        rpy="0 0 0" />
-      <mass
-        value="0.215519946352522" />
-      <inertia
-        ixx="0.000229932389846564"
-        ixy="1.7504811137266E-09"
-        ixz="-7.99493509514227E-09"
-        iyy="0.000176306293548712"
-        iyz="4.28673739521183E-05"
-        izz="0.000236659450018805" />
+      <origin xyz="-8.30483662048742E-05 0.078688423454511 0.0143015574660067" rpy="0 0 0"/>
+      <mass value="0.215519946352522"/>
+      <inertia ixx="0.000229932389846564" ixy="1.7504811137266E-09" ixz="-7.99493509514227E-09" iyy="0.000176306293548712" iyz="4.28673739521183E-05" izz="0.000236659450018805"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.274509803921569 0.505882352941176 0.984313725490196 1" />
+      <material name="">
+        <color rgba="0.274509803921569 0.505882352941176 0.984313725490196 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_shoulder_2"
-    type="revolute">
-    <origin
-      xyz="0.00841988262894328 -0.0700000265220065 0.0728483931482221"
-      rpy="3.14159265358979 1.5707963267949 0" />
-    <parent
-      link="R_shoulder_1" />
-    <child
-      link="R_shoulder_2" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.7854"
-      upper="1.0472"
-      effort="200"
-      velocity="1.57" />
+  <joint name="R_shoulder_2" type="revolute">
+    <origin xyz="0.00841988262894328 -0.0700000265220065 0.0728483931482221" rpy="3.14159265358979 1.5707963267949 0"/>
+    <parent link="R_shoulder_1"/>
+    <child link="R_shoulder_2"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7854" upper="1.0472" effort="200" velocity="1.57"/>
   </joint>
-  <link
-    name="R_shoulder_3">
+  <link name="R_shoulder_3">
     <inertial>
-      <origin
-        xyz="-0.000134822243826771 0.0100415037945115 0.0787738783804664"
-        rpy="0 0 0" />
-      <mass
-        value="1.41649673827991" />
-      <inertia
-        ixx="0.00357185179568122"
-        ixy="-1.84673715525452E-05"
-        ixz="4.45721335844176E-05"
-        iyy="0.00343986017030972"
-        iyz="-0.00053608007181065"
-        izz="0.00134574291147199" />
+      <origin xyz="-0.000134822243826771 0.0100415037945115 0.0787738783804664" rpy="0 0 0"/>
+      <mass value="1.41649673827991"/>
+      <inertia ixx="0.00357185179568122" ixy="-1.84673715525452E-05" ixz="4.45721335844176E-05" iyy="0.00343986017030972" iyz="-0.00053608007181065" izz="0.00134574291147199"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_3.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.866666666666667 0.866666666666667 0.890196078431372 1" />
+      <material name="">
+        <color rgba="0.866666666666667 0.866666666666667 0.890196078431372 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_shoulder_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_shoulder_3.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_shoulder_3"
-    type="revolute">
-    <origin
-      xyz="0 0.124085181670817 0.00975000000000071"
-      rpy="1.5707963267949 0 3.14159265358979" />
-    <parent
-      link="R_shoulder_2" />
-    <child
-      link="R_shoulder_3" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.535"
-      upper="1.535"
-      effort="75"
-      velocity="5.97" />
+  <joint name="R_shoulder_3" type="revolute">
+    <origin xyz="0 0.124085181670817 0.00975000000000071" rpy="1.5707963267949 0 3.14159265358979"/>
+    <parent link="R_shoulder_2"/>
+    <child link="R_shoulder_3"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.535" upper="1.535" effort="75" velocity="5.97"/>
   </joint>
-  <link
-    name="R_elbow_1">
+  <link name="R_elbow_1">
     <inertial>
-      <origin
-        xyz="-0.00335205249710603 0.0361814376762407 0.0182777404009908"
-        rpy="0 0 0" />
-      <mass
-        value="0.357200805765115" />
-      <inertia
-        ixx="0.000481321899854818"
-        ixy="-8.28633646392149E-06"
-        ixz="-2.71493895134369E-07"
-        iyy="0.000493410633708973"
-        iyz="5.12652820450252E-07"
-        izz="0.000432966988862358" />
+      <origin xyz="-0.00335205249710603 0.0361814376762407 0.0182777404009908" rpy="0 0 0"/>
+      <mass value="0.357200805765115"/>
+      <inertia ixx="0.000481321899854818" ixy="-8.28633646392149E-06" ixz="-2.71493895134369E-07" iyy="0.000493410633708973" iyz="5.12652820450252E-07" izz="0.000432966988862358"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_elbow_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_elbow_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_elbow_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_elbow_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_elbow_1"
-    type="revolute">
-    <origin
-      xyz="0.01825 0 0.168414818329183"
-      rpy="1.5707963267949 0 -1.5707963267949" />
-    <parent
-      link="R_shoulder_3" />
-    <child
-      link="R_elbow_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="1.745"
-      effort="200"
-      velocity="2.14" />
+  <joint name="R_elbow_1" type="revolute">
+    <origin xyz="0.01825 0 0.168414818329183" rpy="1.5707963267949 0 -1.5707963267949"/>
+    <parent link="R_shoulder_3"/>
+    <child link="R_elbow_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.745" effort="200" velocity="2.14"/>
   </joint>
-  <link
-    name="R_elbow_2">
+  <link name="R_elbow_2">
     <inertial>
-      <origin
-        xyz="-0.00179432155165848 -0.00199737709956571 -0.0965971551792066"
-        rpy="0 0 0" />
-      <mass
-        value="0.104222803608261" />
-      <inertia
-        ixx="0.000322341990974937"
-        ixy="6.05444363177695E-07"
-        ixz="-2.5849970846936E-05"
-        iyy="0.000318147388702997"
-        iyz="-6.30076935332891E-07"
-        izz="6.8780885495507E-05" />
+      <origin xyz="-0.00179432155165848 -0.00199737709956571 -0.0965971551792066" rpy="0 0 0"/>
+      <mass value="0.104222803608261"/>
+      <inertia ixx="0.000322341990974937" ixy="6.05444363177695E-07" ixz="-2.5849970846936E-05" iyy="0.000318147388702997" iyz="-6.30076935332891E-07" izz="6.8780885495507E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_elbow_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_elbow_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_elbow_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_elbow_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_elbow_2"
-    type="revolute">
-    <origin
-      xyz="-0.00151149621765599 0.0453894955720891 0.0182500000245032"
-      rpy="1.5707963267949 -1.5707963267949 0" />
-    <parent
-      link="R_elbow_1" />
-    <child
-      link="R_elbow_2" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.4835"
-      upper="1.4835"
-      effort="20"
-      velocity="10.14" />
+  <joint name="R_elbow_2" type="revolute">
+    <origin xyz="-0.00151149621765599 0.0453894955720891 0.0182500000245032" rpy="1.5707963267949 -1.5707963267949 0"/>
+    <parent link="R_elbow_1"/>
+    <child link="R_elbow_2"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.4835" upper="1.4835" effort="20" velocity="10.14"/>
   </joint>
-  <link
-    name="R_wrist_1">
+  <link name="R_wrist_1">
     <inertial>
-      <origin
-        xyz="-1.42470769522174E-08 0 0.0264999857529231"
-        rpy="0 0 0" />
-      <mass
-        value="0.0526856914889547" />
-      <inertia
-        ixx="1.14372995305202E-05"
-        ixy="-1.07494875757914E-10"
-        ixz="1.06972058176871E-17"
-        iyy="1.65419431039183E-05"
-        iyz="1.07494875781892E-10"
-        izz="1.14372995305201E-05" />
+      <origin xyz="-1.42470769522174E-08 0 0.0264999857529231" rpy="0 0 0"/>
+      <mass value="0.0526856914889547"/>
+      <inertia ixx="1.14372995305202E-05" ixy="-1.07494875757914E-10" ixz="1.06972058176871E-17" iyy="1.65419431039183E-05" iyz="1.07494875781892E-10" izz="1.14372995305201E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_wrist_1"
-    type="revolute">
-    <origin
-      xyz="-0.0265000000245033 -0.00151149621765716 -0.220610504427911"
-      rpy="1.5707963267949 0 1.5707963267949" />
-    <parent
-      link="R_elbow_2" />
-    <child
-      link="R_wrist_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.63"
-      upper="0.63"
-      effort="30"
-      velocity="3.42" />
+  <joint name="R_wrist_1" type="revolute">
+    <origin xyz="-0.0265000000245033 -0.00151149621765716 -0.220610504427911" rpy="1.5707963267949 0 1.5707963267949"/>
+    <parent link="R_elbow_2"/>
+    <child link="R_wrist_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.63" upper="0.63" effort="30" velocity="3.42"/>
   </joint>
-  <link
-    name="R_wrist_2">
+  <link name="R_wrist_2">
     <inertial>
-      <origin
-        xyz="-3.95780716533345E-08 -0.0259203214334721 0.0250166622379979"
-        rpy="0 0 0" />
-      <mass
-        value="0.0186531124144938" />
-      <inertia
-        ixx="1.53312341866652E-05"
-        ixy="-3.67950190409067E-11"
-        ixz="-1.82901535382511E-11"
-        iyy="1.26801431806188E-05"
-        iyz="4.80035622861216E-07"
-        izz="8.76264957278865E-06" />
+      <origin xyz="-3.95780716533345E-08 -0.0259203214334721 0.0250166622379979" rpy="0 0 0"/>
+      <mass value="0.0186531124144938"/>
+      <inertia ixx="1.53312341866652E-05" ixy="-3.67950190409067E-11" ixz="-1.82901535382511E-11" iyy="1.26801431806188E-05" iyz="4.80035622861216E-07" izz="8.76264957278865E-06"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_wrist_2"
-    type="revolute">
-    <origin
-      xyz="-0.025 0 0.0265"
-      rpy="0 1.5707963267949 0" />
-    <parent
-      link="R_wrist_1" />
-    <child
-      link="R_wrist_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.73"
-      upper="0.73"
-      effort="30"
-      velocity="3.42" />
+  <joint name="R_wrist_2" type="revolute">
+    <origin xyz="-0.025 0 0.0265" rpy="0 1.5707963267949 0"/>
+    <parent link="R_wrist_1"/>
+    <child link="R_wrist_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.73" upper="0.73" effort="30" velocity="3.42"/>
   </joint>
-  <link
-    name="R_wrist_6_axis">
+  <link name="R_wrist_6_axis">
     <inertial>
-      <origin
-        xyz="5.55111512312578E-17 6.93889390390723E-18 -3.17888848580528E-05"
-        rpy="0 0 0" />
-      <mass
-        value="0.236120679342982" />
-      <inertia
-        ixx="3.69633487114174E-05"
-        ixy="1.22860352822774E-22"
-        ixz="1.63214226125136E-21"
-        iyy="3.69633487114174E-05"
-        iyz="-2.61467895146919E-22"
-        izz="5.97634231172414E-05" />
+      <origin xyz="5.55111512312578E-17 6.93889390390723E-18 -3.17888848580528E-05" rpy="0 0 0"/>
+      <mass value="0.236120679342982"/>
+      <inertia ixx="3.69633487114174E-05" ixy="1.22860352822774E-22" ixz="1.63214226125136E-21" iyy="3.69633487114174E-05" iyz="-2.61467895146919E-22" izz="5.97634231172414E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_wrist_6_axis.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_wrist_6_axis"
-    type="fixed">
-    <origin
-      xyz="0 -0.0545 0.024999999999999"
-      rpy="-1.5707963267949 0 0" />
-    <parent
-      link="R_wrist_2" />
-    <child
-      link="R_wrist_6_axis" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="R_wrist_6_axis" type="fixed">
+    <origin xyz="0 -0.0545 0.024999999999999" rpy="-1.5707963267949 0 0"/>
+    <parent link="R_wrist_2"/>
+    <child link="R_wrist_6_axis"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="R_hand">
+  <link name="R_hand">
     <inertial>
-      <origin
-        xyz="0.0114142775225746 -0.000529577423089962 -0.0468468975763972"
-        rpy="0 0 0" />
-      <mass
-        value="0.160550952487095" />
-      <inertia
-        ixx="0.000235330851913788"
-        ixy="7.64000007845755E-07"
-        ixz="1.01539796494313E-05"
-        iyy="0.000120937114349736"
-        iyz="-7.97882701037564E-08"
-        izz="0.000164651033871577" />
+      <origin xyz="0.0114142775225746 -0.000529577423089962 -0.0468468975763972" rpy="0 0 0"/>
+      <mass value="0.160550952487095"/>
+      <inertia ixx="0.000235330851913788" ixy="7.64000007845755E-07" ixz="1.01539796494313E-05" iyy="0.000120937114349736" iyz="-7.97882701037564E-08" izz="0.000164651033871577"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hand.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hand.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hand.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hand.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_hand"
-    type="fixed">
-    <origin
-      xyz="0 0 -0.00550000000000006"
-      rpy="0 0 3.14159265358979" />
-    <parent
-      link="R_wrist_6_axis" />
-    <child
-      link="R_hand" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="R_hand" type="fixed">
+    <origin xyz="0 0 -0.00550000000000006" rpy="0 0 3.14159265358979"/>
+    <parent link="R_wrist_6_axis"/>
+    <child link="R_hand"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="R_gripper_1">
+  <link name="R_gripper_1">
     <inertial>
-      <origin
-        xyz="-0.00259728440220752 4.17878310288167E-08 0.00872940273075612"
-        rpy="0 0 0" />
-      <mass
-        value="0.0307177346178986" />
-      <inertia
-        ixx="1.29762962683552E-05"
-        ixy="-5.19255789557035E-11"
-        ixz="5.09794948618246E-08"
-        iyy="4.17905802814657E-06"
-        iyz="4.64437619741064E-11"
-        izz="1.58366906800263E-05" />
+      <origin xyz="-0.00259728440220752 4.17878310288167E-08 0.00872940273075612" rpy="0 0 0"/>
+      <mass value="0.0307177346178986"/>
+      <inertia ixx="1.29762962683552E-05" ixy="-5.19255789557035E-11" ixz="5.09794948618246E-08" iyy="4.17905802814657E-06" iyz="4.64437619741064E-11" izz="1.58366906800263E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_gripper_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_gripper_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_gripper_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_gripper_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_gripper_1"
-    type="prismatic">
-    <origin
-      xyz="0.0282499999999989 -0.0279999999999589 -0.0499999999999992"
-      rpy="1.5707963267949 0 3.14159265358979" />
-    <parent
-      link="R_hand" />
-    <child
-      link="R_gripper_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.01"
-      upper="0.01"
-      effort="200"
-      velocity="0.03" />
+  <joint name="R_gripper_1" type="prismatic">
+    <origin xyz="0.0282499999999989 -0.0279999999999589 -0.0499999999999992" rpy="1.5707963267949 0 3.14159265358979"/>
+    <parent link="R_hand"/>
+    <child link="R_gripper_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.01" upper="0.01" effort="200" velocity="0.03"/>
   </joint>
-  <link
-    name="R_gripper_2">
+  <link name="R_gripper_2">
     <inertial>
-      <origin
-        xyz="0.0025972844022063 -4.17878301406382E-08 0.00872940273076125"
-        rpy="0 0 0" />
-      <mass
-        value="0.0307177346178985" />
-      <inertia
-        ixx="1.29762962683552E-05"
-        ixy="-5.19255789668847E-11"
-        ixz="-5.09794948618351E-08"
-        iyy="4.17905802814658E-06"
-        iyz="-4.64437619261512E-11"
-        izz="1.58366906800262E-05" />
+      <origin xyz="0.0025972844022063 -4.17878301406382E-08 0.00872940273076125" rpy="0 0 0"/>
+      <mass value="0.0307177346178985"/>
+      <inertia ixx="1.29762962683552E-05" ixy="-5.19255789668847E-11" ixz="-5.09794948618351E-08" iyy="4.17905802814658E-06" iyz="-4.64437619261512E-11" izz="1.58366906800262E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_gripper_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_gripper_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_gripper_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_gripper_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_gripper_2"
-    type="prismatic">
-    <origin
-      xyz="0.0282500000000007 0.027999999999959 -0.0500000000000006"
-      rpy="1.5707963267949 0 0" />
-    <parent
-      link="R_hand" />
-    <child
-      link="R_gripper_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.01"
-      upper="0.01"
-      effort="200"
-      velocity="1" />
-	<mimic joint="R_gripper_1" multiplier="-1" offset="0" />
+  <joint name="R_gripper_2" type="prismatic">
+    <origin xyz="0.0282500000000007 0.027999999999959 -0.0500000000000006" rpy="1.5707963267949 0 0"/>
+    <parent link="R_hand"/>
+    <child link="R_gripper_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.01" upper="0.01" effort="200" velocity="1"/>
+    <mimic joint="R_gripper_1" multiplier="-1" offset="0"/>
   </joint>
-  <link
-    name="L_shoulder_1">
+  <link name="L_shoulder_1">
     <inertial>
-      <origin
-        xyz="0.00792309932259879 -0.0292056473938085 0.0544128919596558"
-        rpy="0 0 0" />
-      <mass
-        value="0.239468146335437" />
-      <inertia
-        ixx="0.000497738082037401"
-        ixy="-2.0652957806433E-06"
-        ixz="-3.75543575082096E-06"
-        iyy="0.000290017911140068"
-        iyz="9.51671043141274E-05"
-        izz="0.000389154038852414" />
+      <origin xyz="0.00792309932259879 -0.0292056473938085 0.0544128919596558" rpy="0 0 0"/>
+      <mass value="0.239468146335437"/>
+      <inertia ixx="0.000497738082037401" ixy="-2.0652957806433E-06" ixz="-3.75543575082096E-06" iyy="0.000290017911140068" iyz="9.51671043141274E-05" izz="0.000389154038852414"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_shoulder_1"
-    type="revolute">
-    <origin
-      xyz="0.0263301173710569 0.248151606851778 0.208999973477994"
-      rpy="1.5707963267949 0 3.14159265" />
-    <parent
-      link="torso" />
-    <child
-      link="L_shoulder_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.7"
-      upper="2.62"
-      effort="150"
-      velocity="3.14" />
+  <joint name="L_shoulder_1" type="revolute">
+    <origin xyz="0.0263301173710569 0.248151606851778 0.208999973477994" rpy="1.5707963267949 0 3.14159265"/>
+    <parent link="torso"/>
+    <child link="L_shoulder_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.7" upper="2.62" effort="150" velocity="3.14"/>
   </joint>
-  <link
-    name="L_shoulder_2">
+  <link name="L_shoulder_2">
     <inertial>
-      <origin
-        xyz="-8.29913087072032E-05 -0.0786882419452206 0.0143014020323115"
-        rpy="0 0 0" />
-      <mass
-        value="0.215522029235245" />
-      <inertia
-        ixx="0.00022993346529617"
-        ixy="-1.13896895320622E-09"
-        ixz="6.62165282493942E-09"
-        iyy="0.000176308389303558"
-        iyz="-4.28670316431622E-05"
-        izz="0.000236660167419136" />
+      <origin xyz="-8.29913087072032E-05 -0.0786882419452206 0.0143014020323115" rpy="0 0 0"/>
+      <mass value="0.215522029235245"/>
+      <inertia ixx="0.00022993346529617" ixy="-1.13896895320622E-09" ixz="6.62165282493942E-09" iyy="0.000176308389303558" iyz="-4.28670316431622E-05" izz="0.000236660167419136"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.274509803921569 0.505882352941176 0.984313725490196 1" />
+      <material name="">
+        <color rgba="0.274509803921569 0.505882352941176 0.984313725490196 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_shoulder_2"
-    type="revolute">
-    <origin
-      xyz="-0.00841988262894327 -0.0699999734779935 0.0728483931482221"
-      rpy="0 1.5707963267949 0" />
-    <parent
-      link="L_shoulder_1" />
-    <child
-      link="L_shoulder_2" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.31"
-      upper="0.785"
-      effort="200"
-      velocity="1.57" />
+  <joint name="L_shoulder_2" type="revolute">
+    <origin xyz="-0.00841988262894327 -0.0699999734779935 0.0728483931482221" rpy="0 1.5707963267949 0"/>
+    <parent link="L_shoulder_1"/>
+    <child link="L_shoulder_2"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.31" upper="0.785" effort="200" velocity="1.57"/>
   </joint>
-  <link
-    name="L_shoulder_3">
+  <link name="L_shoulder_3">
     <inertial>
-      <origin
-        xyz="-0.00013497485436692 0.0100414915428347 -0.0787738976168052"
-        rpy="0 0 0" />
-      <mass
-        value="1.4164968939073" />
-      <inertia
-        ixx="0.0035718500522239"
-        ixy="-1.84709177396477E-05"
-        ixz="-4.45663889855016E-05"
-        iyy="0.00343985732486045"
-        iyz="0.000536080413599446"
-        izz="0.00134574277856862" />
+      <origin xyz="-0.00013497485436692 0.0100414915428347 -0.0787738976168052" rpy="0 0 0"/>
+      <mass value="1.4164968939073"/>
+      <inertia ixx="0.0035718500522239" ixy="-1.84709177396477E-05" ixz="-4.45663889855016E-05" iyy="0.00343985732486045" iyz="0.000536080413599446" izz="0.00134574277856862"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_3.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.866666666666667 0.866666666666667 0.890196078431372 1" />
+      <material name="">
+        <color rgba="0.866666666666667 0.866666666666667 0.890196078431372 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_shoulder_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_shoulder_3.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_shoulder_3"
-    type="revolute">
-    <origin
-      xyz="0 -0.124085181670817 0.00974999999999997"
-      rpy="1.5707963267949 0 -3.14159265358979" />
-    <parent
-      link="L_shoulder_2" />
-    <child
-      link="L_shoulder_3" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-1.483"
-      upper="1.483"
-      effort="100"
-      velocity="5.97" />
+  <joint name="L_shoulder_3" type="revolute">
+    <origin xyz="0 -0.124085181670817 0.00974999999999997" rpy="1.5707963267949 0 -3.14159265358979"/>
+    <parent link="L_shoulder_2"/>
+    <child link="L_shoulder_3"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-1.483" upper="1.483" effort="100" velocity="5.97"/>
   </joint>
-  <link
-    name="L_elbow_1">
+  <link name="L_elbow_1">
     <inertial>
-      <origin
-        xyz="0.0033520232301594 -0.0361814581218826 0.0309503311409521"
-        rpy="0 0 0" />
-      <mass
-        value="0.357200526076797" />
-      <inertia
-        ixx="0.000481320918300655"
-        ixy="-8.286084637858E-06"
-        ixz="1.82151753963896E-07"
-        iyy="0.000493409526193646"
-        iyz="4.88868339499949E-07"
-        izz="0.000432966572383487" />
+      <origin xyz="0.0033520232301594 -0.0361814581218826 0.0309503311409521" rpy="0 0 0"/>
+      <mass value="0.357200526076797"/>
+      <inertia ixx="0.000481320918300655" ixy="-8.286084637858E-06" ixz="1.82151753963896E-07" iyy="0.000493409526193646" iyz="4.88868339499949E-07" izz="0.000432966572383487"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_elbow_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_elbow_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_elbow_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_elbow_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_elbow_1"
-    type="revolute">
-    <origin
-      xyz="-0.031 0 -0.16841"
-      rpy="1.5708 0 1.5708" />
-    <parent
-      link="L_shoulder_3" />
-    <child
-      link="L_elbow_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="1.745"
-      effort="200"
-      velocity="2.14" />
+  <joint name="L_elbow_1" type="revolute">
+    <origin xyz="-0.031 0 -0.16841" rpy="1.5708 0 1.5708"/>
+    <parent link="L_shoulder_3"/>
+    <child link="L_elbow_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.745" effort="200" velocity="2.14"/>
   </joint>
-  <link
-    name="L_elbow_2">
+  <link name="L_elbow_2">
     <inertial>
-      <origin
-        xyz="-0.00179441173803124 -0.000485863490778449 0.0919868849250754"
-        rpy="0 0 0" />
-      <mass
-        value="0.104222193556336" />
-      <inertia
-        ixx="0.00032234171468038"
-        ixy="6.05473585822919E-07"
-        ixz="2.58502843675872E-05"
-        iyy="0.00031814736639119"
-        iyz="6.2969370207132E-07"
-        izz="6.87805819494075E-05" />
+      <origin xyz="-0.00179441173803124 -0.000485863490778449 0.0919868849250754" rpy="0 0 0"/>
+      <mass value="0.104222193556336"/>
+      <inertia ixx="0.00032234171468038" ixy="6.05473585822919E-07" ixz="2.58502843675872E-05" iyy="0.00031814736639119" iyz="6.2969370207132E-07" izz="6.87805819494075E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_elbow_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_elbow_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_elbow_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_elbow_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_elbow_2"
-    type="revolute">
-    <origin
-      xyz="0 -0.05 0.031"
-      rpy="1.5708 1.5708 0" />
-    <parent
-      link="L_elbow_1" />
-    <child
-      link="L_elbow_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-1.5075"
-      upper="4.7728"
-      effort="20"
-      velocity="10.14" />
+  <joint name="L_elbow_2" type="revolute">
+    <origin xyz="0 -0.05 0.031" rpy="1.5708 1.5708 0"/>
+    <parent link="L_elbow_1"/>
+    <child link="L_elbow_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-1.5075" upper="4.7728" effort="20" velocity="10.14"/>
   </joint>
-  <link
-    name="L_wrist_1">
+  <link name="L_wrist_1">
     <inertial>
-      <origin
-        xyz="1.42470775420234E-08 0 0.029499985752923"
-        rpy="0 0 0" />
-      <mass
-        value="0.0526856914889546" />
-      <inertia
-        ixx="1.14372995305201E-05"
-        ixy="-1.07494875803769E-10"
-        ixz="-1.06947965189443E-17"
-        iyy="1.65419431039183E-05"
-        iyz="-1.07494875787595E-10"
-        izz="1.14372995305201E-05" />
+      <origin xyz="1.42470775420234E-08 0 0.029499985752923" rpy="0 0 0"/>
+      <mass value="0.0526856914889546"/>
+      <inertia ixx="1.14372995305201E-05" ixy="-1.07494875803769E-10" ixz="-1.06947965189443E-17" iyy="1.65419431039183E-05" iyz="-1.07494875787595E-10" izz="1.14372995305201E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_wrist_1"
-    type="revolute">
-    <origin
-      xyz="-0.0295 0 0.216"
-      rpy="-1.5708 0 -1.5708" />
-    <parent
-      link="L_elbow_2" />
-    <child
-      link="L_wrist_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.63"
-      upper="0.63"
-      effort="30"
-      velocity="3.14" />
+  <joint name="L_wrist_1" type="revolute">
+    <origin xyz="-0.0295 0 0.216" rpy="-1.5708 0 -1.5708"/>
+    <parent link="L_elbow_2"/>
+    <child link="L_wrist_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.63" upper="0.63" effort="30" velocity="3.14"/>
   </joint>
-  <link
-    name="L_wrist_2">
+  <link name="L_wrist_2">
     <inertial>
-      <origin
-        xyz="1.79172301439934E-08 -0.0259199396604071 -0.0250167038299137"
-        rpy="0 0 0" />
-      <mass
-        value="0.0186526980882103" />
-      <inertia
-        ixx="1.53309144346573E-05"
-        ixy="3.88158291936548E-11"
-        ixz="-3.42735198113668E-11"
-        iyy="1.26802157042517E-05"
-        iyz="-4.80072775330995E-07"
-        izz="8.76270314702912E-06" />
+      <origin xyz="1.79172301439934E-08 -0.0259199396604071 -0.0250167038299137" rpy="0 0 0"/>
+      <mass value="0.0186526980882103"/>
+      <inertia ixx="1.53309144346573E-05" ixy="3.88158291936548E-11" ixz="-3.42735198113668E-11" iyy="1.26802157042517E-05" iyz="-4.80072775330995E-07" izz="8.76270314702912E-06"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_wrist_2"
-    type="revolute">
-    <origin
-      xyz="0.025 0 0.0295"
-      rpy="0 1.5708 0" />
-    <parent
-      link="L_wrist_1" />
-    <child
-      link="L_wrist_2" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.73"
-      upper="0.73"
-      effort="50"
-      velocity="3.14" />
+  <joint name="L_wrist_2" type="revolute">
+    <origin xyz="0.025 0 0.0295" rpy="0 1.5708 0"/>
+    <parent link="L_wrist_1"/>
+    <child link="L_wrist_2"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.73" upper="0.73" effort="50" velocity="3.14"/>
   </joint>
-  <link
-    name="L_wrist_6_axis">
+  <link name="L_wrist_6_axis">
     <inertial>
-      <origin
-        xyz="0 3.46944695195361E-18 -0.00953178888485806"
-        rpy="0 0 0" />
-      <mass
-        value="0.236120679342982" />
-      <inertia
-        ixx="3.69633487114174E-05"
-        ixy="7.48259181062395E-22"
-        ixz="-4.68735092636574E-21"
-        iyy="3.69633487114174E-05"
-        iyz="-1.8045603598641E-21"
-        izz="5.97634231172414E-05" />
+      <origin xyz="0 3.46944695195361E-18 -0.00953178888485806" rpy="0 0 0"/>
+      <mass value="0.236120679342982"/>
+      <inertia ixx="3.69633487114174E-05" ixy="7.48259181062395E-22" ixz="-4.68735092636574E-21" iyy="3.69633487114174E-05" iyz="-1.8045603598641E-21" izz="5.97634231172414E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_wrist_6_axis.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_wrist_6_axis"
-    type="fixed">
-    <origin
-      xyz="0 -0.045 -0.025"
-      rpy="1.5708 0 3.1416" />
-    <parent
-      link="L_wrist_2" />
-    <child
-      link="L_wrist_6_axis" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="L_wrist_6_axis" type="fixed">
+    <origin xyz="0 -0.045 -0.025" rpy="1.5708 0 3.1416"/>
+    <parent link="L_wrist_2"/>
+    <child link="L_wrist_6_axis"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="L_hand">
+  <link name="L_hand">
     <inertial>
-      <origin
-        xyz="-0.0114142049622443 -0.000528099237239076 -0.0468505746051024"
-        rpy="0 0 0" />
-      <mass
-        value="0.160552137537786" />
-      <inertia
-        ixx="0.000235333051484747"
-        ixy="-7.62138680720316E-07"
-        ixz="-1.01538195653235E-05"
-        iyy="0.000120938577461457"
-        iyz="-8.65384277607736E-08"
-        izz="0.000164652018185174" />
+      <origin xyz="-0.0114142049622443 -0.000528099237239076 -0.0468505746051024" rpy="0 0 0"/>
+      <mass value="0.160552137537786"/>
+      <inertia ixx="0.000235333051484747" ixy="-7.62138680720316E-07" ixz="-1.01538195653235E-05" iyy="0.000120938577461457" iyz="-8.65384277607736E-08" izz="0.000164652018185174"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hand.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hand.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hand.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hand.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_hand"
-    type="fixed">
-    <origin
-      xyz="0 0 -0.0150000000000001"
-      rpy="0 0 3.14159265358979" />
-    <parent
-      link="L_wrist_6_axis" />
-    <child
-      link="L_hand" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="L_hand" type="fixed">
+    <origin xyz="0 0 -0.0150000000000001" rpy="0 0 3.14159265358979"/>
+    <parent link="L_wrist_6_axis"/>
+    <child link="L_hand"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="L_gripper_1">
+  <link name="L_gripper_1">
     <inertial>
-      <origin
-        xyz="0.00259728440220741 -4.17878308622832E-08 0.0087294027307587"
-        rpy="0 0 0" />
-      <mass
-        value="0.0307177346178987" />
-      <inertia
-        ixx="1.29762962683553E-05"
-        ixy="-5.19255788888981E-11"
-        ixz="-5.0979494861828E-08"
-        iyy="4.17905802814659E-06"
-        iyz="-4.64437619373365E-11"
-        izz="1.58366906800263E-05" />
+      <origin xyz="0.00259728440220741 -4.17878308622832E-08 0.0087294027307587" rpy="0 0 0"/>
+      <mass value="0.0307177346178987"/>
+      <inertia ixx="1.29762962683553E-05" ixy="-5.19255788888981E-11" ixz="-5.0979494861828E-08" iyy="4.17905802814659E-06" iyz="-4.64437619373365E-11" izz="1.58366906800263E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_gripper_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_gripper_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_gripper_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_gripper_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_gripper_1"
-    type="prismatic">
-    <origin
-      xyz="-0.0282499999999993 -0.0279999999999525 -0.05"
-      rpy="1.5707963267949 0 -3.14159265358979" />
-    <parent
-      link="L_hand" />
-    <child
-      link="L_gripper_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.01"
-      upper="0.01"
-      effort="200"
-      velocity="0.03" />
+  <joint name="L_gripper_1" type="prismatic">
+    <origin xyz="-0.0282499999999993 -0.0279999999999525 -0.05" rpy="1.5707963267949 0 -3.14159265358979"/>
+    <parent link="L_hand"/>
+    <child link="L_gripper_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.01" upper="0.01" effort="200" velocity="0.03"/>
   </joint>
-  <link
-    name="L_gripper_2">
+  <link name="L_gripper_2">
     <inertial>
-      <origin
-        xyz="-0.00259728440220741 4.17878309177944E-08 0.0087294027307587"
-        rpy="0 0 0" />
-      <mass
-        value="0.0307177346178987" />
-      <inertia
-        ixx="1.29762962683552E-05"
-        ixy="-5.19255789953188E-11"
-        ixz="5.09794948618236E-08"
-        iyy="4.17905802814658E-06"
-        iyz="4.64437619579663E-11"
-        izz="1.58366906800263E-05" />
+      <origin xyz="-0.00259728440220741 4.17878309177944E-08 0.0087294027307587" rpy="0 0 0"/>
+      <mass value="0.0307177346178987"/>
+      <inertia ixx="1.29762962683552E-05" ixy="-5.19255789953188E-11" ixz="5.09794948618236E-08" iyy="4.17905802814658E-06" iyz="4.64437619579663E-11" izz="1.58366906800263E-05"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_gripper_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_gripper_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_gripper_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_gripper_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_gripper_2"
-    type="prismatic">
-    <origin
-      xyz="-0.0282500000000002 0.0279999999999655 -0.0500000000000007"
-      rpy="1.5707963267949 0 0" />
-    <parent
-      link="L_hand" />
-    <child
-      link="L_gripper_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.01"
-      upper="0.01"
-      effort="200"
-      velocity="1" />
-	<mimic joint="L_gripper_1" multiplier="-1" offset="0" />
+  <joint name="L_gripper_2" type="prismatic">
+    <origin xyz="-0.0282500000000002 0.0279999999999655 -0.0500000000000007" rpy="1.5707963267949 0 0"/>
+    <parent link="L_hand"/>
+    <child link="L_gripper_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.01" upper="0.01" effort="200" velocity="1"/>
+    <mimic joint="L_gripper_1" multiplier="-1" offset="0"/>
   </joint>
-  <link
-    name="waist_0">
+  <link name="waist_0">
     <inertial>
-      <origin
-        xyz="2.91280970207475E-05 -0.0022750213826772 -0.0651435648775722"
-        rpy="0 0 0" />
-      <mass
-        value="0.35698655766503" />
-      <inertia
-        ixx="0.000608808997769536"
-        ixy="1.07093773537359E-07"
-        ixz="1.86126018469322E-07"
-        iyy="0.000566479034270501"
-        iyz="-4.37608836256615E-05"
-        izz="0.000354128766920868" />
+      <origin xyz="2.91280970207475E-05 -0.0022750213826772 -0.0651435648775722" rpy="0 0 0"/>
+      <mass value="0.35698655766503"/>
+      <inertia ixx="0.000608808997769536" ixy="1.07093773537359E-07" ixz="1.86126018469322E-07" iyy="0.000566479034270501" iyz="-4.37608836256615E-05" izz="0.000354128766920868"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/waist_0.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/waist_0.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/waist_0.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/waist_0.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="waist_0"
-    type="revolute">
-    <origin
-      xyz="0 0.0751588565074892 -0.0749999999999999"
-      rpy="1.5707963267949 0 3.14159265" />
-    <parent
-      link="torso" />
-    <child
-      link="waist_0" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.35"
-      upper="0.08"
-      effort="300"
-      velocity="2.8" />
+  <joint name="waist_0" type="revolute">
+    <origin xyz="0 0.0751588565074892 -0.0749999999999999" rpy="1.5707963267949 0 3.14159265"/>
+    <parent link="torso"/>
+    <child link="waist_0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.35" upper="0.08" effort="300" velocity="2.8"/>
   </joint>
-  <link
-    name="waist_1">
+  <link name="waist_1">
     <inertial>
-      <origin
-        xyz="7.72785563170571E-05 0.00716560746055333 0.0426895158349163"
-        rpy="0 0 0" />
-      <mass
-        value="1.1500503776123" />
-      <inertia
-        ixx="0.00145167030335064"
-        ixy="3.4729987509006E-07"
-        ixz="2.45618843421472E-07"
-        iyy="0.00598367448706287"
-        iyz="5.27934874899453E-05"
-        izz="0.00660795255750994" />
+      <origin xyz="7.72785563170571E-05 0.00716560746055333 0.0426895158349163" rpy="0 0 0"/>
+      <mass value="1.1500503776123"/>
+      <inertia ixx="0.00145167030335064" ixy="3.4729987509006E-07" ixz="2.45618843421472E-07" iyy="0.00598367448706287" iyz="5.27934874899453E-05" izz="0.00660795255750994"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/waist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/waist_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/waist_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/waist_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="waist_1"
-    type="revolute">
-    <origin
-      xyz="0 -0.0460046428794829 -0.0751888646756264"
-      rpy="1.5707963267949 3.1415926535 0" />
-    <parent
-      link="waist_0" />
-    <child
-      link="waist_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.872"
-      upper="0.872"
-      effort="220"
-      velocity="2.5" />
+  <joint name="waist_1" type="revolute">
+    <origin xyz="0 -0.0460046428794829 -0.0751888646756264" rpy="1.5707963267949 3.1415926535 0"/>
+    <parent link="waist_0"/>
+    <child link="waist_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.872" upper="0.872" effort="220" velocity="2.5"/>
   </joint>
-  <link
-    name="R_hip_1">
+  <link name="R_hip_1">
     <inertial>
-      <origin
-        xyz="-0.00751550071741487 0.0449272196313318 0.0677734634797592"
-        rpy="0 0 0" />
-      <mass
-        value="0.702511734974542" />
-      <inertia
-        ixx="0.00233751515397196"
-        ixy="6.60943973930821E-05"
-        ixz="-0.000111033432364663"
-        iyy="0.00150795216749764"
-        iyz="-0.000246278583946588"
-        izz="0.00148759089037691" />
+      <origin xyz="-0.00751550071741487 0.0449272196313318 0.0677734634797592" rpy="0 0 0"/>
+      <mass value="0.702511734974542"/>
+      <inertia ixx="0.00233751515397196" ixy="6.60943973930821E-05" ixz="-0.000111033432364663" iyy="0.00150795216749764" iyz="-0.000246278583946588" izz="0.00148759089037691"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_hip_1"
-    type="revolute">
-    <origin
-      xyz="5.9130214832445E-05 0.0873497468913164 0.0804842516395254"
-      rpy="0 0 1.5707963267949" />
-    <parent
-      link="waist_1" />
-    <child
-      link="R_hip_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.64"
-      upper="0.82"
-      effort="150"
-      velocity="2.3" />
+  <joint name="R_hip_1" type="revolute">
+    <origin xyz="5.9130214832445E-05 0.0873497468913164 0.0804842516395254" rpy="0 0 1.5707963267949"/>
+    <parent link="waist_1"/>
+    <child link="R_hip_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.64" upper="0.82" effort="150" velocity="2.3"/>
   </joint>
-  <link
-    name="R_hip_2">
+  <link name="R_hip_2">
     <inertial>
-      <origin
-        xyz="0.00633060776836825 0.00185601956679682 0.0777441971828316"
-        rpy="0 0 0" />
-      <mass
-        value="0.734936132511548" />
-      <inertia
-        ixx="0.00106823412281239"
-        ixy="-1.06387231576162E-06"
-        ixz="6.40479438806044E-05"
-        iyy="0.00145768518611661"
-        iyz="-1.41727160390084E-06"
-        izz="0.000844982410432454" />
+      <origin xyz="0.00633060776836825 0.00185601956679682 0.0777441971828316" rpy="0 0 0"/>
+      <mass value="0.734936132511548"/>
+      <inertia ixx="0.00106823412281239" ixy="-1.06387231576162E-06" ixz="6.40479438806044E-05" iyy="0.00145768518611661" iyz="-1.41727160390084E-06" izz="0.000844982410432454"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_hip_2"
-    type="revolute">
-    <origin
-      xyz="0.000120244940546271 -0.0645591303819341 0.119511105480992"
-      rpy="-1.5707963267949 0 0" />
-    <parent
-      link="R_hip_1" />
-    <child
-      link="R_hip_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.4188"
-      upper="0.4188"
-      effort="300"
-      velocity="2.3" />
+  <joint name="R_hip_2" type="revolute">
+    <origin xyz="0.000120244940546271 -0.0645591303819341 0.119511105480992" rpy="-1.5707963267949 0 0"/>
+    <parent link="R_hip_1"/>
+    <child link="R_hip_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.4188" upper="0.4188" effort="300" velocity="2.3"/>
   </joint>
-  <link
-    name="R_hip_3">
+  <link name="R_hip_3">
     <inertial>
-      <origin
-        xyz="0.0178487064852858 0.19877979830879 0.0572234103987788"
-        rpy="0 0 0" />
-      <mass
-        value="2.22916826834163" />
-      <inertia
-        ixx="0.0258936494146591"
-        ixy="-0.00027964318472708"
-        ixz="-8.57489661004913E-05"
-        iyy="0.00695872387573845"
-        iyz="0.00146891315438412"
-        izz="0.0226829443474528" />
+      <origin xyz="0.0178487064852858 0.19877979830879 0.0572234103987788" rpy="0 0 0"/>
+      <mass value="2.22916826834163"/>
+      <inertia ixx="0.0258936494146591" ixy="-0.00027964318472708" ixz="-8.57489661004913E-05" iyy="0.00695872387573845" iyz="0.00146891315438412" izz="0.0226829443474528"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_3.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_hip_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_hip_3.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_hip_3"
-    type="revolute">
-    <origin
-      xyz="0.0665383909051456 0 0.0645"
-      rpy="3.14159265358979 1.5707963267949 0" />
-    <parent
-      link="R_hip_2" />
-    <child
-      link="R_hip_3" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.6"
-      upper="1.57"
-      effort="179"
-      velocity="3.0" />
+  <joint name="R_hip_3" type="revolute">
+    <origin xyz="0.0665383909051456 0 0.0645" rpy="3.14159265358979 1.5707963267949 0"/>
+    <parent link="R_hip_2"/>
+    <child link="R_hip_3"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.6" upper="1.57" effort="179" velocity="3.0"/>
   </joint>
-  <link
-    name="R_knee_1">
+  <link name="R_knee_1">
     <inertial>
-      <origin
-        xyz="0.000103621573746775 0.031899919791596 -0.0611262518230414"
-        rpy="0 0 0" />
-      <mass
-        value="0.288732885254315" />
-      <inertia
-        ixx="0.000675187676355684"
-        ixy="1.44832900930507E-06"
-        ixz="3.59284142298261E-07"
-        iyy="0.000329825290532172"
-        iyz="-5.26549537042435E-05"
-        izz="0.000644364597984277" />
+      <origin xyz="0.000103621573746775 0.031899919791596 -0.0611262518230414" rpy="0 0 0"/>
+      <mass value="0.288732885254315"/>
+      <inertia ixx="0.000675187676355684" ixy="1.44832900930507E-06" ixz="3.59284142298261E-07" iyy="0.000329825290532172" iyz="-5.26549537042435E-05" izz="0.000644364597984277"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_knee_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_knee_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      <material name="">
+        <color rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_knee_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_knee_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_knee_1"
-    type="revolute">
-    <origin
-      xyz="0 0.36 0.123038390905146"
-      rpy="0 0 0" />
-    <parent
-      link="R_hip_3" />
-    <child
-      link="R_knee_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-2.1"
-      upper="0.01"
-      effort="300"
-      velocity="2.0" />
+  <joint name="R_knee_1" type="revolute">
+    <origin xyz="0 0.36 0.123038390905146" rpy="0 0 0"/>
+    <parent link="R_hip_3"/>
+    <child link="R_knee_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-2.1" upper="0.01" effort="300" velocity="2.0"/>
   </joint>
-  <link
-    name="R_knee_2">
+  <link name="R_knee_2">
     <inertial>
-      <origin
-        xyz="-0.00218927610179311 -0.0072229953217568 -0.116709104313603"
-        rpy="0 0 0" />
-      <mass
-        value="0.22748254825785" />
-      <inertia
-        ixx="0.00114347580004797"
-        ixy="6.96311690719413E-06"
-        ixz="1.85504489741992E-05"
-        iyy="0.00116733311245734"
-        iyz="-6.53108924677834E-05"
-        izz="0.000349020983287791" />
+      <origin xyz="-0.00218927610179311 -0.0072229953217568 -0.116709104313603" rpy="0 0 0"/>
+      <mass value="0.22748254825785"/>
+      <inertia ixx="0.00114347580004797" ixy="6.96311690719413E-06" ixz="1.85504489741992E-05" iyy="0.00116733311245734" iyz="-6.53108924677834E-05" izz="0.000349020983287791"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_knee_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_knee_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_knee_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_knee_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_knee_2"
-    type="revolute">
-    <origin
-      xyz="0 0.1225 -0.0565000000000001"
-      rpy="1.5707963267949 -1.5707963267949 0" />
-    <parent
-      link="R_knee_1" />
-    <child
-      link="R_knee_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.71"
-      upper="0.71"
-      effort="60"
-      velocity="7.1" />
+  <joint name="R_knee_2" type="revolute">
+    <origin xyz="0 0.1225 -0.0565000000000001" rpy="1.5707963267949 -1.5707963267949 0"/>
+    <parent link="R_knee_1"/>
+    <child link="R_knee_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.71" upper="0.71" effort="60" velocity="7.1"/>
   </joint>
-  <link
-    name="R_ankle_1">
+  <link name="R_ankle_1">
     <inertial>
-      <origin
-        xyz="0.0181641370700055 -0.000498446330315816 0.0315334946117711"
-        rpy="0 0 0" />
-      <mass
-        value="0.393585094641969" />
-      <inertia
-        ixx="0.000214451558868162"
-        ixy="5.2028050979071E-06"
-        ixz="-7.94199673975836E-06"
-        iyy="0.000690829224880303"
-        iyz="1.10290345557783E-07"
-        izz="0.000665355114256883" />
+      <origin xyz="0.0181641370700055 -0.000498446330315816 0.0315334946117711" rpy="0 0 0"/>
+      <mass value="0.393585094641969"/>
+      <inertia ixx="0.000214451558868162" ixy="5.2028050979071E-06" ixz="-7.94199673975836E-06" iyy="0.000690829224880303" iyz="1.10290345557783E-07" izz="0.000665355114256883"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_ankle_1"
-    type="revolute">
-    <origin
-      xyz="0.032578 -0.00025797 -0.23773"
-      rpy="-1.5708 0 1.5708" />
-    <parent
-      link="R_knee_2" />
-    <child
-      link="R_ankle_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.436"
-      upper="0.6"
-      effort="116"
-      velocity="4.3" />
+  <joint name="R_ankle_1" type="revolute">
+    <origin xyz="0.032578 -0.00025797 -0.23773" rpy="-1.5708 0 1.5708"/>
+    <parent link="R_knee_2"/>
+    <child link="R_ankle_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.436" upper="0.6" effort="116" velocity="4.3"/>
   </joint>
-  <link
-    name="R_ankle_2">
+  <link name="R_ankle_2">
     <inertial>
-      <origin
-        xyz="0.000365355168468751 0.0507792001251035 0.0787118328488394"
-        rpy="0 0 0" />
-      <mass
-        value="0.141881185143616" />
-      <inertia
-        ixx="0.000396241394704082"
-        ixy="-2.03221430300384E-07"
-        ixz="-2.43823376021635E-06"
-        iyy="0.000346113762426567"
-        iyz="1.25474926070719E-05"
-        izz="0.000190427510098469" />
+      <origin xyz="0.000365355168468751 0.0507792001251035 0.0787118328488394" rpy="0 0 0"/>
+      <mass value="0.141881185143616"/>
+      <inertia ixx="0.000396241394704082" ixy="-2.03221430300384E-07" ixz="-2.43823376021635E-06" iyy="0.000346113762426567" iyz="1.25474926070719E-05" izz="0.000190427510098469"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_ankle_2"
-    type="revolute">
-    <origin
-      xyz="-0.060668 -0.00022995 0.032578"
-      rpy="0 1.5708 0" />
-    <parent
-      link="R_ankle_1" />
-    <child
-      link="R_ankle_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.35"
-      upper="0.35"
-      effort="70"
-      velocity="4.9" />
+  <joint name="R_ankle_2" type="revolute">
+    <origin xyz="-0.060668 -0.00022995 0.032578" rpy="0 1.5708 0"/>
+    <parent link="R_ankle_1"/>
+    <child link="R_ankle_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.35" upper="0.35" effort="70" velocity="4.9"/>
   </joint>
-  <link
-    name="R_ankle_6_axis">
+  <link name="R_ankle_6_axis">
     <inertial>
-      <origin
-        xyz="-2.94856181137781E-09 2.55540664952265E-09 0.0105912621593117"
-        rpy="0 0 0" />
-      <mass
-        value="0.507659863952688" />
-      <inertia
-        ixx="0.000136587815878783"
-        ixy="1.48712430539678E-12"
-        ixz="1.72055077908226E-11"
-        iyy="0.000136587826692532"
-        iyz="-1.49745046202963E-11"
-        izz="0.000228582398475473" />
+      <origin xyz="-2.94856181137781E-09 2.55540664952265E-09 0.0105912621593117" rpy="0 0 0"/>
+      <mass value="0.507659863952688"/>
+      <inertia ixx="0.000136587815878783" ixy="1.48712430539678E-12" ixz="1.72055077908226E-11" iyy="0.000136587826692532" iyz="-1.49745046202963E-11" izz="0.000228582398475473"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_ankle_6_axis.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_ankle_6_axis"
-    type="fixed">
-    <origin
-      xyz="0 0.101737731329006 0.0590748593972759"
-      rpy="-1.5707963267949 0 3.14159265358979" />
-    <parent
-      link="R_ankle_2" />
-    <child
-      link="R_ankle_6_axis" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="R_ankle_6_axis" type="fixed">
+    <origin xyz="0 0.101737731329006 0.0590748593972759" rpy="-1.5707963267949 0 3.14159265358979"/>
+    <parent link="R_ankle_2"/>
+    <child link="R_ankle_6_axis"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="R_foot">
+  <link name="R_foot">
     <inertial>
-      <origin
-        xyz="-0.0214898400161258 -0.0237387767620028 -0.00951162240561465"
-        rpy="0 0 0" />
-      <mass
-        value="0.598325928646002" />
-      <inertia
-        ixx="0.00300030373055539"
-        ixy="-1.44307591538009E-07"
-        ixz="-5.75170302571315E-08"
-        iyy="0.00104797337504159"
-        iyz="-6.3536254354421E-08"
-        izz="0.00400876471061525" />
+      <origin xyz="-0.0214898400161258 -0.0237387767620028 -0.00951162240561465" rpy="0 0 0"/>
+      <mass value="0.598325928646002"/>
+      <inertia ixx="0.00300030373055539" ixy="-1.44307591538009E-07" ixz="-5.75170302571315E-08" iyy="0.00104797337504159" iyz="-6.3536254354421E-08" izz="0.00400876471061525"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_foot.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_foot.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/R_foot.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/R_foot.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="R_foot"
-    type="fixed">
-    <origin
-      xyz="0 0 -0.00086226867099426"
-      rpy="0 0 -3.14159265358979" />
-    <parent
-      link="R_ankle_6_axis" />
-    <child
-      link="R_foot" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="R_foot" type="fixed">
+    <origin xyz="0 0 -0.00086226867099426" rpy="0 0 -3.14159265358979"/>
+    <parent link="R_ankle_6_axis"/>
+    <child link="R_foot"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="L_hip_1">
+  <link name="L_hip_1">
     <inertial>
-      <origin
-        xyz="0.00752660206990489 0.0448039680630427 0.0674879415248602"
-        rpy="0 0 0" />
-      <mass
-        value="0.705361688796012" />
-      <inertia
-        ixx="0.0023508446625821"
-        ixy="-6.68883231835774E-05"
-        ixz="0.000109699047515101"
-        iyy="0.00151844053731105"
-        iyz="-0.000251631730592157"
-        izz="0.00149210442528926" />
+      <origin xyz="0.00752660206990489 0.0448039680630427 0.0674879415248602" rpy="0 0 0"/>
+      <mass value="0.705361688796012"/>
+      <inertia ixx="0.0023508446625821" ixy="-6.68883231835774E-05" ixz="0.000109699047515101" iyy="0.00151844053731105" iyz="-0.000251631730592157" izz="0.00149210442528926"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_hip_1"
-    type="revolute">
-    <origin
-      xyz="0 -0.0874524045087781 0.0804896286305103"
-      rpy="0 0 1.5707963267949" />
-    <parent
-      link="waist_1" />
-    <child
-      link="L_hip_1" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-0.82"
-      upper="0.64"
-      effort="150"
-      velocity="2.3" />
+  <joint name="L_hip_1" type="revolute">
+    <origin xyz="0 -0.0874524045087781 0.0804896286305103" rpy="0 0 1.5707963267949"/>
+    <parent link="waist_1"/>
+    <child link="L_hip_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.82" upper="0.64" effort="150" velocity="2.3"/>
   </joint>
-  <link
-    name="L_hip_2">
+  <link name="L_hip_2">
     <inertial>
-      <origin
-        xyz="-0.00633069025212976 0.00185559278779271 0.0777443040849581"
-        rpy="0 0 0" />
-      <mass
-        value="0.73493515778264" />
-      <inertia
-        ixx="0.00106823434084216"
-        ixy="1.06412550701765E-06"
-        ixz="-6.40480365796266E-05"
-        iyy="0.00145768454292413"
-        iyz="-1.41781822257133E-06"
-        izz="0.000844982043819743" />
+      <origin xyz="-0.00633069025212976 0.00185559278779271 0.0777443040849581" rpy="0 0 0"/>
+      <mass value="0.73493515778264"/>
+      <inertia ixx="0.00106823434084216" ixy="1.06412550701765E-06" ixz="-6.40480365796266E-05" iyy="0.00145768454292413" iyz="-1.41781822257133E-06" izz="0.000844982043819743"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_hip_2"
-    type="revolute">
-    <origin
-      xyz="-7.76036593591739E-05 -0.0645 0.119505728490007"
-      rpy="-1.5707963267949 0 0" />
-    <parent
-      link="L_hip_1" />
-    <child
-      link="L_hip_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.4188"
-      upper="0.4188"
-      effort="300"
-      velocity="2.3" />
+  <joint name="L_hip_2" type="revolute">
+    <origin xyz="-7.76036593591739E-05 -0.0645 0.119505728490007" rpy="-1.5707963267949 0 0"/>
+    <parent link="L_hip_1"/>
+    <child link="L_hip_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.4188" upper="0.4188" effort="300" velocity="2.3"/>
   </joint>
-  <link
-    name="L_hip_3">
+  <link name="L_hip_3">
     <inertial>
-      <origin
-        xyz="0.0178479991735299 0.198780710658916 -0.0572237058618264"
-        rpy="0 0 0" />
-      <mass
-        value="2.22917681075779" />
-      <inertia
-        ixx="0.025893288391959"
-        ixy="-0.00027989034819745"
-        ixz="8.57170002420954E-05"
-        iyy="0.00695871012546919"
-        iyz="-0.00146904667547058"
-        izz="0.0226825189711649" />
+      <origin xyz="0.0178479991735299 0.198780710658916 -0.0572237058618264" rpy="0 0 0"/>
+      <mass value="2.22917681075779"/>
+      <inertia ixx="0.025893288391959" ixy="-0.00027989034819745" ixz="8.57170002420954E-05" iyy="0.00695871012546919" iyz="-0.00146904667547058" izz="0.0226825189711649"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_3.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_hip_3.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_hip_3.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_hip_3"
-    type="revolute">
-    <origin
-      xyz="-0.0665383909051456 0 0.0645"
-      rpy="3.14159265358979 1.5707963267949 0" />
-    <parent
-      link="L_hip_2" />
-    <child
-      link="L_hip_3" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.57"
-      upper="0.6"
-      effort="179"
-      velocity="3.0" />
+  <joint name="L_hip_3" type="revolute">
+    <origin xyz="-0.0665383909051456 0 0.0645" rpy="3.14159265358979 1.5707963267949 0"/>
+    <parent link="L_hip_2"/>
+    <child link="L_hip_3"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="0.6" effort="179" velocity="3.0"/>
   </joint>
-  <link
-    name="L_knee_1">
+  <link name="L_knee_1">
     <inertial>
-      <origin
-        xyz="0.000103631913179965 0.0318999326305122 0.0611262337673915"
-        rpy="0 0 0" />
-      <mass
-        value="0.811338742989555" />
-      <inertia
-        ixx="0.00189727691985258"
-        ixy="4.0689432697324E-06"
-        ixz="-1.01074628937687E-06"
-        iyy="0.000926808824807678"
-        iyz="0.000147960050698268"
-        izz="0.00181066443004522" />
+      <origin xyz="0.000103631913179965 0.0318999326305122 0.0611262337673915" rpy="0 0 0"/>
+      <mass value="0.811338742989555"/>
+      <inertia ixx="0.00189727691985258" ixy="4.0689432697324E-06" ixz="-1.01074628937687E-06" iyy="0.000926808824807678" iyz="0.000147960050698268" izz="0.00181066443004522"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_knee_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_knee_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      <material name="">
+        <color rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_knee_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_knee_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_knee_1"
-    type="revolute">
-    <origin
-      xyz="0 0.36 -0.123038390905146"
-      rpy="0 0 0" />
-    <parent
-      link="L_hip_3" />
-    <child
-      link="L_knee_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-2.1"
-      upper="0.01"
-      effort="300"
-      velocity="2.0" />
+  <joint name="L_knee_1" type="revolute">
+    <origin xyz="0 0.36 -0.123038390905146" rpy="0 0 0"/>
+    <parent link="L_hip_3"/>
+    <child link="L_knee_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-2.1" upper="0.01" effort="300" velocity="2.0"/>
   </joint>
-  <link
-    name="L_knee_2">
+  <link name="L_knee_2">
     <inertial>
-      <origin
-        xyz="0.00218732298702172 -0.00722438399708682 -0.11670121740333"
-        rpy="0 0 0" />
-      <mass
-        value="0.227461905771537" />
-      <inertia
-        ixx="0.00114325224025726"
-        ixy="-7.00929764364505E-06"
-        ixz="-1.86093104134661E-05"
-        iyy="0.00116709551430297"
-        iyz="-6.53313726245334E-05"
-        izz="0.000349002670846749" />
+      <origin xyz="0.00218732298702172 -0.00722438399708682 -0.11670121740333" rpy="0 0 0"/>
+      <mass value="0.227461905771537"/>
+      <inertia ixx="0.00114325224025726" ixy="-7.00929764364505E-06" ixz="-1.86093104134661E-05" iyy="0.00116709551430297" iyz="-6.53313726245334E-05" izz="0.000349002670846749"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_knee_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_knee_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_knee_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_knee_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_knee_2"
-    type="revolute">
-    <origin
-      xyz="0 0.1225 0.0565000000000002"
-      rpy="1.5707963267949 -1.5707963267949 0" />
-    <parent
-      link="L_knee_1" />
-    <child
-      link="L_knee_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.71"
-      upper="0.71"
-      effort="65"
-      velocity="7.0" />
+  <joint name="L_knee_2" type="revolute">
+    <origin xyz="0 0.1225 0.0565000000000002" rpy="1.5707963267949 -1.5707963267949 0"/>
+    <parent link="L_knee_1"/>
+    <child link="L_knee_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.71" upper="0.71" effort="65" velocity="7.0"/>
   </joint>
-  <link
-    name="L_ankle_1">
+  <link name="L_ankle_1">
     <inertial>
-      <origin
-        xyz="-0.018164159088352 0.00049845692671191 -0.031533497574577"
-        rpy="0 0 0" />
-      <mass
-        value="0.39358532347787" />
-      <inertia
-        ixx="0.000214451687359162"
-        ixy="5.20297398255097E-06"
-        ixz="-7.94204299979492E-06"
-        iyy="0.00069082962703835"
-        iyz="1.10305189400345E-07"
-        izz="0.000665355551221626" />
+      <origin xyz="-0.018164159088352 0.00049845692671191 -0.031533497574577" rpy="0 0 0"/>
+      <mass value="0.39358532347787"/>
+      <inertia ixx="0.000214451687359162" ixy="5.20297398255097E-06" ixz="-7.94204299979492E-06" iyy="0.00069082962703835" iyz="1.10305189400345E-07" izz="0.000665355551221626"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_1.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_1.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_1.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_ankle_1"
-    type="revolute">
-    <origin
-      xyz="-0.032578 -0.00025797 -0.23773"
-      rpy="1.5708 0 -1.5708" />
-    <parent
-      link="L_knee_2" />
-    <child
-      link="L_ankle_1" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.6"
-      upper="0.436"
-      effort="116"
-      velocity="4.3" />
+  <joint name="L_ankle_1" type="revolute">
+    <origin xyz="-0.032578 -0.00025797 -0.23773" rpy="1.5708 0 -1.5708"/>
+    <parent link="L_knee_2"/>
+    <child link="L_ankle_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.6" upper="0.436" effort="116" velocity="4.3"/>
   </joint>
-  <link
-    name="L_ankle_2">
+  <link name="L_ankle_2">
     <inertial>
-      <origin
-        xyz="-0.000365744475670227 0.0507785032984199 0.0787117683855666"
-        rpy="0 0 0" />
-      <mass
-        value="0.141886722727266" />
-      <inertia
-        ixx="0.000396256473780017"
-        ixy="2.05561425627449E-07"
-        ixz="2.43516418299186E-06"
-        iyy="0.000346130847487362"
-        iyz="1.2550518261642E-05"
-        izz="0.000190437709964598" />
+      <origin xyz="-0.000365744475670227 0.0507785032984199 0.0787117683855666" rpy="0 0 0"/>
+      <mass value="0.141886722727266"/>
+      <inertia ixx="0.000396256473780017" ixy="2.05561425627449E-07" ixz="2.43516418299186E-06" iyy="0.000346130847487362" iyz="1.2550518261642E-05" izz="0.000190437709964598"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_2.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_2.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_2.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_ankle_2"
-    type="revolute">
-    <origin
-      xyz="0.060668 0.00022995 -0.032578"
-      rpy="3.1416 1.5708 0" />
-    <parent
-      link="L_ankle_1" />
-    <child
-      link="L_ankle_2" />
-    <axis
-      xyz="0 0 -1" />
-    <limit
-      lower="-0.35"
-      upper="0.35"
-      effort="70"
-      velocity="4.9" />
+  <joint name="L_ankle_2" type="revolute">
+    <origin xyz="0.060668 0.00022995 -0.032578" rpy="3.1416 1.5708 0"/>
+    <parent link="L_ankle_1"/>
+    <child link="L_ankle_2"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.35" upper="0.35" effort="70" velocity="4.9"/>
   </joint>
-  <link
-    name="L_ankle_6_axis">
+  <link name="L_ankle_6_axis">
     <inertial>
-      <origin
-        xyz="2.94864480054891E-09 -2.5554778167701E-09 0.0245751389353789"
-        rpy="0 0 0" />
-      <mass
-        value="0.507659863952687" />
-      <inertia
-        ixx="0.000136587815878782"
-        ixy="1.48712423302558E-12"
-        ixz="-1.72055077381958E-11"
-        iyy="0.000136587826692531"
-        iyz="1.49745046752861E-11"
-        izz="0.000228582398475472" />
+      <origin xyz="2.94864480054891E-09 -2.5554778167701E-09 0.0245751389353789" rpy="0 0 0"/>
+      <mass value="0.507659863952687"/>
+      <inertia ixx="0.000136587815878782" ixy="1.48712423302558E-12" ixz="-1.72055077381958E-11" iyy="0.000136587826692531" iyz="1.49745046752861E-11" izz="0.000228582398475472"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_ankle_6_axis.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_ankle_6_axis"
-    type="fixed">
-    <origin
-      xyz="0 0.115721608105073 0.0590748593972637"
-      rpy="-1.5707963267949 0 -3.14159265358979" />
-    <parent
-      link="L_ankle_2" />
-    <child
-      link="L_ankle_6_axis" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="L_ankle_6_axis" type="fixed">
+    <origin xyz="0 0.115721608105073 0.0590748593972637" rpy="-1.5707963267949 0 -3.14159265358979"/>
+    <parent link="L_ankle_2"/>
+    <child link="L_ankle_6_axis"/>
+    <axis xyz="0 0 0"/>
   </joint>
-  <link
-    name="L_foot">
+  <link name="L_foot">
     <inertial>
-      <origin
-        xyz="0.0214898400161262 -0.0237387767620025 -0.00951162240561465"
-        rpy="0 0 0" />
-      <mass
-        value="0.598325928646003" />
-      <inertia
-        ixx="0.0030003037305554"
-        ixy="1.44307591563127E-07"
-        ixz="5.75170302573726E-08"
-        iyy="0.00104797337504159"
-        iyz="-6.35362543541155E-08"
-        izz="0.00400876471061526" />
+      <origin xyz="0.0214898400161262 -0.0237387767620025 -0.00951162240561465" rpy="0 0 0"/>
+      <mass value="0.598325928646003"/>
+      <inertia ixx="0.0030003037305554" ixy="1.44307591563127E-07" ixz="5.75170302573726E-08" iyy="0.00104797337504159" iyz="-6.35362543541155E-08" izz="0.00400876471061526"/>
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_foot.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_foot.STL"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1"/>
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://bit_xuanyuan_description/meshes/L_foot.STL" />
+        <mesh filename="package://bit_xuanyuan_description/meshes/L_foot.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="L_foot"
-    type="fixed">
-    <origin
-      xyz="0 0 0.0131216081050727"
-      rpy="0 0 3.14159265358979" />
-    <parent
-      link="L_ankle_6_axis" />
-    <child
-      link="L_foot" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="L_foot" type="fixed">
+    <origin xyz="0 0 0.0131216081050727" rpy="0 0 3.14159265358979"/>
+    <parent link="L_ankle_6_axis"/>
+    <child link="L_foot"/>
+    <axis xyz="0 0 0"/>
   </joint>
 </robot>
