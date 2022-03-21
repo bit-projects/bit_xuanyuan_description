@@ -1,1016 +1,1008 @@
+<?xml version="1.0"?>
 <mujoco model="bit_xuanyuan">
-    <compiler angle="radian" meshdir="../meshes/" />
-    <size njmax="1000" nconmax="1000" nuserdata="1000" nuser_actuator="34"/>
-    <option timestep="0.001" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" impratio="10" />
-    <default>
-        <joint limited="true" damping="0.2" pos="0 0 0" />
-        <motor ctrllimited="false" forcelimited="false"/>
-        <default class="collision">
-          <geom condim="3" material="matgeom" type="mesh" group="0" />
-        </default>
-        <default class="visual">
-          <geom condim="3" material="matgeom" type="mesh" group="1" conaffinity="0" contype="0" />
-        </default>
-        <default class="L_foot">
-          <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
-          <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
-        </default>
-        <default class="R_foot">
-          <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
-        </default>
-        <default class="L_gripper_1"> <!-- R_gripper_2 -->
-          <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
-        </default>
-        <default class="L_gripper_2"> <!-- L_gripper_1 -->
-          <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6" />
-        </default>
+  <compiler angle="radian" meshdir="../meshes/"/>
+  <size njmax="1000" nconmax="1000" nuserdata="1000" nuser_actuator="34"/>
+  <option timestep="0.001" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" impratio="10"/>
+  <default>
+    <joint limited="true" damping="0.2" pos="0 0 0"/>
+    <motor ctrllimited="false" forcelimited="false"/>
+    <default class="collision">
+      <geom condim="3" material="matgeom" type="mesh" group="0"/>
     </default>
-    <visual>
-        <map force="0.1" zfar="30"/>
-        <rgba haze="0.15 0.25 0.35 1"/>
-        <quality shadowsize="2048"/>
-        <global offwidth="800" offheight="800"/>
-    </visual>
-    <asset>
-        <mesh name="torso" file="torso.STL" />
-        <mesh name="R_shoulder_1" file="R_shoulder_1.STL" />
-        <mesh name="R_shoulder_2" file="R_shoulder_2.STL" />
-        <mesh name="R_shoulder_3" file="R_shoulder_3.STL" />
-        <mesh name="R_elbow_1" file="R_elbow_1.STL" />
-        <mesh name="R_elbow_2" file="R_elbow_2.STL" />
-        <mesh name="R_wrist_1" file="R_wrist_1.STL" />
-        <mesh name="R_wrist_2" file="R_wrist_2.STL" />
-        <mesh name="R_wrist_6_axis" file="R_wrist_6_axis.STL" />
-        <mesh name="R_hand" file="R_hand.STL" />
-        <mesh name="R_gripper_1" file="R_gripper_1.STL" />
-        <mesh name="R_gripper_2" file="R_gripper_2.STL" />
-        <mesh name="L_shoulder_1" file="L_shoulder_1.STL" />
-        <mesh name="L_shoulder_2" file="L_shoulder_2.STL" />
-        <mesh name="L_shoulder_3" file="L_shoulder_3.STL" />
-        <mesh name="L_elbow_1" file="L_elbow_1.STL" />
-        <mesh name="L_elbow_2" file="L_elbow_2.STL" />
-        <mesh name="L_wrist_1" file="L_wrist_1.STL" />
-        <mesh name="L_wrist_2" file="L_wrist_2.STL" />
-        <mesh name="L_wrist_6_axis" file="L_wrist_6_axis.STL" />
-        <mesh name="L_hand" file="L_hand.STL" />
-        <mesh name="L_gripper_1" file="L_gripper_1.STL" />
-        <mesh name="L_gripper_2" file="L_gripper_2.STL" />
-        <mesh name="waist_0" file="waist_0.STL" />
-        <mesh name="waist_1" file="waist_1.STL" />
-        <mesh name="R_hip_1" file="R_hip_1.STL" />
-        <mesh name="R_hip_2" file="R_hip_2.STL" />
-        <mesh name="R_hip_3" file="R_hip_3.STL" />
-        <mesh name="R_knee_1" file="R_knee_1.STL" />
-        <mesh name="R_knee_2" file="R_knee_2.STL" />
-        <mesh name="R_ankle_1" file="R_ankle_1.STL" />
-        <mesh name="R_ankle_2" file="R_ankle_2.STL" />
-        <mesh name="R_ankle_6_axis" file="R_ankle_6_axis.STL" />
-        <mesh name="R_foot" file="R_foot.STL" />
-        <mesh name="L_hip_1" file="L_hip_1.STL" />
-        <mesh name="L_hip_2" file="L_hip_2.STL" />
-        <mesh name="L_hip_3" file="L_hip_3.STL" />
-        <mesh name="L_knee_1" file="L_knee_1.STL" />
-        <mesh name="L_knee_2" file="L_knee_2.STL" />
-        <mesh name="L_ankle_1" file="L_ankle_1.STL" />
-        <mesh name="L_ankle_2" file="L_ankle_2.STL" />
-        <mesh name="L_ankle_6_axis" file="L_ankle_6_axis.STL" />
-        <mesh name="L_foot" file="L_foot.STL" />
-
-        <mesh name="convex_torso" file="convex/torso.STL" />
-        <mesh name="convex_R_shoulder_1" file="convex/R_shoulder_1.STL" />
-        <mesh name="convex_R_shoulder_2" file="convex/R_shoulder_2.STL" />
-        <mesh name="convex_R_shoulder_3" file="convex/R_shoulder_3.STL" />
-        <mesh name="convex_R_elbow_1" file="convex/R_elbow_1.STL" />
-        <mesh name="convex_R_elbow_2" file="convex/R_elbow_2.STL" />
-        <mesh name="convex_R_wrist_1" file="convex/R_wrist_1.STL" />
-        <mesh name="convex_R_wrist_2" file="convex/R_wrist_2.STL" />
-        <mesh name="convex_R_wrist_6_axis" file="convex/R_wrist_6_axis.STL" />
-        <mesh name="convex_R_hand" file="convex/R_hand.STL" />
-        <mesh name="convex_R_gripper_1" file="convex/R_gripper_1.STL" />
-        <mesh name="convex_R_gripper_2" file="convex/R_gripper_2.STL" />
-        <mesh name="convex_L_shoulder_1" file="convex/L_shoulder_1.STL" />
-        <mesh name="convex_L_shoulder_2" file="convex/L_shoulder_2.STL" />
-        <mesh name="convex_L_shoulder_3" file="convex/L_shoulder_3.STL" />
-        <mesh name="convex_L_elbow_1" file="convex/L_elbow_1.STL" />
-        <mesh name="convex_L_elbow_2" file="convex/L_elbow_2.STL" />
-        <mesh name="convex_L_wrist_1" file="convex/L_wrist_1.STL" />
-        <mesh name="convex_L_wrist_2" file="convex/L_wrist_2.STL" />
-        <mesh name="convex_L_wrist_6_axis" file="convex/L_wrist_6_axis.STL" />
-        <mesh name="convex_L_hand" file="convex/L_hand.STL" />
-        <mesh name="convex_L_gripper_1" file="convex/L_gripper_1.STL" />
-        <mesh name="convex_L_gripper_2" file="convex/L_gripper_2.STL" />
-        <mesh name="convex_waist_0" file="convex/waist_0.STL" />
-        <mesh name="convex_waist_1" file="convex/waist_1.STL" />
-        <mesh name="convex_R_hip_1" file="convex/R_hip_1.STL" />
-        <mesh name="convex_R_hip_2" file="convex/R_hip_2.STL" />
-        <mesh name="convex_R_hip_3" file="convex/R_hip_3.STL" />
-        <mesh name="convex_R_knee_1" file="convex/R_knee_1.STL" />
-        <mesh name="convex_R_knee_2" file="convex/R_knee_2.STL" />
-        <mesh name="convex_R_ankle_1" file="convex/R_ankle_1.STL" />
-        <mesh name="convex_R_ankle_2" file="convex/R_ankle_2.STL" />
-        <mesh name="convex_R_ankle_6_axis" file="convex/R_ankle_6_axis.STL" />
-        <mesh name="convex_R_foot" file="convex/R_foot.STL" />
-        <mesh name="convex_L_hip_1" file="convex/L_hip_1.STL" />
-        <mesh name="convex_L_hip_2" file="convex/L_hip_2.STL" />
-        <mesh name="convex_L_hip_3" file="convex/L_hip_3.STL" />
-        <mesh name="convex_L_knee_1" file="convex/L_knee_1.STL" />
-        <mesh name="convex_L_knee_2" file="convex/L_knee_2.STL" />
-        <mesh name="convex_L_ankle_1" file="convex/L_ankle_1.STL" />
-        <mesh name="convex_L_ankle_2" file="convex/L_ankle_2.STL" />
-        <mesh name="convex_L_ankle_6_axis" file="convex/L_ankle_6_axis.STL" />
-        <mesh name="convex_L_foot" file="convex/L_foot.STL" />
-
-        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
-        <material name="matgeom" texture="texgeom" texuniform="true" rgba="0.8 0.6 .4 1"/>
-    </asset>
-    <contact>
-        <exclude body1="torso" body2="R_shoulder_1" />
-        <exclude body1="torso" body2="R_shoulder_2" />
-        <exclude body1="torso" body2="R_shoulder_3" />
-        <exclude body1="torso" body2="R_elbow_1" />
-        <exclude body1="torso" body2="R_elbow_2" />
-        <exclude body1="torso" body2="R_wrist_1" />
-        <exclude body1="torso" body2="R_wrist_2" />
-        <exclude body1="torso" body2="R_gripper_1" />
-        <exclude body1="torso" body2="R_gripper_2" />
-        <exclude body1="torso" body2="L_shoulder_1" />
-        <exclude body1="torso" body2="L_shoulder_2" />
-        <exclude body1="torso" body2="L_shoulder_3" />
-        <exclude body1="torso" body2="L_elbow_1" />
-        <exclude body1="torso" body2="L_elbow_2" />
-        <exclude body1="torso" body2="L_wrist_1" />
-        <exclude body1="torso" body2="L_wrist_2" />
-        <exclude body1="torso" body2="L_gripper_1" />
-        <exclude body1="torso" body2="L_gripper_2" />
-        <exclude body1="torso" body2="waist_0" />
-        <exclude body1="torso" body2="waist_1" />
-        <exclude body1="torso" body2="R_hip_1" />
-        <exclude body1="torso" body2="R_hip_2" />
-        <exclude body1="torso" body2="R_hip_3" />
-        <exclude body1="torso" body2="R_knee_1" />
-        <exclude body1="torso" body2="R_knee_2" />
-        <exclude body1="torso" body2="R_ankle_1" />
-        <exclude body1="torso" body2="R_ankle_2" />
-        <exclude body1="torso" body2="L_hip_1" />
-        <exclude body1="torso" body2="L_hip_2" />
-        <exclude body1="torso" body2="L_hip_3" />
-        <exclude body1="torso" body2="L_knee_1" />
-        <exclude body1="torso" body2="L_knee_2" />
-        <exclude body1="torso" body2="L_ankle_1" />
-        <exclude body1="torso" body2="L_ankle_2" />
-        <exclude body1="R_shoulder_1" body2="R_shoulder_2" />
-        <exclude body1="R_shoulder_1" body2="R_shoulder_3" />
-        <exclude body1="R_shoulder_1" body2="R_elbow_1" />
-        <exclude body1="R_shoulder_1" body2="R_elbow_2" />
-        <exclude body1="R_shoulder_1" body2="R_wrist_1" />
-        <exclude body1="R_shoulder_1" body2="R_wrist_2" />
-        <exclude body1="R_shoulder_1" body2="R_gripper_1" />
-        <exclude body1="R_shoulder_1" body2="R_gripper_2" />
-        <exclude body1="R_shoulder_1" body2="L_shoulder_1" />
-        <exclude body1="R_shoulder_1" body2="L_shoulder_2" />
-        <exclude body1="R_shoulder_1" body2="L_shoulder_3" />
-        <exclude body1="R_shoulder_1" body2="L_elbow_1" />
-        <exclude body1="R_shoulder_1" body2="L_elbow_2" />
-        <exclude body1="R_shoulder_1" body2="L_wrist_1" />
-        <exclude body1="R_shoulder_1" body2="L_wrist_2" />
-        <exclude body1="R_shoulder_1" body2="L_gripper_1" />
-        <exclude body1="R_shoulder_1" body2="L_gripper_2" />
-        <exclude body1="R_shoulder_1" body2="waist_0" />
-        <exclude body1="R_shoulder_1" body2="waist_1" />
-        <exclude body1="R_shoulder_1" body2="R_hip_1" />
-        <exclude body1="R_shoulder_1" body2="R_hip_2" />
-        <exclude body1="R_shoulder_1" body2="R_hip_3" />
-        <exclude body1="R_shoulder_1" body2="R_knee_1" />
-        <exclude body1="R_shoulder_1" body2="R_knee_2" />
-        <exclude body1="R_shoulder_1" body2="R_ankle_1" />
-        <exclude body1="R_shoulder_1" body2="R_ankle_2" />
-        <exclude body1="R_shoulder_1" body2="L_hip_1" />
-        <exclude body1="R_shoulder_1" body2="L_hip_2" />
-        <exclude body1="R_shoulder_1" body2="L_hip_3" />
-        <exclude body1="R_shoulder_1" body2="L_knee_1" />
-        <exclude body1="R_shoulder_1" body2="L_knee_2" />
-        <exclude body1="R_shoulder_1" body2="L_ankle_1" />
-        <exclude body1="R_shoulder_1" body2="L_ankle_2" />
-        <exclude body1="R_shoulder_2" body2="R_shoulder_3" />
-        <exclude body1="R_shoulder_2" body2="R_elbow_1" />
-        <exclude body1="R_shoulder_2" body2="R_elbow_2" />
-        <exclude body1="R_shoulder_2" body2="R_wrist_1" />
-        <exclude body1="R_shoulder_2" body2="R_wrist_2" />
-        <exclude body1="R_shoulder_2" body2="R_gripper_1" />
-        <exclude body1="R_shoulder_2" body2="R_gripper_2" />
-        <exclude body1="R_shoulder_2" body2="L_shoulder_1" />
-        <exclude body1="R_shoulder_2" body2="L_shoulder_2" />
-        <exclude body1="R_shoulder_2" body2="L_shoulder_3" />
-        <exclude body1="R_shoulder_2" body2="L_elbow_1" />
-        <exclude body1="R_shoulder_2" body2="L_elbow_2" />
-        <exclude body1="R_shoulder_2" body2="L_wrist_1" />
-        <exclude body1="R_shoulder_2" body2="L_wrist_2" />
-        <exclude body1="R_shoulder_2" body2="L_gripper_1" />
-        <exclude body1="R_shoulder_2" body2="L_gripper_2" />
-        <exclude body1="R_shoulder_2" body2="waist_0" />
-        <exclude body1="R_shoulder_2" body2="waist_1" />
-        <exclude body1="R_shoulder_2" body2="R_hip_1" />
-        <exclude body1="R_shoulder_2" body2="R_hip_2" />
-        <exclude body1="R_shoulder_2" body2="R_hip_3" />
-        <exclude body1="R_shoulder_2" body2="R_knee_1" />
-        <exclude body1="R_shoulder_2" body2="R_knee_2" />
-        <exclude body1="R_shoulder_2" body2="R_ankle_1" />
-        <exclude body1="R_shoulder_2" body2="R_ankle_2" />
-        <exclude body1="R_shoulder_2" body2="L_hip_1" />
-        <exclude body1="R_shoulder_2" body2="L_hip_2" />
-        <exclude body1="R_shoulder_2" body2="L_hip_3" />
-        <exclude body1="R_shoulder_2" body2="L_knee_1" />
-        <exclude body1="R_shoulder_2" body2="L_knee_2" />
-        <exclude body1="R_shoulder_2" body2="L_ankle_1" />
-        <exclude body1="R_shoulder_2" body2="L_ankle_2" />
-        <exclude body1="R_shoulder_3" body2="R_elbow_1" />
-        <exclude body1="R_shoulder_3" body2="R_elbow_2" />
-        <exclude body1="R_shoulder_3" body2="R_wrist_1" />
-        <exclude body1="R_shoulder_3" body2="R_wrist_2" />
-        <exclude body1="R_shoulder_3" body2="R_gripper_1" />
-        <exclude body1="R_shoulder_3" body2="R_gripper_2" />
-        <exclude body1="R_shoulder_3" body2="L_shoulder_1" />
-        <exclude body1="R_shoulder_3" body2="L_shoulder_2" />
-        <exclude body1="R_shoulder_3" body2="L_shoulder_3" />
-        <exclude body1="R_shoulder_3" body2="L_elbow_1" />
-        <exclude body1="R_shoulder_3" body2="L_elbow_2" />
-        <exclude body1="R_shoulder_3" body2="L_wrist_1" />
-        <exclude body1="R_shoulder_3" body2="L_wrist_2" />
-        <exclude body1="R_shoulder_3" body2="L_gripper_1" />
-        <exclude body1="R_shoulder_3" body2="L_gripper_2" />
-        <exclude body1="R_shoulder_3" body2="waist_0" />
-        <exclude body1="R_shoulder_3" body2="waist_1" />
-        <exclude body1="R_shoulder_3" body2="R_hip_1" />
-        <exclude body1="R_shoulder_3" body2="R_hip_2" />
-        <exclude body1="R_shoulder_3" body2="R_hip_3" />
-        <exclude body1="R_shoulder_3" body2="R_knee_1" />
-        <exclude body1="R_shoulder_3" body2="R_knee_2" />
-        <exclude body1="R_shoulder_3" body2="R_ankle_1" />
-        <exclude body1="R_shoulder_3" body2="R_ankle_2" />
-        <exclude body1="R_shoulder_3" body2="L_hip_1" />
-        <exclude body1="R_shoulder_3" body2="L_hip_2" />
-        <exclude body1="R_shoulder_3" body2="L_hip_3" />
-        <exclude body1="R_shoulder_3" body2="L_knee_1" />
-        <exclude body1="R_shoulder_3" body2="L_knee_2" />
-        <exclude body1="R_shoulder_3" body2="L_ankle_1" />
-        <exclude body1="R_shoulder_3" body2="L_ankle_2" />
-        <exclude body1="R_elbow_1" body2="R_elbow_2" />
-        <exclude body1="R_elbow_1" body2="R_wrist_1" />
-        <exclude body1="R_elbow_1" body2="R_wrist_2" />
-        <exclude body1="R_elbow_1" body2="R_gripper_1" />
-        <exclude body1="R_elbow_1" body2="R_gripper_2" />
-        <exclude body1="R_elbow_1" body2="L_shoulder_1" />
-        <exclude body1="R_elbow_1" body2="L_shoulder_2" />
-        <exclude body1="R_elbow_1" body2="L_shoulder_3" />
-        <exclude body1="R_elbow_1" body2="L_elbow_1" />
-        <exclude body1="R_elbow_1" body2="L_elbow_2" />
-        <exclude body1="R_elbow_1" body2="L_wrist_1" />
-        <exclude body1="R_elbow_1" body2="L_wrist_2" />
-        <exclude body1="R_elbow_1" body2="L_gripper_1" />
-        <exclude body1="R_elbow_1" body2="L_gripper_2" />
-        <exclude body1="R_elbow_1" body2="waist_0" />
-        <exclude body1="R_elbow_1" body2="waist_1" />
-        <exclude body1="R_elbow_1" body2="R_hip_1" />
-        <exclude body1="R_elbow_1" body2="R_hip_2" />
-        <exclude body1="R_elbow_1" body2="R_hip_3" />
-        <exclude body1="R_elbow_1" body2="R_knee_1" />
-        <exclude body1="R_elbow_1" body2="R_knee_2" />
-        <exclude body1="R_elbow_1" body2="R_ankle_1" />
-        <exclude body1="R_elbow_1" body2="R_ankle_2" />
-        <exclude body1="R_elbow_1" body2="L_hip_1" />
-        <exclude body1="R_elbow_1" body2="L_hip_2" />
-        <exclude body1="R_elbow_1" body2="L_hip_3" />
-        <exclude body1="R_elbow_1" body2="L_knee_1" />
-        <exclude body1="R_elbow_1" body2="L_knee_2" />
-        <exclude body1="R_elbow_1" body2="L_ankle_1" />
-        <exclude body1="R_elbow_1" body2="L_ankle_2" />
-        <exclude body1="R_elbow_2" body2="R_wrist_1" />
-        <exclude body1="R_elbow_2" body2="R_wrist_2" />
-        <exclude body1="R_elbow_2" body2="R_gripper_1" />
-        <exclude body1="R_elbow_2" body2="R_gripper_2" />
-        <exclude body1="R_elbow_2" body2="L_shoulder_1" />
-        <exclude body1="R_elbow_2" body2="L_shoulder_2" />
-        <exclude body1="R_elbow_2" body2="L_shoulder_3" />
-        <exclude body1="R_elbow_2" body2="L_elbow_1" />
-        <exclude body1="R_elbow_2" body2="L_elbow_2" />
-        <exclude body1="R_elbow_2" body2="L_wrist_1" />
-        <exclude body1="R_elbow_2" body2="L_wrist_2" />
-        <exclude body1="R_elbow_2" body2="L_gripper_1" />
-        <exclude body1="R_elbow_2" body2="L_gripper_2" />
-        <exclude body1="R_elbow_2" body2="waist_0" />
-        <exclude body1="R_elbow_2" body2="waist_1" />
-        <exclude body1="R_elbow_2" body2="R_hip_1" />
-        <exclude body1="R_elbow_2" body2="R_hip_2" />
-        <exclude body1="R_elbow_2" body2="R_hip_3" />
-        <exclude body1="R_elbow_2" body2="R_knee_1" />
-        <exclude body1="R_elbow_2" body2="R_knee_2" />
-        <exclude body1="R_elbow_2" body2="R_ankle_1" />
-        <exclude body1="R_elbow_2" body2="R_ankle_2" />
-        <exclude body1="R_elbow_2" body2="L_hip_1" />
-        <exclude body1="R_elbow_2" body2="L_hip_2" />
-        <exclude body1="R_elbow_2" body2="L_hip_3" />
-        <exclude body1="R_elbow_2" body2="L_knee_1" />
-        <exclude body1="R_elbow_2" body2="L_knee_2" />
-        <exclude body1="R_elbow_2" body2="L_ankle_1" />
-        <exclude body1="R_elbow_2" body2="L_ankle_2" />
-        <exclude body1="R_wrist_1" body2="R_wrist_2" />
-        <exclude body1="R_wrist_1" body2="R_gripper_1" />
-        <exclude body1="R_wrist_1" body2="R_gripper_2" />
-        <exclude body1="R_wrist_1" body2="L_shoulder_1" />
-        <exclude body1="R_wrist_1" body2="L_shoulder_2" />
-        <exclude body1="R_wrist_1" body2="L_shoulder_3" />
-        <exclude body1="R_wrist_1" body2="L_elbow_1" />
-        <exclude body1="R_wrist_1" body2="L_elbow_2" />
-        <exclude body1="R_wrist_1" body2="L_wrist_1" />
-        <exclude body1="R_wrist_1" body2="L_wrist_2" />
-        <exclude body1="R_wrist_1" body2="L_gripper_1" />
-        <exclude body1="R_wrist_1" body2="L_gripper_2" />
-        <exclude body1="R_wrist_1" body2="waist_0" />
-        <exclude body1="R_wrist_1" body2="waist_1" />
-        <exclude body1="R_wrist_1" body2="R_hip_1" />
-        <exclude body1="R_wrist_1" body2="R_hip_2" />
-        <exclude body1="R_wrist_1" body2="R_hip_3" />
-        <exclude body1="R_wrist_1" body2="R_knee_1" />
-        <exclude body1="R_wrist_1" body2="R_knee_2" />
-        <exclude body1="R_wrist_1" body2="R_ankle_1" />
-        <exclude body1="R_wrist_1" body2="R_ankle_2" />
-        <exclude body1="R_wrist_1" body2="L_hip_1" />
-        <exclude body1="R_wrist_1" body2="L_hip_2" />
-        <exclude body1="R_wrist_1" body2="L_hip_3" />
-        <exclude body1="R_wrist_1" body2="L_knee_1" />
-        <exclude body1="R_wrist_1" body2="L_knee_2" />
-        <exclude body1="R_wrist_1" body2="L_ankle_1" />
-        <exclude body1="R_wrist_1" body2="L_ankle_2" />
-        <exclude body1="R_wrist_2" body2="R_gripper_1" />
-        <exclude body1="R_wrist_2" body2="R_gripper_2" />
-        <exclude body1="R_wrist_2" body2="L_shoulder_1" />
-        <exclude body1="R_wrist_2" body2="L_shoulder_2" />
-        <exclude body1="R_wrist_2" body2="L_shoulder_3" />
-        <exclude body1="R_wrist_2" body2="L_elbow_1" />
-        <exclude body1="R_wrist_2" body2="L_elbow_2" />
-        <exclude body1="R_wrist_2" body2="L_wrist_1" />
-        <exclude body1="R_wrist_2" body2="L_wrist_2" />
-        <exclude body1="R_wrist_2" body2="L_gripper_1" />
-        <exclude body1="R_wrist_2" body2="L_gripper_2" />
-        <exclude body1="R_wrist_2" body2="waist_0" />
-        <exclude body1="R_wrist_2" body2="waist_1" />
-        <exclude body1="R_wrist_2" body2="R_hip_1" />
-        <exclude body1="R_wrist_2" body2="R_hip_2" />
-        <exclude body1="R_wrist_2" body2="R_hip_3" />
-        <exclude body1="R_wrist_2" body2="R_knee_1" />
-        <exclude body1="R_wrist_2" body2="R_knee_2" />
-        <exclude body1="R_wrist_2" body2="R_ankle_1" />
-        <exclude body1="R_wrist_2" body2="R_ankle_2" />
-        <exclude body1="R_wrist_2" body2="L_hip_1" />
-        <exclude body1="R_wrist_2" body2="L_hip_2" />
-        <exclude body1="R_wrist_2" body2="L_hip_3" />
-        <exclude body1="R_wrist_2" body2="L_knee_1" />
-        <exclude body1="R_wrist_2" body2="L_knee_2" />
-        <exclude body1="R_wrist_2" body2="L_ankle_1" />
-        <exclude body1="R_wrist_2" body2="L_ankle_2" />
-        <exclude body1="R_gripper_1" body2="R_gripper_2" />
-        <exclude body1="R_gripper_1" body2="L_shoulder_1" />
-        <exclude body1="R_gripper_1" body2="L_shoulder_2" />
-        <exclude body1="R_gripper_1" body2="L_shoulder_3" />
-        <exclude body1="R_gripper_1" body2="L_elbow_1" />
-        <exclude body1="R_gripper_1" body2="L_elbow_2" />
-        <exclude body1="R_gripper_1" body2="L_wrist_1" />
-        <exclude body1="R_gripper_1" body2="L_wrist_2" />
-        <exclude body1="R_gripper_1" body2="L_gripper_1" />
-        <exclude body1="R_gripper_1" body2="L_gripper_2" />
-        <exclude body1="R_gripper_1" body2="waist_0" />
-        <exclude body1="R_gripper_1" body2="waist_1" />
-        <exclude body1="R_gripper_1" body2="R_hip_1" />
-        <exclude body1="R_gripper_1" body2="R_hip_2" />
-        <exclude body1="R_gripper_1" body2="R_hip_3" />
-        <exclude body1="R_gripper_1" body2="R_knee_1" />
-        <exclude body1="R_gripper_1" body2="R_knee_2" />
-        <exclude body1="R_gripper_1" body2="R_ankle_1" />
-        <exclude body1="R_gripper_1" body2="R_ankle_2" />
-        <exclude body1="R_gripper_1" body2="L_hip_1" />
-        <exclude body1="R_gripper_1" body2="L_hip_2" />
-        <exclude body1="R_gripper_1" body2="L_hip_3" />
-        <exclude body1="R_gripper_1" body2="L_knee_1" />
-        <exclude body1="R_gripper_1" body2="L_knee_2" />
-        <exclude body1="R_gripper_1" body2="L_ankle_1" />
-        <exclude body1="R_gripper_1" body2="L_ankle_2" />
-        <exclude body1="R_gripper_2" body2="L_shoulder_1" />
-        <exclude body1="R_gripper_2" body2="L_shoulder_2" />
-        <exclude body1="R_gripper_2" body2="L_shoulder_3" />
-        <exclude body1="R_gripper_2" body2="L_elbow_1" />
-        <exclude body1="R_gripper_2" body2="L_elbow_2" />
-        <exclude body1="R_gripper_2" body2="L_wrist_1" />
-        <exclude body1="R_gripper_2" body2="L_wrist_2" />
-        <exclude body1="R_gripper_2" body2="L_gripper_1" />
-        <exclude body1="R_gripper_2" body2="L_gripper_2" />
-        <exclude body1="R_gripper_2" body2="waist_0" />
-        <exclude body1="R_gripper_2" body2="waist_1" />
-        <exclude body1="R_gripper_2" body2="R_hip_1" />
-        <exclude body1="R_gripper_2" body2="R_hip_2" />
-        <exclude body1="R_gripper_2" body2="R_hip_3" />
-        <exclude body1="R_gripper_2" body2="R_knee_1" />
-        <exclude body1="R_gripper_2" body2="R_knee_2" />
-        <exclude body1="R_gripper_2" body2="R_ankle_1" />
-        <exclude body1="R_gripper_2" body2="R_ankle_2" />
-        <exclude body1="R_gripper_2" body2="L_hip_1" />
-        <exclude body1="R_gripper_2" body2="L_hip_2" />
-        <exclude body1="R_gripper_2" body2="L_hip_3" />
-        <exclude body1="R_gripper_2" body2="L_knee_1" />
-        <exclude body1="R_gripper_2" body2="L_knee_2" />
-        <exclude body1="R_gripper_2" body2="L_ankle_1" />
-        <exclude body1="R_gripper_2" body2="L_ankle_2" />
-        <exclude body1="L_shoulder_1" body2="L_shoulder_2" />
-        <exclude body1="L_shoulder_1" body2="L_shoulder_3" />
-        <exclude body1="L_shoulder_1" body2="L_elbow_1" />
-        <exclude body1="L_shoulder_1" body2="L_elbow_2" />
-        <exclude body1="L_shoulder_1" body2="L_wrist_1" />
-        <exclude body1="L_shoulder_1" body2="L_wrist_2" />
-        <exclude body1="L_shoulder_1" body2="L_gripper_1" />
-        <exclude body1="L_shoulder_1" body2="L_gripper_2" />
-        <exclude body1="L_shoulder_1" body2="waist_0" />
-        <exclude body1="L_shoulder_1" body2="waist_1" />
-        <exclude body1="L_shoulder_1" body2="R_hip_1" />
-        <exclude body1="L_shoulder_1" body2="R_hip_2" />
-        <exclude body1="L_shoulder_1" body2="R_hip_3" />
-        <exclude body1="L_shoulder_1" body2="R_knee_1" />
-        <exclude body1="L_shoulder_1" body2="R_knee_2" />
-        <exclude body1="L_shoulder_1" body2="R_ankle_1" />
-        <exclude body1="L_shoulder_1" body2="R_ankle_2" />
-        <exclude body1="L_shoulder_1" body2="L_hip_1" />
-        <exclude body1="L_shoulder_1" body2="L_hip_2" />
-        <exclude body1="L_shoulder_1" body2="L_hip_3" />
-        <exclude body1="L_shoulder_1" body2="L_knee_1" />
-        <exclude body1="L_shoulder_1" body2="L_knee_2" />
-        <exclude body1="L_shoulder_1" body2="L_ankle_1" />
-        <exclude body1="L_shoulder_1" body2="L_ankle_2" />
-        <exclude body1="L_shoulder_2" body2="L_shoulder_3" />
-        <exclude body1="L_shoulder_2" body2="L_elbow_1" />
-        <exclude body1="L_shoulder_2" body2="L_elbow_2" />
-        <exclude body1="L_shoulder_2" body2="L_wrist_1" />
-        <exclude body1="L_shoulder_2" body2="L_wrist_2" />
-        <exclude body1="L_shoulder_2" body2="L_gripper_1" />
-        <exclude body1="L_shoulder_2" body2="L_gripper_2" />
-        <exclude body1="L_shoulder_2" body2="waist_0" />
-        <exclude body1="L_shoulder_2" body2="waist_1" />
-        <exclude body1="L_shoulder_2" body2="R_hip_1" />
-        <exclude body1="L_shoulder_2" body2="R_hip_2" />
-        <exclude body1="L_shoulder_2" body2="R_hip_3" />
-        <exclude body1="L_shoulder_2" body2="R_knee_1" />
-        <exclude body1="L_shoulder_2" body2="R_knee_2" />
-        <exclude body1="L_shoulder_2" body2="R_ankle_1" />
-        <exclude body1="L_shoulder_2" body2="R_ankle_2" />
-        <exclude body1="L_shoulder_2" body2="L_hip_1" />
-        <exclude body1="L_shoulder_2" body2="L_hip_2" />
-        <exclude body1="L_shoulder_2" body2="L_hip_3" />
-        <exclude body1="L_shoulder_2" body2="L_knee_1" />
-        <exclude body1="L_shoulder_2" body2="L_knee_2" />
-        <exclude body1="L_shoulder_2" body2="L_ankle_1" />
-        <exclude body1="L_shoulder_2" body2="L_ankle_2" />
-        <exclude body1="L_shoulder_3" body2="L_elbow_1" />
-        <exclude body1="L_shoulder_3" body2="L_elbow_2" />
-        <exclude body1="L_shoulder_3" body2="L_wrist_1" />
-        <exclude body1="L_shoulder_3" body2="L_wrist_2" />
-        <exclude body1="L_shoulder_3" body2="L_gripper_1" />
-        <exclude body1="L_shoulder_3" body2="L_gripper_2" />
-        <exclude body1="L_shoulder_3" body2="waist_0" />
-        <exclude body1="L_shoulder_3" body2="waist_1" />
-        <exclude body1="L_shoulder_3" body2="R_hip_1" />
-        <exclude body1="L_shoulder_3" body2="R_hip_2" />
-        <exclude body1="L_shoulder_3" body2="R_hip_3" />
-        <exclude body1="L_shoulder_3" body2="R_knee_1" />
-        <exclude body1="L_shoulder_3" body2="R_knee_2" />
-        <exclude body1="L_shoulder_3" body2="R_ankle_1" />
-        <exclude body1="L_shoulder_3" body2="R_ankle_2" />
-        <exclude body1="L_shoulder_3" body2="L_hip_1" />
-        <exclude body1="L_shoulder_3" body2="L_hip_2" />
-        <exclude body1="L_shoulder_3" body2="L_hip_3" />
-        <exclude body1="L_shoulder_3" body2="L_knee_1" />
-        <exclude body1="L_shoulder_3" body2="L_knee_2" />
-        <exclude body1="L_shoulder_3" body2="L_ankle_1" />
-        <exclude body1="L_shoulder_3" body2="L_ankle_2" />
-        <exclude body1="L_elbow_1" body2="L_elbow_2" />
-        <exclude body1="L_elbow_1" body2="L_wrist_1" />
-        <exclude body1="L_elbow_1" body2="L_wrist_2" />
-        <exclude body1="L_elbow_1" body2="L_gripper_1" />
-        <exclude body1="L_elbow_1" body2="L_gripper_2" />
-        <exclude body1="L_elbow_1" body2="waist_0" />
-        <exclude body1="L_elbow_1" body2="waist_1" />
-        <exclude body1="L_elbow_1" body2="R_hip_1" />
-        <exclude body1="L_elbow_1" body2="R_hip_2" />
-        <exclude body1="L_elbow_1" body2="R_hip_3" />
-        <exclude body1="L_elbow_1" body2="R_knee_1" />
-        <exclude body1="L_elbow_1" body2="R_knee_2" />
-        <exclude body1="L_elbow_1" body2="R_ankle_1" />
-        <exclude body1="L_elbow_1" body2="R_ankle_2" />
-        <exclude body1="L_elbow_1" body2="L_hip_1" />
-        <exclude body1="L_elbow_1" body2="L_hip_2" />
-        <exclude body1="L_elbow_1" body2="L_hip_3" />
-        <exclude body1="L_elbow_1" body2="L_knee_1" />
-        <exclude body1="L_elbow_1" body2="L_knee_2" />
-        <exclude body1="L_elbow_1" body2="L_ankle_1" />
-        <exclude body1="L_elbow_1" body2="L_ankle_2" />
-        <exclude body1="L_elbow_2" body2="L_wrist_1" />
-        <exclude body1="L_elbow_2" body2="L_wrist_2" />
-        <exclude body1="L_elbow_2" body2="L_gripper_1" />
-        <exclude body1="L_elbow_2" body2="L_gripper_2" />
-        <exclude body1="L_elbow_2" body2="waist_0" />
-        <exclude body1="L_elbow_2" body2="waist_1" />
-        <exclude body1="L_elbow_2" body2="R_hip_1" />
-        <exclude body1="L_elbow_2" body2="R_hip_2" />
-        <exclude body1="L_elbow_2" body2="R_hip_3" />
-        <exclude body1="L_elbow_2" body2="R_knee_1" />
-        <exclude body1="L_elbow_2" body2="R_knee_2" />
-        <exclude body1="L_elbow_2" body2="R_ankle_1" />
-        <exclude body1="L_elbow_2" body2="R_ankle_2" />
-        <exclude body1="L_elbow_2" body2="L_hip_1" />
-        <exclude body1="L_elbow_2" body2="L_hip_2" />
-        <exclude body1="L_elbow_2" body2="L_hip_3" />
-        <exclude body1="L_elbow_2" body2="L_knee_1" />
-        <exclude body1="L_elbow_2" body2="L_knee_2" />
-        <exclude body1="L_elbow_2" body2="L_ankle_1" />
-        <exclude body1="L_elbow_2" body2="L_ankle_2" />
-        <exclude body1="L_wrist_1" body2="L_wrist_2" />
-        <exclude body1="L_wrist_1" body2="L_gripper_1" />
-        <exclude body1="L_wrist_1" body2="L_gripper_2" />
-        <exclude body1="L_wrist_1" body2="waist_0" />
-        <exclude body1="L_wrist_1" body2="waist_1" />
-        <exclude body1="L_wrist_1" body2="R_hip_1" />
-        <exclude body1="L_wrist_1" body2="R_hip_2" />
-        <exclude body1="L_wrist_1" body2="R_hip_3" />
-        <exclude body1="L_wrist_1" body2="R_knee_1" />
-        <exclude body1="L_wrist_1" body2="R_knee_2" />
-        <exclude body1="L_wrist_1" body2="R_ankle_1" />
-        <exclude body1="L_wrist_1" body2="R_ankle_2" />
-        <exclude body1="L_wrist_1" body2="L_hip_1" />
-        <exclude body1="L_wrist_1" body2="L_hip_2" />
-        <exclude body1="L_wrist_1" body2="L_hip_3" />
-        <exclude body1="L_wrist_1" body2="L_knee_1" />
-        <exclude body1="L_wrist_1" body2="L_knee_2" />
-        <exclude body1="L_wrist_1" body2="L_ankle_1" />
-        <exclude body1="L_wrist_1" body2="L_ankle_2" />
-        <exclude body1="L_wrist_2" body2="L_gripper_1" />
-        <exclude body1="L_wrist_2" body2="L_gripper_2" />
-        <exclude body1="L_wrist_2" body2="waist_0" />
-        <exclude body1="L_wrist_2" body2="waist_1" />
-        <exclude body1="L_wrist_2" body2="R_hip_1" />
-        <exclude body1="L_wrist_2" body2="R_hip_2" />
-        <exclude body1="L_wrist_2" body2="R_hip_3" />
-        <exclude body1="L_wrist_2" body2="R_knee_1" />
-        <exclude body1="L_wrist_2" body2="R_knee_2" />
-        <exclude body1="L_wrist_2" body2="R_ankle_1" />
-        <exclude body1="L_wrist_2" body2="R_ankle_2" />
-        <exclude body1="L_wrist_2" body2="L_hip_1" />
-        <exclude body1="L_wrist_2" body2="L_hip_2" />
-        <exclude body1="L_wrist_2" body2="L_hip_3" />
-        <exclude body1="L_wrist_2" body2="L_knee_1" />
-        <exclude body1="L_wrist_2" body2="L_knee_2" />
-        <exclude body1="L_wrist_2" body2="L_ankle_1" />
-        <exclude body1="L_wrist_2" body2="L_ankle_2" />
-        <exclude body1="L_gripper_1" body2="L_gripper_2" />
-        <exclude body1="L_gripper_1" body2="waist_0" />
-        <exclude body1="L_gripper_1" body2="waist_1" />
-        <exclude body1="L_gripper_1" body2="R_hip_1" />
-        <exclude body1="L_gripper_1" body2="R_hip_2" />
-        <exclude body1="L_gripper_1" body2="R_hip_3" />
-        <exclude body1="L_gripper_1" body2="R_knee_1" />
-        <exclude body1="L_gripper_1" body2="R_knee_2" />
-        <exclude body1="L_gripper_1" body2="R_ankle_1" />
-        <exclude body1="L_gripper_1" body2="R_ankle_2" />
-        <exclude body1="L_gripper_1" body2="L_hip_1" />
-        <exclude body1="L_gripper_1" body2="L_hip_2" />
-        <exclude body1="L_gripper_1" body2="L_hip_3" />
-        <exclude body1="L_gripper_1" body2="L_knee_1" />
-        <exclude body1="L_gripper_1" body2="L_knee_2" />
-        <exclude body1="L_gripper_1" body2="L_ankle_1" />
-        <exclude body1="L_gripper_1" body2="L_ankle_2" />
-        <exclude body1="L_gripper_2" body2="waist_0" />
-        <exclude body1="L_gripper_2" body2="waist_1" />
-        <exclude body1="L_gripper_2" body2="R_hip_1" />
-        <exclude body1="L_gripper_2" body2="R_hip_2" />
-        <exclude body1="L_gripper_2" body2="R_hip_3" />
-        <exclude body1="L_gripper_2" body2="R_knee_1" />
-        <exclude body1="L_gripper_2" body2="R_knee_2" />
-        <exclude body1="L_gripper_2" body2="R_ankle_1" />
-        <exclude body1="L_gripper_2" body2="R_ankle_2" />
-        <exclude body1="L_gripper_2" body2="L_hip_1" />
-        <exclude body1="L_gripper_2" body2="L_hip_2" />
-        <exclude body1="L_gripper_2" body2="L_hip_3" />
-        <exclude body1="L_gripper_2" body2="L_knee_1" />
-        <exclude body1="L_gripper_2" body2="L_knee_2" />
-        <exclude body1="L_gripper_2" body2="L_ankle_1" />
-        <exclude body1="L_gripper_2" body2="L_ankle_2" />
-        <exclude body1="waist_0" body2="waist_1" />
-        <exclude body1="waist_0" body2="R_hip_1" />
-        <exclude body1="waist_0" body2="R_hip_2" />
-        <exclude body1="waist_0" body2="R_hip_3" />
-        <exclude body1="waist_0" body2="R_knee_1" />
-        <exclude body1="waist_0" body2="R_knee_2" />
-        <exclude body1="waist_0" body2="R_ankle_1" />
-        <exclude body1="waist_0" body2="R_ankle_2" />
-        <exclude body1="waist_0" body2="L_hip_1" />
-        <exclude body1="waist_0" body2="L_hip_2" />
-        <exclude body1="waist_0" body2="L_hip_3" />
-        <exclude body1="waist_0" body2="L_knee_1" />
-        <exclude body1="waist_0" body2="L_knee_2" />
-        <exclude body1="waist_0" body2="L_ankle_1" />
-        <exclude body1="waist_0" body2="L_ankle_2" />
-        <exclude body1="waist_1" body2="R_hip_1" />
-        <exclude body1="waist_1" body2="R_hip_2" />
-        <exclude body1="waist_1" body2="R_hip_3" />
-        <exclude body1="waist_1" body2="R_knee_1" />
-        <exclude body1="waist_1" body2="R_knee_2" />
-        <exclude body1="waist_1" body2="R_ankle_1" />
-        <exclude body1="waist_1" body2="R_ankle_2" />
-        <exclude body1="waist_1" body2="L_hip_1" />
-        <exclude body1="waist_1" body2="L_hip_2" />
-        <exclude body1="waist_1" body2="L_hip_3" />
-        <exclude body1="waist_1" body2="L_knee_1" />
-        <exclude body1="waist_1" body2="L_knee_2" />
-        <exclude body1="waist_1" body2="L_ankle_1" />
-        <exclude body1="waist_1" body2="L_ankle_2" />
-        <exclude body1="R_hip_1" body2="R_hip_2" />
-        <exclude body1="R_hip_1" body2="R_hip_3" />
-        <exclude body1="R_hip_1" body2="R_knee_1" />
-        <exclude body1="R_hip_1" body2="R_knee_2" />
-        <exclude body1="R_hip_1" body2="R_ankle_1" />
-        <exclude body1="R_hip_1" body2="R_ankle_2" />
-        <exclude body1="R_hip_1" body2="L_hip_1" />
-        <exclude body1="R_hip_1" body2="L_hip_2" />
-        <exclude body1="R_hip_1" body2="L_hip_3" />
-        <exclude body1="R_hip_1" body2="L_knee_1" />
-        <exclude body1="R_hip_1" body2="L_knee_2" />
-        <exclude body1="R_hip_1" body2="L_ankle_1" />
-        <exclude body1="R_hip_1" body2="L_ankle_2" />
-        <exclude body1="R_hip_2" body2="R_hip_3" />
-        <exclude body1="R_hip_2" body2="R_knee_1" />
-        <exclude body1="R_hip_2" body2="R_knee_2" />
-        <exclude body1="R_hip_2" body2="R_ankle_1" />
-        <exclude body1="R_hip_2" body2="R_ankle_2" />
-        <exclude body1="R_hip_2" body2="L_hip_1" />
-        <exclude body1="R_hip_2" body2="L_hip_2" />
-        <exclude body1="R_hip_2" body2="L_hip_3" />
-        <exclude body1="R_hip_2" body2="L_knee_1" />
-        <exclude body1="R_hip_2" body2="L_knee_2" />
-        <exclude body1="R_hip_2" body2="L_ankle_1" />
-        <exclude body1="R_hip_2" body2="L_ankle_2" />
-        <exclude body1="R_hip_3" body2="R_knee_1" />
-        <exclude body1="R_hip_3" body2="R_knee_2" />
-        <exclude body1="R_hip_3" body2="R_ankle_1" />
-        <exclude body1="R_hip_3" body2="R_ankle_2" />
-        <exclude body1="R_hip_3" body2="L_hip_1" />
-        <exclude body1="R_hip_3" body2="L_hip_2" />
-        <exclude body1="R_hip_3" body2="L_hip_3" />
-        <exclude body1="R_hip_3" body2="L_knee_1" />
-        <exclude body1="R_hip_3" body2="L_knee_2" />
-        <exclude body1="R_hip_3" body2="L_ankle_1" />
-        <exclude body1="R_hip_3" body2="L_ankle_2" />
-        <exclude body1="R_knee_1" body2="R_knee_2" />
-        <exclude body1="R_knee_1" body2="R_ankle_1" />
-        <exclude body1="R_knee_1" body2="R_ankle_2" />
-        <exclude body1="R_knee_1" body2="L_hip_1" />
-        <exclude body1="R_knee_1" body2="L_hip_2" />
-        <exclude body1="R_knee_1" body2="L_hip_3" />
-        <exclude body1="R_knee_1" body2="L_knee_1" />
-        <exclude body1="R_knee_1" body2="L_knee_2" />
-        <exclude body1="R_knee_1" body2="L_ankle_1" />
-        <exclude body1="R_knee_1" body2="L_ankle_2" />
-        <exclude body1="R_knee_2" body2="R_ankle_1" />
-        <exclude body1="R_knee_2" body2="R_ankle_2" />
-        <exclude body1="R_knee_2" body2="L_hip_1" />
-        <exclude body1="R_knee_2" body2="L_hip_2" />
-        <exclude body1="R_knee_2" body2="L_hip_3" />
-        <exclude body1="R_knee_2" body2="L_knee_1" />
-        <exclude body1="R_knee_2" body2="L_knee_2" />
-        <exclude body1="R_knee_2" body2="L_ankle_1" />
-        <exclude body1="R_knee_2" body2="L_ankle_2" />
-        <exclude body1="R_ankle_1" body2="R_ankle_2" />
-        <exclude body1="R_ankle_1" body2="L_hip_1" />
-        <exclude body1="R_ankle_1" body2="L_hip_2" />
-        <exclude body1="R_ankle_1" body2="L_hip_3" />
-        <exclude body1="R_ankle_1" body2="L_knee_1" />
-        <exclude body1="R_ankle_1" body2="L_knee_2" />
-        <exclude body1="R_ankle_1" body2="L_ankle_1" />
-        <exclude body1="R_ankle_1" body2="L_ankle_2" />
-        <exclude body1="R_ankle_2" body2="L_hip_1" />
-        <exclude body1="R_ankle_2" body2="L_hip_2" />
-        <exclude body1="R_ankle_2" body2="L_hip_3" />
-        <exclude body1="R_ankle_2" body2="L_knee_1" />
-        <exclude body1="R_ankle_2" body2="L_knee_2" />
-        <exclude body1="R_ankle_2" body2="L_ankle_1" />
-        <exclude body1="R_ankle_2" body2="L_ankle_2" />
-        <exclude body1="L_hip_1" body2="L_hip_2" />
-        <exclude body1="L_hip_1" body2="L_hip_3" />
-        <exclude body1="L_hip_1" body2="L_knee_1" />
-        <exclude body1="L_hip_1" body2="L_knee_2" />
-        <exclude body1="L_hip_1" body2="L_ankle_1" />
-        <exclude body1="L_hip_1" body2="L_ankle_2" />
-        <exclude body1="L_hip_2" body2="L_hip_3" />
-        <exclude body1="L_hip_2" body2="L_knee_1" />
-        <exclude body1="L_hip_2" body2="L_knee_2" />
-        <exclude body1="L_hip_2" body2="L_ankle_1" />
-        <exclude body1="L_hip_2" body2="L_ankle_2" />
-        <exclude body1="L_hip_3" body2="L_knee_1" />
-        <exclude body1="L_hip_3" body2="L_knee_2" />
-        <exclude body1="L_hip_3" body2="L_ankle_1" />
-        <exclude body1="L_hip_3" body2="L_ankle_2" />
-        <exclude body1="L_knee_1" body2="L_knee_2" />
-        <exclude body1="L_knee_1" body2="L_ankle_1" />
-        <exclude body1="L_knee_1" body2="L_ankle_2" />
-        <exclude body1="L_knee_2" body2="L_ankle_1" />
-        <exclude body1="L_knee_2" body2="L_ankle_2" />
-        <exclude body1="L_ankle_1" body2="L_ankle_2" />
-    </contact>
-    <worldbody>
-        <light directional="false" diffuse="0.2 0.2 0.2" specular="0 0 0" pos="0 0 2" dir="0 0 -1" castshadow="false"/>
-        <body name="torso" pos="0 0 1.25">
-          <freejoint name="root" />
-          <inertial pos="0.000550229702140016 0.000245474501299226 0.166981875072049" quat="1 0 0 0" mass="26.3712421112853" diaginertia="0.284090758604728 0.418241196537563 0.329268995000378" />
-          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.501961 1 0.501961 1" mesh="torso" />
-          <geom type="mesh" rgba="0.501961 1 0.501961 1" mesh="convex_torso" />
-          <!-- site for root imu sensor -->
+    <default class="visual">
+      <geom condim="3" material="matgeom" type="mesh" group="1" conaffinity="0" contype="0"/>
+    </default>
+    <default class="L_foot">
+      <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
+      <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
+    </default>
+    <default class="R_foot">
+      <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
+    </default>
+    <default class="L_gripper_1">
+      <!-- R_gripper_2 -->
+      <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
+    </default>
+    <default class="L_gripper_2">
+      <!-- L_gripper_1 -->
+      <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
+    </default>
+  </default>
+  <visual>
+    <map force="0.1" zfar="30"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <quality shadowsize="2048"/>
+    <global offwidth="800" offheight="800"/>
+  </visual>
+  <asset>
+    <mesh name="torso" file="torso.STL"/>
+    <mesh name="R_shoulder_1" file="R_shoulder_1.STL"/>
+    <mesh name="R_shoulder_2" file="R_shoulder_2.STL"/>
+    <mesh name="R_shoulder_3" file="R_shoulder_3.STL"/>
+    <mesh name="R_elbow_1" file="R_elbow_1.STL"/>
+    <mesh name="R_elbow_2" file="R_elbow_2.STL"/>
+    <mesh name="R_wrist_1" file="R_wrist_1.STL"/>
+    <mesh name="R_wrist_2" file="R_wrist_2.STL"/>
+    <mesh name="R_wrist_6_axis" file="R_wrist_6_axis.STL"/>
+    <mesh name="R_hand" file="R_hand.STL"/>
+    <mesh name="R_gripper_1" file="R_gripper_1.STL"/>
+    <mesh name="R_gripper_2" file="R_gripper_2.STL"/>
+    <mesh name="L_shoulder_1" file="L_shoulder_1.STL"/>
+    <mesh name="L_shoulder_2" file="L_shoulder_2.STL"/>
+    <mesh name="L_shoulder_3" file="L_shoulder_3.STL"/>
+    <mesh name="L_elbow_1" file="L_elbow_1.STL"/>
+    <mesh name="L_elbow_2" file="L_elbow_2.STL"/>
+    <mesh name="L_wrist_1" file="L_wrist_1.STL"/>
+    <mesh name="L_wrist_2" file="L_wrist_2.STL"/>
+    <mesh name="L_wrist_6_axis" file="L_wrist_6_axis.STL"/>
+    <mesh name="L_hand" file="L_hand.STL"/>
+    <mesh name="L_gripper_1" file="L_gripper_1.STL"/>
+    <mesh name="L_gripper_2" file="L_gripper_2.STL"/>
+    <mesh name="waist_0" file="waist_0.STL"/>
+    <mesh name="waist_1" file="waist_1.STL"/>
+    <mesh name="R_hip_1" file="R_hip_1.STL"/>
+    <mesh name="R_hip_2" file="R_hip_2.STL"/>
+    <mesh name="R_hip_3" file="R_hip_3.STL"/>
+    <mesh name="R_knee_1" file="R_knee_1.STL"/>
+    <mesh name="R_knee_2" file="R_knee_2.STL"/>
+    <mesh name="R_ankle_1" file="R_ankle_1.STL"/>
+    <mesh name="R_ankle_2" file="R_ankle_2.STL"/>
+    <mesh name="R_ankle_6_axis" file="R_ankle_6_axis.STL"/>
+    <mesh name="R_foot" file="R_foot.STL"/>
+    <mesh name="L_hip_1" file="L_hip_1.STL"/>
+    <mesh name="L_hip_2" file="L_hip_2.STL"/>
+    <mesh name="L_hip_3" file="L_hip_3.STL"/>
+    <mesh name="L_knee_1" file="L_knee_1.STL"/>
+    <mesh name="L_knee_2" file="L_knee_2.STL"/>
+    <mesh name="L_ankle_1" file="L_ankle_1.STL"/>
+    <mesh name="L_ankle_2" file="L_ankle_2.STL"/>
+    <mesh name="L_ankle_6_axis" file="L_ankle_6_axis.STL"/>
+    <mesh name="L_foot" file="L_foot.STL"/>
+    <mesh name="convex_torso" file="convex/torso.STL"/>
+    <mesh name="convex_R_shoulder_1" file="convex/R_shoulder_1.STL"/>
+    <mesh name="convex_R_shoulder_2" file="convex/R_shoulder_2.STL"/>
+    <mesh name="convex_R_shoulder_3" file="convex/R_shoulder_3.STL"/>
+    <mesh name="convex_R_elbow_1" file="convex/R_elbow_1.STL"/>
+    <mesh name="convex_R_elbow_2" file="convex/R_elbow_2.STL"/>
+    <mesh name="convex_R_wrist_1" file="convex/R_wrist_1.STL"/>
+    <mesh name="convex_R_wrist_2" file="convex/R_wrist_2.STL"/>
+    <mesh name="convex_R_wrist_6_axis" file="convex/R_wrist_6_axis.STL"/>
+    <mesh name="convex_R_hand" file="convex/R_hand.STL"/>
+    <mesh name="convex_R_gripper_1" file="convex/R_gripper_1.STL"/>
+    <mesh name="convex_R_gripper_2" file="convex/R_gripper_2.STL"/>
+    <mesh name="convex_L_shoulder_1" file="convex/L_shoulder_1.STL"/>
+    <mesh name="convex_L_shoulder_2" file="convex/L_shoulder_2.STL"/>
+    <mesh name="convex_L_shoulder_3" file="convex/L_shoulder_3.STL"/>
+    <mesh name="convex_L_elbow_1" file="convex/L_elbow_1.STL"/>
+    <mesh name="convex_L_elbow_2" file="convex/L_elbow_2.STL"/>
+    <mesh name="convex_L_wrist_1" file="convex/L_wrist_1.STL"/>
+    <mesh name="convex_L_wrist_2" file="convex/L_wrist_2.STL"/>
+    <mesh name="convex_L_wrist_6_axis" file="convex/L_wrist_6_axis.STL"/>
+    <mesh name="convex_L_hand" file="convex/L_hand.STL"/>
+    <mesh name="convex_L_gripper_1" file="convex/L_gripper_1.STL"/>
+    <mesh name="convex_L_gripper_2" file="convex/L_gripper_2.STL"/>
+    <mesh name="convex_waist_0" file="convex/waist_0.STL"/>
+    <mesh name="convex_waist_1" file="convex/waist_1.STL"/>
+    <mesh name="convex_R_hip_1" file="convex/R_hip_1.STL"/>
+    <mesh name="convex_R_hip_2" file="convex/R_hip_2.STL"/>
+    <mesh name="convex_R_hip_3" file="convex/R_hip_3.STL"/>
+    <mesh name="convex_R_knee_1" file="convex/R_knee_1.STL"/>
+    <mesh name="convex_R_knee_2" file="convex/R_knee_2.STL"/>
+    <mesh name="convex_R_ankle_1" file="convex/R_ankle_1.STL"/>
+    <mesh name="convex_R_ankle_2" file="convex/R_ankle_2.STL"/>
+    <mesh name="convex_R_ankle_6_axis" file="convex/R_ankle_6_axis.STL"/>
+    <mesh name="convex_R_foot" file="convex/R_foot.STL"/>
+    <mesh name="convex_L_hip_1" file="convex/L_hip_1.STL"/>
+    <mesh name="convex_L_hip_2" file="convex/L_hip_2.STL"/>
+    <mesh name="convex_L_hip_3" file="convex/L_hip_3.STL"/>
+    <mesh name="convex_L_knee_1" file="convex/L_knee_1.STL"/>
+    <mesh name="convex_L_knee_2" file="convex/L_knee_2.STL"/>
+    <mesh name="convex_L_ankle_1" file="convex/L_ankle_1.STL"/>
+    <mesh name="convex_L_ankle_2" file="convex/L_ankle_2.STL"/>
+    <mesh name="convex_L_ankle_6_axis" file="convex/L_ankle_6_axis.STL"/>
+    <mesh name="convex_L_foot" file="convex/L_foot.STL"/>
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
+    <material name="matgeom" texture="texgeom" texuniform="true" rgba="0.8 0.6 .4 1"/>
+  </asset>
+  <contact>
+    <exclude body1="torso" body2="R_shoulder_1"/>
+    <exclude body1="torso" body2="R_shoulder_2"/>
+    <exclude body1="torso" body2="R_shoulder_3"/>
+    <exclude body1="torso" body2="R_elbow_1"/>
+    <exclude body1="torso" body2="R_elbow_2"/>
+    <exclude body1="torso" body2="R_wrist_1"/>
+    <exclude body1="torso" body2="R_wrist_2"/>
+    <exclude body1="torso" body2="R_gripper_1"/>
+    <exclude body1="torso" body2="R_gripper_2"/>
+    <exclude body1="torso" body2="L_shoulder_1"/>
+    <exclude body1="torso" body2="L_shoulder_2"/>
+    <exclude body1="torso" body2="L_shoulder_3"/>
+    <exclude body1="torso" body2="L_elbow_1"/>
+    <exclude body1="torso" body2="L_elbow_2"/>
+    <exclude body1="torso" body2="L_wrist_1"/>
+    <exclude body1="torso" body2="L_wrist_2"/>
+    <exclude body1="torso" body2="L_gripper_1"/>
+    <exclude body1="torso" body2="L_gripper_2"/>
+    <exclude body1="torso" body2="waist_0"/>
+    <exclude body1="torso" body2="waist_1"/>
+    <exclude body1="torso" body2="R_hip_1"/>
+    <exclude body1="torso" body2="R_hip_2"/>
+    <exclude body1="torso" body2="R_hip_3"/>
+    <exclude body1="torso" body2="R_knee_1"/>
+    <exclude body1="torso" body2="R_knee_2"/>
+    <exclude body1="torso" body2="R_ankle_1"/>
+    <exclude body1="torso" body2="R_ankle_2"/>
+    <exclude body1="torso" body2="L_hip_1"/>
+    <exclude body1="torso" body2="L_hip_2"/>
+    <exclude body1="torso" body2="L_hip_3"/>
+    <exclude body1="torso" body2="L_knee_1"/>
+    <exclude body1="torso" body2="L_knee_2"/>
+    <exclude body1="torso" body2="L_ankle_1"/>
+    <exclude body1="torso" body2="L_ankle_2"/>
+    <exclude body1="R_shoulder_1" body2="R_shoulder_2"/>
+    <exclude body1="R_shoulder_1" body2="R_shoulder_3"/>
+    <exclude body1="R_shoulder_1" body2="R_elbow_1"/>
+    <exclude body1="R_shoulder_1" body2="R_elbow_2"/>
+    <exclude body1="R_shoulder_1" body2="R_wrist_1"/>
+    <exclude body1="R_shoulder_1" body2="R_wrist_2"/>
+    <exclude body1="R_shoulder_1" body2="R_gripper_1"/>
+    <exclude body1="R_shoulder_1" body2="R_gripper_2"/>
+    <exclude body1="R_shoulder_1" body2="L_shoulder_1"/>
+    <exclude body1="R_shoulder_1" body2="L_shoulder_2"/>
+    <exclude body1="R_shoulder_1" body2="L_shoulder_3"/>
+    <exclude body1="R_shoulder_1" body2="L_elbow_1"/>
+    <exclude body1="R_shoulder_1" body2="L_elbow_2"/>
+    <exclude body1="R_shoulder_1" body2="L_wrist_1"/>
+    <exclude body1="R_shoulder_1" body2="L_wrist_2"/>
+    <exclude body1="R_shoulder_1" body2="L_gripper_1"/>
+    <exclude body1="R_shoulder_1" body2="L_gripper_2"/>
+    <exclude body1="R_shoulder_1" body2="waist_0"/>
+    <exclude body1="R_shoulder_1" body2="waist_1"/>
+    <exclude body1="R_shoulder_1" body2="R_hip_1"/>
+    <exclude body1="R_shoulder_1" body2="R_hip_2"/>
+    <exclude body1="R_shoulder_1" body2="R_hip_3"/>
+    <exclude body1="R_shoulder_1" body2="R_knee_1"/>
+    <exclude body1="R_shoulder_1" body2="R_knee_2"/>
+    <exclude body1="R_shoulder_1" body2="R_ankle_1"/>
+    <exclude body1="R_shoulder_1" body2="R_ankle_2"/>
+    <exclude body1="R_shoulder_1" body2="L_hip_1"/>
+    <exclude body1="R_shoulder_1" body2="L_hip_2"/>
+    <exclude body1="R_shoulder_1" body2="L_hip_3"/>
+    <exclude body1="R_shoulder_1" body2="L_knee_1"/>
+    <exclude body1="R_shoulder_1" body2="L_knee_2"/>
+    <exclude body1="R_shoulder_1" body2="L_ankle_1"/>
+    <exclude body1="R_shoulder_1" body2="L_ankle_2"/>
+    <exclude body1="R_shoulder_2" body2="R_shoulder_3"/>
+    <exclude body1="R_shoulder_2" body2="R_elbow_1"/>
+    <exclude body1="R_shoulder_2" body2="R_elbow_2"/>
+    <exclude body1="R_shoulder_2" body2="R_wrist_1"/>
+    <exclude body1="R_shoulder_2" body2="R_wrist_2"/>
+    <exclude body1="R_shoulder_2" body2="R_gripper_1"/>
+    <exclude body1="R_shoulder_2" body2="R_gripper_2"/>
+    <exclude body1="R_shoulder_2" body2="L_shoulder_1"/>
+    <exclude body1="R_shoulder_2" body2="L_shoulder_2"/>
+    <exclude body1="R_shoulder_2" body2="L_shoulder_3"/>
+    <exclude body1="R_shoulder_2" body2="L_elbow_1"/>
+    <exclude body1="R_shoulder_2" body2="L_elbow_2"/>
+    <exclude body1="R_shoulder_2" body2="L_wrist_1"/>
+    <exclude body1="R_shoulder_2" body2="L_wrist_2"/>
+    <exclude body1="R_shoulder_2" body2="L_gripper_1"/>
+    <exclude body1="R_shoulder_2" body2="L_gripper_2"/>
+    <exclude body1="R_shoulder_2" body2="waist_0"/>
+    <exclude body1="R_shoulder_2" body2="waist_1"/>
+    <exclude body1="R_shoulder_2" body2="R_hip_1"/>
+    <exclude body1="R_shoulder_2" body2="R_hip_2"/>
+    <exclude body1="R_shoulder_2" body2="R_hip_3"/>
+    <exclude body1="R_shoulder_2" body2="R_knee_1"/>
+    <exclude body1="R_shoulder_2" body2="R_knee_2"/>
+    <exclude body1="R_shoulder_2" body2="R_ankle_1"/>
+    <exclude body1="R_shoulder_2" body2="R_ankle_2"/>
+    <exclude body1="R_shoulder_2" body2="L_hip_1"/>
+    <exclude body1="R_shoulder_2" body2="L_hip_2"/>
+    <exclude body1="R_shoulder_2" body2="L_hip_3"/>
+    <exclude body1="R_shoulder_2" body2="L_knee_1"/>
+    <exclude body1="R_shoulder_2" body2="L_knee_2"/>
+    <exclude body1="R_shoulder_2" body2="L_ankle_1"/>
+    <exclude body1="R_shoulder_2" body2="L_ankle_2"/>
+    <exclude body1="R_shoulder_3" body2="R_elbow_1"/>
+    <exclude body1="R_shoulder_3" body2="R_elbow_2"/>
+    <exclude body1="R_shoulder_3" body2="R_wrist_1"/>
+    <exclude body1="R_shoulder_3" body2="R_wrist_2"/>
+    <exclude body1="R_shoulder_3" body2="R_gripper_1"/>
+    <exclude body1="R_shoulder_3" body2="R_gripper_2"/>
+    <exclude body1="R_shoulder_3" body2="L_shoulder_1"/>
+    <exclude body1="R_shoulder_3" body2="L_shoulder_2"/>
+    <exclude body1="R_shoulder_3" body2="L_shoulder_3"/>
+    <exclude body1="R_shoulder_3" body2="L_elbow_1"/>
+    <exclude body1="R_shoulder_3" body2="L_elbow_2"/>
+    <exclude body1="R_shoulder_3" body2="L_wrist_1"/>
+    <exclude body1="R_shoulder_3" body2="L_wrist_2"/>
+    <exclude body1="R_shoulder_3" body2="L_gripper_1"/>
+    <exclude body1="R_shoulder_3" body2="L_gripper_2"/>
+    <exclude body1="R_shoulder_3" body2="waist_0"/>
+    <exclude body1="R_shoulder_3" body2="waist_1"/>
+    <exclude body1="R_shoulder_3" body2="R_hip_1"/>
+    <exclude body1="R_shoulder_3" body2="R_hip_2"/>
+    <exclude body1="R_shoulder_3" body2="R_hip_3"/>
+    <exclude body1="R_shoulder_3" body2="R_knee_1"/>
+    <exclude body1="R_shoulder_3" body2="R_knee_2"/>
+    <exclude body1="R_shoulder_3" body2="R_ankle_1"/>
+    <exclude body1="R_shoulder_3" body2="R_ankle_2"/>
+    <exclude body1="R_shoulder_3" body2="L_hip_1"/>
+    <exclude body1="R_shoulder_3" body2="L_hip_2"/>
+    <exclude body1="R_shoulder_3" body2="L_hip_3"/>
+    <exclude body1="R_shoulder_3" body2="L_knee_1"/>
+    <exclude body1="R_shoulder_3" body2="L_knee_2"/>
+    <exclude body1="R_shoulder_3" body2="L_ankle_1"/>
+    <exclude body1="R_shoulder_3" body2="L_ankle_2"/>
+    <exclude body1="R_elbow_1" body2="R_elbow_2"/>
+    <exclude body1="R_elbow_1" body2="R_wrist_1"/>
+    <exclude body1="R_elbow_1" body2="R_wrist_2"/>
+    <exclude body1="R_elbow_1" body2="R_gripper_1"/>
+    <exclude body1="R_elbow_1" body2="R_gripper_2"/>
+    <exclude body1="R_elbow_1" body2="L_shoulder_1"/>
+    <exclude body1="R_elbow_1" body2="L_shoulder_2"/>
+    <exclude body1="R_elbow_1" body2="L_shoulder_3"/>
+    <exclude body1="R_elbow_1" body2="L_elbow_1"/>
+    <exclude body1="R_elbow_1" body2="L_elbow_2"/>
+    <exclude body1="R_elbow_1" body2="L_wrist_1"/>
+    <exclude body1="R_elbow_1" body2="L_wrist_2"/>
+    <exclude body1="R_elbow_1" body2="L_gripper_1"/>
+    <exclude body1="R_elbow_1" body2="L_gripper_2"/>
+    <exclude body1="R_elbow_1" body2="waist_0"/>
+    <exclude body1="R_elbow_1" body2="waist_1"/>
+    <exclude body1="R_elbow_1" body2="R_hip_1"/>
+    <exclude body1="R_elbow_1" body2="R_hip_2"/>
+    <exclude body1="R_elbow_1" body2="R_hip_3"/>
+    <exclude body1="R_elbow_1" body2="R_knee_1"/>
+    <exclude body1="R_elbow_1" body2="R_knee_2"/>
+    <exclude body1="R_elbow_1" body2="R_ankle_1"/>
+    <exclude body1="R_elbow_1" body2="R_ankle_2"/>
+    <exclude body1="R_elbow_1" body2="L_hip_1"/>
+    <exclude body1="R_elbow_1" body2="L_hip_2"/>
+    <exclude body1="R_elbow_1" body2="L_hip_3"/>
+    <exclude body1="R_elbow_1" body2="L_knee_1"/>
+    <exclude body1="R_elbow_1" body2="L_knee_2"/>
+    <exclude body1="R_elbow_1" body2="L_ankle_1"/>
+    <exclude body1="R_elbow_1" body2="L_ankle_2"/>
+    <exclude body1="R_elbow_2" body2="R_wrist_1"/>
+    <exclude body1="R_elbow_2" body2="R_wrist_2"/>
+    <exclude body1="R_elbow_2" body2="R_gripper_1"/>
+    <exclude body1="R_elbow_2" body2="R_gripper_2"/>
+    <exclude body1="R_elbow_2" body2="L_shoulder_1"/>
+    <exclude body1="R_elbow_2" body2="L_shoulder_2"/>
+    <exclude body1="R_elbow_2" body2="L_shoulder_3"/>
+    <exclude body1="R_elbow_2" body2="L_elbow_1"/>
+    <exclude body1="R_elbow_2" body2="L_elbow_2"/>
+    <exclude body1="R_elbow_2" body2="L_wrist_1"/>
+    <exclude body1="R_elbow_2" body2="L_wrist_2"/>
+    <exclude body1="R_elbow_2" body2="L_gripper_1"/>
+    <exclude body1="R_elbow_2" body2="L_gripper_2"/>
+    <exclude body1="R_elbow_2" body2="waist_0"/>
+    <exclude body1="R_elbow_2" body2="waist_1"/>
+    <exclude body1="R_elbow_2" body2="R_hip_1"/>
+    <exclude body1="R_elbow_2" body2="R_hip_2"/>
+    <exclude body1="R_elbow_2" body2="R_hip_3"/>
+    <exclude body1="R_elbow_2" body2="R_knee_1"/>
+    <exclude body1="R_elbow_2" body2="R_knee_2"/>
+    <exclude body1="R_elbow_2" body2="R_ankle_1"/>
+    <exclude body1="R_elbow_2" body2="R_ankle_2"/>
+    <exclude body1="R_elbow_2" body2="L_hip_1"/>
+    <exclude body1="R_elbow_2" body2="L_hip_2"/>
+    <exclude body1="R_elbow_2" body2="L_hip_3"/>
+    <exclude body1="R_elbow_2" body2="L_knee_1"/>
+    <exclude body1="R_elbow_2" body2="L_knee_2"/>
+    <exclude body1="R_elbow_2" body2="L_ankle_1"/>
+    <exclude body1="R_elbow_2" body2="L_ankle_2"/>
+    <exclude body1="R_wrist_1" body2="R_wrist_2"/>
+    <exclude body1="R_wrist_1" body2="R_gripper_1"/>
+    <exclude body1="R_wrist_1" body2="R_gripper_2"/>
+    <exclude body1="R_wrist_1" body2="L_shoulder_1"/>
+    <exclude body1="R_wrist_1" body2="L_shoulder_2"/>
+    <exclude body1="R_wrist_1" body2="L_shoulder_3"/>
+    <exclude body1="R_wrist_1" body2="L_elbow_1"/>
+    <exclude body1="R_wrist_1" body2="L_elbow_2"/>
+    <exclude body1="R_wrist_1" body2="L_wrist_1"/>
+    <exclude body1="R_wrist_1" body2="L_wrist_2"/>
+    <exclude body1="R_wrist_1" body2="L_gripper_1"/>
+    <exclude body1="R_wrist_1" body2="L_gripper_2"/>
+    <exclude body1="R_wrist_1" body2="waist_0"/>
+    <exclude body1="R_wrist_1" body2="waist_1"/>
+    <exclude body1="R_wrist_1" body2="R_hip_1"/>
+    <exclude body1="R_wrist_1" body2="R_hip_2"/>
+    <exclude body1="R_wrist_1" body2="R_hip_3"/>
+    <exclude body1="R_wrist_1" body2="R_knee_1"/>
+    <exclude body1="R_wrist_1" body2="R_knee_2"/>
+    <exclude body1="R_wrist_1" body2="R_ankle_1"/>
+    <exclude body1="R_wrist_1" body2="R_ankle_2"/>
+    <exclude body1="R_wrist_1" body2="L_hip_1"/>
+    <exclude body1="R_wrist_1" body2="L_hip_2"/>
+    <exclude body1="R_wrist_1" body2="L_hip_3"/>
+    <exclude body1="R_wrist_1" body2="L_knee_1"/>
+    <exclude body1="R_wrist_1" body2="L_knee_2"/>
+    <exclude body1="R_wrist_1" body2="L_ankle_1"/>
+    <exclude body1="R_wrist_1" body2="L_ankle_2"/>
+    <exclude body1="R_wrist_2" body2="R_gripper_1"/>
+    <exclude body1="R_wrist_2" body2="R_gripper_2"/>
+    <exclude body1="R_wrist_2" body2="L_shoulder_1"/>
+    <exclude body1="R_wrist_2" body2="L_shoulder_2"/>
+    <exclude body1="R_wrist_2" body2="L_shoulder_3"/>
+    <exclude body1="R_wrist_2" body2="L_elbow_1"/>
+    <exclude body1="R_wrist_2" body2="L_elbow_2"/>
+    <exclude body1="R_wrist_2" body2="L_wrist_1"/>
+    <exclude body1="R_wrist_2" body2="L_wrist_2"/>
+    <exclude body1="R_wrist_2" body2="L_gripper_1"/>
+    <exclude body1="R_wrist_2" body2="L_gripper_2"/>
+    <exclude body1="R_wrist_2" body2="waist_0"/>
+    <exclude body1="R_wrist_2" body2="waist_1"/>
+    <exclude body1="R_wrist_2" body2="R_hip_1"/>
+    <exclude body1="R_wrist_2" body2="R_hip_2"/>
+    <exclude body1="R_wrist_2" body2="R_hip_3"/>
+    <exclude body1="R_wrist_2" body2="R_knee_1"/>
+    <exclude body1="R_wrist_2" body2="R_knee_2"/>
+    <exclude body1="R_wrist_2" body2="R_ankle_1"/>
+    <exclude body1="R_wrist_2" body2="R_ankle_2"/>
+    <exclude body1="R_wrist_2" body2="L_hip_1"/>
+    <exclude body1="R_wrist_2" body2="L_hip_2"/>
+    <exclude body1="R_wrist_2" body2="L_hip_3"/>
+    <exclude body1="R_wrist_2" body2="L_knee_1"/>
+    <exclude body1="R_wrist_2" body2="L_knee_2"/>
+    <exclude body1="R_wrist_2" body2="L_ankle_1"/>
+    <exclude body1="R_wrist_2" body2="L_ankle_2"/>
+    <exclude body1="R_gripper_1" body2="R_gripper_2"/>
+    <exclude body1="R_gripper_1" body2="L_shoulder_1"/>
+    <exclude body1="R_gripper_1" body2="L_shoulder_2"/>
+    <exclude body1="R_gripper_1" body2="L_shoulder_3"/>
+    <exclude body1="R_gripper_1" body2="L_elbow_1"/>
+    <exclude body1="R_gripper_1" body2="L_elbow_2"/>
+    <exclude body1="R_gripper_1" body2="L_wrist_1"/>
+    <exclude body1="R_gripper_1" body2="L_wrist_2"/>
+    <exclude body1="R_gripper_1" body2="L_gripper_1"/>
+    <exclude body1="R_gripper_1" body2="L_gripper_2"/>
+    <exclude body1="R_gripper_1" body2="waist_0"/>
+    <exclude body1="R_gripper_1" body2="waist_1"/>
+    <exclude body1="R_gripper_1" body2="R_hip_1"/>
+    <exclude body1="R_gripper_1" body2="R_hip_2"/>
+    <exclude body1="R_gripper_1" body2="R_hip_3"/>
+    <exclude body1="R_gripper_1" body2="R_knee_1"/>
+    <exclude body1="R_gripper_1" body2="R_knee_2"/>
+    <exclude body1="R_gripper_1" body2="R_ankle_1"/>
+    <exclude body1="R_gripper_1" body2="R_ankle_2"/>
+    <exclude body1="R_gripper_1" body2="L_hip_1"/>
+    <exclude body1="R_gripper_1" body2="L_hip_2"/>
+    <exclude body1="R_gripper_1" body2="L_hip_3"/>
+    <exclude body1="R_gripper_1" body2="L_knee_1"/>
+    <exclude body1="R_gripper_1" body2="L_knee_2"/>
+    <exclude body1="R_gripper_1" body2="L_ankle_1"/>
+    <exclude body1="R_gripper_1" body2="L_ankle_2"/>
+    <exclude body1="R_gripper_2" body2="L_shoulder_1"/>
+    <exclude body1="R_gripper_2" body2="L_shoulder_2"/>
+    <exclude body1="R_gripper_2" body2="L_shoulder_3"/>
+    <exclude body1="R_gripper_2" body2="L_elbow_1"/>
+    <exclude body1="R_gripper_2" body2="L_elbow_2"/>
+    <exclude body1="R_gripper_2" body2="L_wrist_1"/>
+    <exclude body1="R_gripper_2" body2="L_wrist_2"/>
+    <exclude body1="R_gripper_2" body2="L_gripper_1"/>
+    <exclude body1="R_gripper_2" body2="L_gripper_2"/>
+    <exclude body1="R_gripper_2" body2="waist_0"/>
+    <exclude body1="R_gripper_2" body2="waist_1"/>
+    <exclude body1="R_gripper_2" body2="R_hip_1"/>
+    <exclude body1="R_gripper_2" body2="R_hip_2"/>
+    <exclude body1="R_gripper_2" body2="R_hip_3"/>
+    <exclude body1="R_gripper_2" body2="R_knee_1"/>
+    <exclude body1="R_gripper_2" body2="R_knee_2"/>
+    <exclude body1="R_gripper_2" body2="R_ankle_1"/>
+    <exclude body1="R_gripper_2" body2="R_ankle_2"/>
+    <exclude body1="R_gripper_2" body2="L_hip_1"/>
+    <exclude body1="R_gripper_2" body2="L_hip_2"/>
+    <exclude body1="R_gripper_2" body2="L_hip_3"/>
+    <exclude body1="R_gripper_2" body2="L_knee_1"/>
+    <exclude body1="R_gripper_2" body2="L_knee_2"/>
+    <exclude body1="R_gripper_2" body2="L_ankle_1"/>
+    <exclude body1="R_gripper_2" body2="L_ankle_2"/>
+    <exclude body1="L_shoulder_1" body2="L_shoulder_2"/>
+    <exclude body1="L_shoulder_1" body2="L_shoulder_3"/>
+    <exclude body1="L_shoulder_1" body2="L_elbow_1"/>
+    <exclude body1="L_shoulder_1" body2="L_elbow_2"/>
+    <exclude body1="L_shoulder_1" body2="L_wrist_1"/>
+    <exclude body1="L_shoulder_1" body2="L_wrist_2"/>
+    <exclude body1="L_shoulder_1" body2="L_gripper_1"/>
+    <exclude body1="L_shoulder_1" body2="L_gripper_2"/>
+    <exclude body1="L_shoulder_1" body2="waist_0"/>
+    <exclude body1="L_shoulder_1" body2="waist_1"/>
+    <exclude body1="L_shoulder_1" body2="R_hip_1"/>
+    <exclude body1="L_shoulder_1" body2="R_hip_2"/>
+    <exclude body1="L_shoulder_1" body2="R_hip_3"/>
+    <exclude body1="L_shoulder_1" body2="R_knee_1"/>
+    <exclude body1="L_shoulder_1" body2="R_knee_2"/>
+    <exclude body1="L_shoulder_1" body2="R_ankle_1"/>
+    <exclude body1="L_shoulder_1" body2="R_ankle_2"/>
+    <exclude body1="L_shoulder_1" body2="L_hip_1"/>
+    <exclude body1="L_shoulder_1" body2="L_hip_2"/>
+    <exclude body1="L_shoulder_1" body2="L_hip_3"/>
+    <exclude body1="L_shoulder_1" body2="L_knee_1"/>
+    <exclude body1="L_shoulder_1" body2="L_knee_2"/>
+    <exclude body1="L_shoulder_1" body2="L_ankle_1"/>
+    <exclude body1="L_shoulder_1" body2="L_ankle_2"/>
+    <exclude body1="L_shoulder_2" body2="L_shoulder_3"/>
+    <exclude body1="L_shoulder_2" body2="L_elbow_1"/>
+    <exclude body1="L_shoulder_2" body2="L_elbow_2"/>
+    <exclude body1="L_shoulder_2" body2="L_wrist_1"/>
+    <exclude body1="L_shoulder_2" body2="L_wrist_2"/>
+    <exclude body1="L_shoulder_2" body2="L_gripper_1"/>
+    <exclude body1="L_shoulder_2" body2="L_gripper_2"/>
+    <exclude body1="L_shoulder_2" body2="waist_0"/>
+    <exclude body1="L_shoulder_2" body2="waist_1"/>
+    <exclude body1="L_shoulder_2" body2="R_hip_1"/>
+    <exclude body1="L_shoulder_2" body2="R_hip_2"/>
+    <exclude body1="L_shoulder_2" body2="R_hip_3"/>
+    <exclude body1="L_shoulder_2" body2="R_knee_1"/>
+    <exclude body1="L_shoulder_2" body2="R_knee_2"/>
+    <exclude body1="L_shoulder_2" body2="R_ankle_1"/>
+    <exclude body1="L_shoulder_2" body2="R_ankle_2"/>
+    <exclude body1="L_shoulder_2" body2="L_hip_1"/>
+    <exclude body1="L_shoulder_2" body2="L_hip_2"/>
+    <exclude body1="L_shoulder_2" body2="L_hip_3"/>
+    <exclude body1="L_shoulder_2" body2="L_knee_1"/>
+    <exclude body1="L_shoulder_2" body2="L_knee_2"/>
+    <exclude body1="L_shoulder_2" body2="L_ankle_1"/>
+    <exclude body1="L_shoulder_2" body2="L_ankle_2"/>
+    <exclude body1="L_shoulder_3" body2="L_elbow_1"/>
+    <exclude body1="L_shoulder_3" body2="L_elbow_2"/>
+    <exclude body1="L_shoulder_3" body2="L_wrist_1"/>
+    <exclude body1="L_shoulder_3" body2="L_wrist_2"/>
+    <exclude body1="L_shoulder_3" body2="L_gripper_1"/>
+    <exclude body1="L_shoulder_3" body2="L_gripper_2"/>
+    <exclude body1="L_shoulder_3" body2="waist_0"/>
+    <exclude body1="L_shoulder_3" body2="waist_1"/>
+    <exclude body1="L_shoulder_3" body2="R_hip_1"/>
+    <exclude body1="L_shoulder_3" body2="R_hip_2"/>
+    <exclude body1="L_shoulder_3" body2="R_hip_3"/>
+    <exclude body1="L_shoulder_3" body2="R_knee_1"/>
+    <exclude body1="L_shoulder_3" body2="R_knee_2"/>
+    <exclude body1="L_shoulder_3" body2="R_ankle_1"/>
+    <exclude body1="L_shoulder_3" body2="R_ankle_2"/>
+    <exclude body1="L_shoulder_3" body2="L_hip_1"/>
+    <exclude body1="L_shoulder_3" body2="L_hip_2"/>
+    <exclude body1="L_shoulder_3" body2="L_hip_3"/>
+    <exclude body1="L_shoulder_3" body2="L_knee_1"/>
+    <exclude body1="L_shoulder_3" body2="L_knee_2"/>
+    <exclude body1="L_shoulder_3" body2="L_ankle_1"/>
+    <exclude body1="L_shoulder_3" body2="L_ankle_2"/>
+    <exclude body1="L_elbow_1" body2="L_elbow_2"/>
+    <exclude body1="L_elbow_1" body2="L_wrist_1"/>
+    <exclude body1="L_elbow_1" body2="L_wrist_2"/>
+    <exclude body1="L_elbow_1" body2="L_gripper_1"/>
+    <exclude body1="L_elbow_1" body2="L_gripper_2"/>
+    <exclude body1="L_elbow_1" body2="waist_0"/>
+    <exclude body1="L_elbow_1" body2="waist_1"/>
+    <exclude body1="L_elbow_1" body2="R_hip_1"/>
+    <exclude body1="L_elbow_1" body2="R_hip_2"/>
+    <exclude body1="L_elbow_1" body2="R_hip_3"/>
+    <exclude body1="L_elbow_1" body2="R_knee_1"/>
+    <exclude body1="L_elbow_1" body2="R_knee_2"/>
+    <exclude body1="L_elbow_1" body2="R_ankle_1"/>
+    <exclude body1="L_elbow_1" body2="R_ankle_2"/>
+    <exclude body1="L_elbow_1" body2="L_hip_1"/>
+    <exclude body1="L_elbow_1" body2="L_hip_2"/>
+    <exclude body1="L_elbow_1" body2="L_hip_3"/>
+    <exclude body1="L_elbow_1" body2="L_knee_1"/>
+    <exclude body1="L_elbow_1" body2="L_knee_2"/>
+    <exclude body1="L_elbow_1" body2="L_ankle_1"/>
+    <exclude body1="L_elbow_1" body2="L_ankle_2"/>
+    <exclude body1="L_elbow_2" body2="L_wrist_1"/>
+    <exclude body1="L_elbow_2" body2="L_wrist_2"/>
+    <exclude body1="L_elbow_2" body2="L_gripper_1"/>
+    <exclude body1="L_elbow_2" body2="L_gripper_2"/>
+    <exclude body1="L_elbow_2" body2="waist_0"/>
+    <exclude body1="L_elbow_2" body2="waist_1"/>
+    <exclude body1="L_elbow_2" body2="R_hip_1"/>
+    <exclude body1="L_elbow_2" body2="R_hip_2"/>
+    <exclude body1="L_elbow_2" body2="R_hip_3"/>
+    <exclude body1="L_elbow_2" body2="R_knee_1"/>
+    <exclude body1="L_elbow_2" body2="R_knee_2"/>
+    <exclude body1="L_elbow_2" body2="R_ankle_1"/>
+    <exclude body1="L_elbow_2" body2="R_ankle_2"/>
+    <exclude body1="L_elbow_2" body2="L_hip_1"/>
+    <exclude body1="L_elbow_2" body2="L_hip_2"/>
+    <exclude body1="L_elbow_2" body2="L_hip_3"/>
+    <exclude body1="L_elbow_2" body2="L_knee_1"/>
+    <exclude body1="L_elbow_2" body2="L_knee_2"/>
+    <exclude body1="L_elbow_2" body2="L_ankle_1"/>
+    <exclude body1="L_elbow_2" body2="L_ankle_2"/>
+    <exclude body1="L_wrist_1" body2="L_wrist_2"/>
+    <exclude body1="L_wrist_1" body2="L_gripper_1"/>
+    <exclude body1="L_wrist_1" body2="L_gripper_2"/>
+    <exclude body1="L_wrist_1" body2="waist_0"/>
+    <exclude body1="L_wrist_1" body2="waist_1"/>
+    <exclude body1="L_wrist_1" body2="R_hip_1"/>
+    <exclude body1="L_wrist_1" body2="R_hip_2"/>
+    <exclude body1="L_wrist_1" body2="R_hip_3"/>
+    <exclude body1="L_wrist_1" body2="R_knee_1"/>
+    <exclude body1="L_wrist_1" body2="R_knee_2"/>
+    <exclude body1="L_wrist_1" body2="R_ankle_1"/>
+    <exclude body1="L_wrist_1" body2="R_ankle_2"/>
+    <exclude body1="L_wrist_1" body2="L_hip_1"/>
+    <exclude body1="L_wrist_1" body2="L_hip_2"/>
+    <exclude body1="L_wrist_1" body2="L_hip_3"/>
+    <exclude body1="L_wrist_1" body2="L_knee_1"/>
+    <exclude body1="L_wrist_1" body2="L_knee_2"/>
+    <exclude body1="L_wrist_1" body2="L_ankle_1"/>
+    <exclude body1="L_wrist_1" body2="L_ankle_2"/>
+    <exclude body1="L_wrist_2" body2="L_gripper_1"/>
+    <exclude body1="L_wrist_2" body2="L_gripper_2"/>
+    <exclude body1="L_wrist_2" body2="waist_0"/>
+    <exclude body1="L_wrist_2" body2="waist_1"/>
+    <exclude body1="L_wrist_2" body2="R_hip_1"/>
+    <exclude body1="L_wrist_2" body2="R_hip_2"/>
+    <exclude body1="L_wrist_2" body2="R_hip_3"/>
+    <exclude body1="L_wrist_2" body2="R_knee_1"/>
+    <exclude body1="L_wrist_2" body2="R_knee_2"/>
+    <exclude body1="L_wrist_2" body2="R_ankle_1"/>
+    <exclude body1="L_wrist_2" body2="R_ankle_2"/>
+    <exclude body1="L_wrist_2" body2="L_hip_1"/>
+    <exclude body1="L_wrist_2" body2="L_hip_2"/>
+    <exclude body1="L_wrist_2" body2="L_hip_3"/>
+    <exclude body1="L_wrist_2" body2="L_knee_1"/>
+    <exclude body1="L_wrist_2" body2="L_knee_2"/>
+    <exclude body1="L_wrist_2" body2="L_ankle_1"/>
+    <exclude body1="L_wrist_2" body2="L_ankle_2"/>
+    <exclude body1="L_gripper_1" body2="L_gripper_2"/>
+    <exclude body1="L_gripper_1" body2="waist_0"/>
+    <exclude body1="L_gripper_1" body2="waist_1"/>
+    <exclude body1="L_gripper_1" body2="R_hip_1"/>
+    <exclude body1="L_gripper_1" body2="R_hip_2"/>
+    <exclude body1="L_gripper_1" body2="R_hip_3"/>
+    <exclude body1="L_gripper_1" body2="R_knee_1"/>
+    <exclude body1="L_gripper_1" body2="R_knee_2"/>
+    <exclude body1="L_gripper_1" body2="R_ankle_1"/>
+    <exclude body1="L_gripper_1" body2="R_ankle_2"/>
+    <exclude body1="L_gripper_1" body2="L_hip_1"/>
+    <exclude body1="L_gripper_1" body2="L_hip_2"/>
+    <exclude body1="L_gripper_1" body2="L_hip_3"/>
+    <exclude body1="L_gripper_1" body2="L_knee_1"/>
+    <exclude body1="L_gripper_1" body2="L_knee_2"/>
+    <exclude body1="L_gripper_1" body2="L_ankle_1"/>
+    <exclude body1="L_gripper_1" body2="L_ankle_2"/>
+    <exclude body1="L_gripper_2" body2="waist_0"/>
+    <exclude body1="L_gripper_2" body2="waist_1"/>
+    <exclude body1="L_gripper_2" body2="R_hip_1"/>
+    <exclude body1="L_gripper_2" body2="R_hip_2"/>
+    <exclude body1="L_gripper_2" body2="R_hip_3"/>
+    <exclude body1="L_gripper_2" body2="R_knee_1"/>
+    <exclude body1="L_gripper_2" body2="R_knee_2"/>
+    <exclude body1="L_gripper_2" body2="R_ankle_1"/>
+    <exclude body1="L_gripper_2" body2="R_ankle_2"/>
+    <exclude body1="L_gripper_2" body2="L_hip_1"/>
+    <exclude body1="L_gripper_2" body2="L_hip_2"/>
+    <exclude body1="L_gripper_2" body2="L_hip_3"/>
+    <exclude body1="L_gripper_2" body2="L_knee_1"/>
+    <exclude body1="L_gripper_2" body2="L_knee_2"/>
+    <exclude body1="L_gripper_2" body2="L_ankle_1"/>
+    <exclude body1="L_gripper_2" body2="L_ankle_2"/>
+    <exclude body1="waist_0" body2="waist_1"/>
+    <exclude body1="waist_0" body2="R_hip_1"/>
+    <exclude body1="waist_0" body2="R_hip_2"/>
+    <exclude body1="waist_0" body2="R_hip_3"/>
+    <exclude body1="waist_0" body2="R_knee_1"/>
+    <exclude body1="waist_0" body2="R_knee_2"/>
+    <exclude body1="waist_0" body2="R_ankle_1"/>
+    <exclude body1="waist_0" body2="R_ankle_2"/>
+    <exclude body1="waist_0" body2="L_hip_1"/>
+    <exclude body1="waist_0" body2="L_hip_2"/>
+    <exclude body1="waist_0" body2="L_hip_3"/>
+    <exclude body1="waist_0" body2="L_knee_1"/>
+    <exclude body1="waist_0" body2="L_knee_2"/>
+    <exclude body1="waist_0" body2="L_ankle_1"/>
+    <exclude body1="waist_0" body2="L_ankle_2"/>
+    <exclude body1="waist_1" body2="R_hip_1"/>
+    <exclude body1="waist_1" body2="R_hip_2"/>
+    <exclude body1="waist_1" body2="R_hip_3"/>
+    <exclude body1="waist_1" body2="R_knee_1"/>
+    <exclude body1="waist_1" body2="R_knee_2"/>
+    <exclude body1="waist_1" body2="R_ankle_1"/>
+    <exclude body1="waist_1" body2="R_ankle_2"/>
+    <exclude body1="waist_1" body2="L_hip_1"/>
+    <exclude body1="waist_1" body2="L_hip_2"/>
+    <exclude body1="waist_1" body2="L_hip_3"/>
+    <exclude body1="waist_1" body2="L_knee_1"/>
+    <exclude body1="waist_1" body2="L_knee_2"/>
+    <exclude body1="waist_1" body2="L_ankle_1"/>
+    <exclude body1="waist_1" body2="L_ankle_2"/>
+    <exclude body1="R_hip_1" body2="R_hip_2"/>
+    <exclude body1="R_hip_1" body2="R_hip_3"/>
+    <exclude body1="R_hip_1" body2="R_knee_1"/>
+    <exclude body1="R_hip_1" body2="R_knee_2"/>
+    <exclude body1="R_hip_1" body2="R_ankle_1"/>
+    <exclude body1="R_hip_1" body2="R_ankle_2"/>
+    <exclude body1="R_hip_1" body2="L_hip_1"/>
+    <exclude body1="R_hip_1" body2="L_hip_2"/>
+    <exclude body1="R_hip_1" body2="L_hip_3"/>
+    <exclude body1="R_hip_1" body2="L_knee_1"/>
+    <exclude body1="R_hip_1" body2="L_knee_2"/>
+    <exclude body1="R_hip_1" body2="L_ankle_1"/>
+    <exclude body1="R_hip_1" body2="L_ankle_2"/>
+    <exclude body1="R_hip_2" body2="R_hip_3"/>
+    <exclude body1="R_hip_2" body2="R_knee_1"/>
+    <exclude body1="R_hip_2" body2="R_knee_2"/>
+    <exclude body1="R_hip_2" body2="R_ankle_1"/>
+    <exclude body1="R_hip_2" body2="R_ankle_2"/>
+    <exclude body1="R_hip_2" body2="L_hip_1"/>
+    <exclude body1="R_hip_2" body2="L_hip_2"/>
+    <exclude body1="R_hip_2" body2="L_hip_3"/>
+    <exclude body1="R_hip_2" body2="L_knee_1"/>
+    <exclude body1="R_hip_2" body2="L_knee_2"/>
+    <exclude body1="R_hip_2" body2="L_ankle_1"/>
+    <exclude body1="R_hip_2" body2="L_ankle_2"/>
+    <exclude body1="R_hip_3" body2="R_knee_1"/>
+    <exclude body1="R_hip_3" body2="R_knee_2"/>
+    <exclude body1="R_hip_3" body2="R_ankle_1"/>
+    <exclude body1="R_hip_3" body2="R_ankle_2"/>
+    <exclude body1="R_hip_3" body2="L_hip_1"/>
+    <exclude body1="R_hip_3" body2="L_hip_2"/>
+    <exclude body1="R_hip_3" body2="L_hip_3"/>
+    <exclude body1="R_hip_3" body2="L_knee_1"/>
+    <exclude body1="R_hip_3" body2="L_knee_2"/>
+    <exclude body1="R_hip_3" body2="L_ankle_1"/>
+    <exclude body1="R_hip_3" body2="L_ankle_2"/>
+    <exclude body1="R_knee_1" body2="R_knee_2"/>
+    <exclude body1="R_knee_1" body2="R_ankle_1"/>
+    <exclude body1="R_knee_1" body2="R_ankle_2"/>
+    <exclude body1="R_knee_1" body2="L_hip_1"/>
+    <exclude body1="R_knee_1" body2="L_hip_2"/>
+    <exclude body1="R_knee_1" body2="L_hip_3"/>
+    <exclude body1="R_knee_1" body2="L_knee_1"/>
+    <exclude body1="R_knee_1" body2="L_knee_2"/>
+    <exclude body1="R_knee_1" body2="L_ankle_1"/>
+    <exclude body1="R_knee_1" body2="L_ankle_2"/>
+    <exclude body1="R_knee_2" body2="R_ankle_1"/>
+    <exclude body1="R_knee_2" body2="R_ankle_2"/>
+    <exclude body1="R_knee_2" body2="L_hip_1"/>
+    <exclude body1="R_knee_2" body2="L_hip_2"/>
+    <exclude body1="R_knee_2" body2="L_hip_3"/>
+    <exclude body1="R_knee_2" body2="L_knee_1"/>
+    <exclude body1="R_knee_2" body2="L_knee_2"/>
+    <exclude body1="R_knee_2" body2="L_ankle_1"/>
+    <exclude body1="R_knee_2" body2="L_ankle_2"/>
+    <exclude body1="R_ankle_1" body2="R_ankle_2"/>
+    <exclude body1="R_ankle_1" body2="L_hip_1"/>
+    <exclude body1="R_ankle_1" body2="L_hip_2"/>
+    <exclude body1="R_ankle_1" body2="L_hip_3"/>
+    <exclude body1="R_ankle_1" body2="L_knee_1"/>
+    <exclude body1="R_ankle_1" body2="L_knee_2"/>
+    <exclude body1="R_ankle_1" body2="L_ankle_1"/>
+    <exclude body1="R_ankle_1" body2="L_ankle_2"/>
+    <exclude body1="R_ankle_2" body2="L_hip_1"/>
+    <exclude body1="R_ankle_2" body2="L_hip_2"/>
+    <exclude body1="R_ankle_2" body2="L_hip_3"/>
+    <exclude body1="R_ankle_2" body2="L_knee_1"/>
+    <exclude body1="R_ankle_2" body2="L_knee_2"/>
+    <exclude body1="R_ankle_2" body2="L_ankle_1"/>
+    <exclude body1="R_ankle_2" body2="L_ankle_2"/>
+    <exclude body1="L_hip_1" body2="L_hip_2"/>
+    <exclude body1="L_hip_1" body2="L_hip_3"/>
+    <exclude body1="L_hip_1" body2="L_knee_1"/>
+    <exclude body1="L_hip_1" body2="L_knee_2"/>
+    <exclude body1="L_hip_1" body2="L_ankle_1"/>
+    <exclude body1="L_hip_1" body2="L_ankle_2"/>
+    <exclude body1="L_hip_2" body2="L_hip_3"/>
+    <exclude body1="L_hip_2" body2="L_knee_1"/>
+    <exclude body1="L_hip_2" body2="L_knee_2"/>
+    <exclude body1="L_hip_2" body2="L_ankle_1"/>
+    <exclude body1="L_hip_2" body2="L_ankle_2"/>
+    <exclude body1="L_hip_3" body2="L_knee_1"/>
+    <exclude body1="L_hip_3" body2="L_knee_2"/>
+    <exclude body1="L_hip_3" body2="L_ankle_1"/>
+    <exclude body1="L_hip_3" body2="L_ankle_2"/>
+    <exclude body1="L_knee_1" body2="L_knee_2"/>
+    <exclude body1="L_knee_1" body2="L_ankle_1"/>
+    <exclude body1="L_knee_1" body2="L_ankle_2"/>
+    <exclude body1="L_knee_2" body2="L_ankle_1"/>
+    <exclude body1="L_knee_2" body2="L_ankle_2"/>
+    <exclude body1="L_ankle_1" body2="L_ankle_2"/>
+  </contact>
+  <worldbody>
+    <body name="waist_1" pos="0 0 1.25">
+      <freejoint name="root"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="waist_1"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="convex_waist_1"/>
+      <body name="waist_0" pos="0 0 0">
+        <inertial pos="2.91281e-05 -0.00227502 -0.0651436" quat="0.995227 -0.0975805 -0.00028445 0.00105614" mass="0.356987" diaginertia="0.000608809 0.000575144 0.000345464"/>
+        <joint name="waist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.872 0.872" armature="0.19"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="waist_0"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="convex_waist_0"/>
+        <body name="torso" pos="0 0.0751589 0.046" quat="1.26918e-09 1.26918e-09 -0.707107 -0.707107">
           <site name="imu"  size="0.01" pos="0 0 0" />
-          <body name="R_shoulder_1" pos="0.0263301 -0.248152 0.209" quat="0.707107 0.707107 0 0">
-              <inertial pos="-0.0079232 -0.0292048 0.0544129" quat="0.870644 0.490142 -0.0207568 0.0361796" mass="0.23947" diaginertia="0.000498105 0.000446537 0.000232287" />
-              <joint name="R_shoulder_1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19" />
-              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_shoulder_1" />
-              <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_shoulder_1" />
-              <body name="R_shoulder_2" pos="0.00841988 -0.07 0.0728484" quat="0 0.707107 0 -0.707107">
-                  <inertial pos="-8.30484e-05 0.0786884 0.0143016" quat="0.604206 0.367188 -0.367226 0.604362" mass="0.21552" diaginertia="0.000258907 0.000229932 0.000154059" />
-                  <joint name="R_shoulder_2" pos="0 0 0" axis="0 0 1" limited="true" range="-0.91 1.69" armature="0.19" />
-                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.27451 0.505882 0.984314 1" mesh="R_shoulder_2" />
-                  <geom type="mesh" rgba="0.27451 0.505882 0.984314 1" mesh="convex_R_shoulder_2" />
-                  <body name="R_shoulder_3" pos="0 0.124085 0.00975" quat="0 0 0.707107 0.707107">
-                      <inertial pos="-0.000134822 0.0100415 0.0787739" quat="0.923312 -0.10657 -0.0511403 -0.365407" mass="1.4165" diaginertia="0.00359925 0.00354236 0.00121584" />
-                      <joint name="R_shoulder_3" pos="0 0 0" axis="0 0 1" limited="true" range="-4.71 1.57" armature="0.19" />
-                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.866667 0.866667 0.890196 1" mesh="R_shoulder_3" />
-                      <geom type="mesh" rgba="0.866667 0.866667 0.890196 1" mesh="convex_R_shoulder_3" />
-                      <body name="R_elbow_1" pos="0.01825 0 0.168415" quat="0.5 0.5 -0.5 -0.5">
-                          <inertial pos="-0.00335205 0.0361814 0.0182777" quat="0.522894 0.00388047 -0.00225145 0.852386" mass="0.357201" diaginertia="0.000497628 0.00047711 0.000432962" />
-                          <joint name="R_elbow_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.75 2.255" armature="0.19" />
-                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.890196 0.890196 0.913725 1" mesh="R_elbow_1" />
-                          <geom type="mesh" rgba="0.890196 0.890196 0.913725 1" mesh="convex_R_elbow_1" />
-                          <body name="R_elbow_2" pos="-0.0015115 0.0453895 0.01825" quat="0.5 0.5 -0.5 0.5">
-                              <inertial pos="-0.00179432 -0.00199738 -0.0965972" quat="0.997567 0.00130704 0.050256 0.0482968" mass="0.104223" diaginertia="0.000325015 0.000318084 6.61711e-05" />
-                              <joint name="R_elbow_2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5072 4.7728" armature="0.19" />
-                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_elbow_2" />
-                              <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_elbow_2" />
-                              <body name="R_wrist_1" pos="-0.0265 -0.0015115 -0.220611" quat="0.5 0.5 0.5 0.5">
-                                  <inertial pos="-1.42471e-08 0 0.0265" quat="0.707099 7.44514e-06 -7.44529e-06 0.707114" mass="0.0526857" diaginertia="1.65419e-05 1.14373e-05 1.14373e-05" />
-                                  <joint name="R_wrist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-1.2 1.2" armature="0.19" />
-                                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.752941 0.752941 0.752941 1" mesh="R_wrist_1" />
-                                  <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="convex_R_wrist_1" />
-                                  <body name="R_wrist_2" pos="-0.025 0 0.0265" quat="0.707107 0 0.707107 0">
-                                      <inertial pos="-0.00441239 -0.0734701 0.024796" quat="0.699662 0.70768 -0.0673876 -0.0715597" mass="0.415325" diaginertia="0.000607598 0.000485234 0.000235703" />
-                                      <joint name="R_wrist_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.75 0.85" armature="0.19" />
-                                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_wrist_2" />
-                                      <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_wrist_2" />
-                                      <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_wrist_6_axis" />
-                                      <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_R_wrist_6_axis" />
-                                      <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hand" />
-                                      <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="convex_R_hand" />
-                                      <!-- Site for sensor -->
-                                      <site name="rh_force"  size="0.01" pos="0.0 0.0 0.0" />
-                                      <body name="R_gripper_1" pos="-0.02825 -0.11 -0.003" quat="-1 0 0 0">
-                                          <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
-                                          <joint name="R_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_1" />
-                                          <geom class="L_gripper_2" />
-                                      </body>
-                                      <body name="R_gripper_2" pos="-0.02825 -0.11 0.053" quat="0 0 1 0">
-                                          <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
-                                          <joint name="R_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_2" />
-                                          <geom class="L_gripper_1" />
-                                      </body>
-                                  </body>
-                              </body>
-                          </body>
+          <inertial pos="-0.00055062 0.241982 -0.0747554" quat="0.105096 0.698751 0.105561 0.699685" mass="26.3712" diaginertia="0.427584 0.319926 0.284091"/>
+          <joint name="waist_0" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.35 0.08" armature="0.19"/>
+          <geom pos="0 0.075 -0.075" quat="0.000563088 -0.000563088 0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.501961 1 0.501961 1" mesh="torso"/>
+          <geom pos="0 0.075 -0.075" quat="0.000563088 -0.000563088 0.707107 0.707107" type="mesh" rgba="0.501961 1 0.501961 1" mesh="torso"/>
+          <body name="R_shoulder_1" pos="-0.0259349 0.284 -0.323193" quat="0.000796327 0 1 0">
+            <inertial pos="-0.0079232 -0.0292048 0.0544129" quat="0.870644 0.490142 -0.0207568 0.0361796" mass="0.23947" diaginertia="0.000498105 0.000446537 0.000232287"/>
+            <joint name="R_shoulder_1" pos="0 0 0" axis="0 0 1" limited="true" range="-1.04607 2.44346" armature="0.19"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_shoulder_1"/>
+            <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_shoulder_1"/>
+            <body name="R_shoulder_2" pos="0.00841988 -0.07 0.0728484" quat="0 0.707107 0 -0.707107">
+              <inertial pos="-8.30484e-05 0.0786884 0.0143016" quat="0.604206 0.367188 -0.367226 0.604362" mass="0.21552" diaginertia="0.000258907 0.000229932 0.000154059"/>
+              <joint name="R_shoulder_2" pos="0 0 0" axis="0 0 1" limited="true" range="-0.7854 1.0472" armature="0.19"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.27451 0.505882 0.984314 1" mesh="R_shoulder_2"/>
+              <geom type="mesh" rgba="0.27451 0.505882 0.984314 1" mesh="convex_R_shoulder_2"/>
+              <body name="R_shoulder_3" pos="0 0.124085 0.00975" quat="0 0 0.707107 0.707107">
+                <inertial pos="-0.000134822 0.0100415 0.0787739" quat="0.923312 -0.10657 -0.0511403 -0.365407" mass="1.4165" diaginertia="0.00359925 0.00354236 0.00121584"/>
+                <joint name="R_shoulder_3" pos="0 0 0" axis="0 0 1" limited="true" range="-1.535 1.535" armature="0.19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.866667 0.866667 0.890196 1" mesh="R_shoulder_3"/>
+                <geom type="mesh" rgba="0.866667 0.866667 0.890196 1" mesh="convex_R_shoulder_3"/>
+                <body name="R_elbow_1" pos="0.01825 0 0.168415" quat="0.5 0.5 -0.5 -0.5">
+                  <inertial pos="-0.00335205 0.0361814 0.0182777" quat="0.522894 0.00388047 -0.00225145 0.852386" mass="0.357201" diaginertia="0.000497628 0.00047711 0.000432962"/>
+                  <joint name="R_elbow_1" pos="0 0 0" axis="0 0 -1" limited="true" range="0 1.745" armature="0.19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.890196 0.890196 0.913725 1" mesh="R_elbow_1"/>
+                  <geom type="mesh" rgba="0.890196 0.890196 0.913725 1" mesh="convex_R_elbow_1"/>
+                  <body name="R_elbow_2" pos="-0.0015115 0.0453895 0.01825" quat="0.5 0.5 -0.5 0.5">
+                    <inertial pos="-0.00179432 -0.00199738 -0.0965972" quat="0.997567 0.00130704 0.050256 0.0482968" mass="0.104223" diaginertia="0.000325015 0.000318084 6.61711e-05"/>
+                    <joint name="R_elbow_2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.4835 1.4835" armature="0.19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_elbow_2"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_elbow_2"/>
+                    <body name="R_wrist_1" pos="-0.0265 -0.0015115 -0.220611" quat="0.5 0.5 0.5 0.5">
+                      <inertial pos="-1.42471e-08 0 0.0265" quat="0.707099 7.44514e-06 -7.44529e-06 0.707114" mass="0.0526857" diaginertia="1.65419e-05 1.14373e-05 1.14373e-05"/>
+                      <joint name="R_wrist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.63 0.63" armature="0.19"/>
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.752941 0.752941 0.752941 1" mesh="R_wrist_1"/>
+                      <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="convex_R_wrist_1"/>
+                      <body name="R_wrist_2" pos="-0.025 0 0.0265" quat="0.707107 0 0.707107 0">
+                        <inertial pos="-0.00441239 -0.0734701 0.024796" quat="0.699662 0.70768 -0.0673876 -0.0715597" mass="0.415325" diaginertia="0.000607598 0.000485234 0.000235703"/>
+                        <joint name="R_wrist_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.73 0.73" armature="0.19"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_wrist_2"/>
+                        <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_wrist_2"/>
+                        <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_wrist_6_axis"/>
+                        <geom pos="0 -0.0545 0.025" quat="0.707107 -0.707107 0 0" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="R_wrist_6_axis"/>
+                        <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hand"/>
+                        <geom pos="0 -0.06 0.025" quat="0 0 0.707107 0.707107" type="mesh" rgba="1 1 1 1" mesh="R_hand"/>
+                        <!-- Site for sensor -->
+                        <site name="rh_force" size="0.01" pos="0.0 0.0 0.0"/>
+                        <body name="R_gripper_1" pos="-0.02825 -0.11 -0.003" quat="-1 0 0 0">
+                          <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06"/>
+                          <joint name="R_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19"/>
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_1"/>
+                          <geom class="L_gripper_2"/>
+                        </body>
+                        <body name="R_gripper_2" pos="-0.02825 -0.11 0.053" quat="0 0 1 0">
+                          <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06"/>
+                          <joint name="R_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19"/>
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_gripper_2"/>
+                          <geom class="L_gripper_1"/>
+                        </body>
                       </body>
+                    </body>
                   </body>
+                </body>
               </body>
+            </body>
           </body>
-          <body name="L_shoulder_1" pos="0.0263301 0.248152 0.209" quat="1.26918e-09 1.26918e-09 0.707107 0.707107">
-              <inertial pos="0.0079231 -0.0292056 0.0544129" quat="0.870653 0.490127 0.0207558 -0.0361701" mass="0.239468" diaginertia="0.000498096 0.00044653 0.000232284" />
-              <joint name="L_shoulder_1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19" />
-              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_shoulder_1" />
-              <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_shoulder_1" />
-              <body name="L_shoulder_2" pos="-0.00841988 -0.07 0.0728484" quat="0.707107 0 0.707107 0">
-                  <inertial pos="-8.29913e-05 -0.0786882 0.0143014" quat="0.367238 0.604356 -0.604213 0.367174" mass="0.215522" diaginertia="0.000258907 0.000229933 0.000154061" />
-                  <joint name="L_shoulder_2" pos="0 0 0" axis="0 0 1" limited="true" range="-0.91 1.69" armature="0.19" />
-                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.27451 0.505882 0.984314 1" mesh="L_shoulder_2" />
-                  <geom type="mesh" rgba="0.27451 0.505882 0.984314 1" mesh="convex_L_shoulder_2" />
-                  <body name="L_shoulder_3" pos="0 -0.124085 0.00975" quat="0 0 -0.707107 -0.707107">
-                      <inertial pos="-0.000134975 0.0100415 -0.0787739" quat="0.923313 0.10657 0.0511389 -0.365406" mass="1.4165" diaginertia="0.00359925 0.00354236 0.00121584" />
-                      <joint name="L_shoulder_3" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.57 4.71" armature="0.19" />
-                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.866667 0.866667 0.890196 1" mesh="L_shoulder_3" />
-                      <geom type="mesh" rgba="0.866667 0.866667 0.890196 1" mesh="convex_L_shoulder_3" />
-                      <body name="L_elbow_1" pos="-0.031 0 -0.16841" quat="0.499998 0.5 0.500002 0.5">
-                          <inertial pos="0.00335202 -0.0361815 0.0309503" quat="0.522951 5.50658e-05 -0.0051345 0.852347" mass="0.357201" diaginertia="0.000497624 0.000477112 0.000432961" />
-                          <joint name="L_elbow_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.75 2.255" armature="0.19" />
-                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.890196 0.890196 0.913725 1" mesh="L_elbow_1" />
-                          <geom type="mesh" rgba="0.890196 0.890196 0.913725 1" mesh="convex_L_elbow_1" />
-                          <body name="L_elbow_2" pos="0 -0.05 0.031" quat="0.499998 0.5 0.5 -0.500002">
-                              <inertial pos="-0.00179441 -0.000485863 0.0919869" quat="0.997567 -0.00130787 -0.0502565 0.0482974" mass="0.104222" diaginertia="0.000325015 0.000318084 6.61707e-05" />
-                              <joint name="L_elbow_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.5075 4.7728" armature="0.19" />
-                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_elbow_2" />
-                              <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_elbow_2" />
-                              <body name="L_wrist_1" pos="-0.0295 0 0.216" quat="0.499998 -0.5 0.500002 -0.5">
-                                  <inertial pos="1.42471e-08 0 0.0295" quat="0.707099 -7.44529e-06 7.44514e-06 0.707114" mass="0.0526857" diaginertia="1.65419e-05 1.14373e-05 1.14373e-05" />
-                                  <joint name="L_wrist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-1.2 1.2" armature="0.19" />
-                                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.752941 0.752941 0.752941 1" mesh="L_wrist_1" />
-                                  <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="convex_L_wrist_1" />
-                                  <body name="L_wrist_2" pos="0.025 0 0.0295" quat="0.707105 0 0.707108 0">
-                                      <inertial pos="-0.00441217 -0.0734717 -0.0247965" quat="0.707678 0.699665 -0.0715441 -0.0673899" mass="0.415326" diaginertia="0.00060764 0.000485276 0.000235704" />
-                                      <joint name="L_wrist_2" pos="0 0 0" axis="0 0 1" limited="true" range="-0.75 0.85" armature="0.19" />
-                                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_wrist_2" />
-                                      <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_wrist_2" />
-                                      <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_wrist_6_axis" />
-                                      <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_L_wrist_6_axis" />
-                                      <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hand" />
-                                      <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" rgba="1 1 1 1" mesh="convex_L_hand" />
-                                      <!-- Site for sensor -->
-                                      <site name="lh_force"  size="0.01" pos="0.0 0.0 0.0" />
-                                      <body name="L_gripper_1" pos="-0.0282495 -0.11 0.00300024" quat="6.74622e-12 -3.67321e-06 1 -1.8366e-06">
-                                          <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
-                                          <joint name="L_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_1" />
-                                          <geom class="L_gripper_1" />
-                                      </body>
-                                      <body name="L_gripper_2" pos="-0.0282495 -0.11 -0.0529998" quat="-1 1.8366e-06 6.74783e-12 -3.67321e-06">
-                                          <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06" />
-                                          <joint name="L_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_2" />
-                                          <geom class="L_gripper_2" />
-                                      </body>
-                                  </body>
-                              </body>
-                          </body>
+          <body name="L_shoulder_1" pos="-0.0267253 0.284 0.173109" quat="-1 0 0.000796329 0">
+            <inertial pos="0.0079231 -0.0292056 0.0544129" quat="0.870653 0.490127 0.0207558 -0.0361701" mass="0.239468" diaginertia="0.000498096 0.00044653 0.000232284"/>
+            <joint name="L_shoulder_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.7 2.62" armature="0.19"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_shoulder_1"/>
+            <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_shoulder_1"/>
+            <body name="L_shoulder_2" pos="-0.00841988 -0.07 0.0728484" quat="0.707107 0 0.707107 0">
+              <inertial pos="-8.29913e-05 -0.0786882 0.0143014" quat="0.367238 0.604356 -0.604213 0.367174" mass="0.215522" diaginertia="0.000258907 0.000229933 0.000154061"/>
+              <joint name="L_shoulder_2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.31 0.785" armature="0.19"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.27451 0.505882 0.984314 1" mesh="L_shoulder_2"/>
+              <geom type="mesh" rgba="0.27451 0.505882 0.984314 1" mesh="convex_L_shoulder_2"/>
+              <body name="L_shoulder_3" pos="0 -0.124085 0.00975" quat="0 0 -0.707107 -0.707107">
+                <inertial pos="-0.000134975 0.0100415 -0.0787739" quat="0.923313 0.10657 0.0511389 -0.365406" mass="1.4165" diaginertia="0.00359925 0.00354236 0.00121584"/>
+                <joint name="L_shoulder_3" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.483 1.483" armature="0.19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.866667 0.866667 0.890196 1" mesh="L_shoulder_3"/>
+                <geom type="mesh" rgba="0.866667 0.866667 0.890196 1" mesh="convex_L_shoulder_3"/>
+                <body name="L_elbow_1" pos="-0.031 0 -0.16841" quat="0.499998 0.5 0.500002 0.5">
+                  <inertial pos="0.00335202 -0.0361815 0.0309503" quat="0.522951 5.50658e-05 -0.0051345 0.852347" mass="0.357201" diaginertia="0.000497624 0.000477112 0.000432961"/>
+                  <joint name="L_elbow_1" pos="0 0 0" axis="0 0 -1" limited="true" range="0 1.745" armature="0.19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.890196 0.890196 0.913725 1" mesh="L_elbow_1"/>
+                  <geom type="mesh" rgba="0.890196 0.890196 0.913725 1" mesh="convex_L_elbow_1"/>
+                  <body name="L_elbow_2" pos="0 -0.05 0.031" quat="0.499998 0.5 0.5 -0.500002">
+                    <inertial pos="-0.00179441 -0.000485863 0.0919869" quat="0.997567 -0.00130787 -0.0502565 0.0482974" mass="0.104222" diaginertia="0.000325015 0.000318084 6.61707e-05"/>
+                    <joint name="L_elbow_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.5075 4.7728" armature="0.19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_elbow_2"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_elbow_2"/>
+                    <body name="L_wrist_1" pos="-0.0295 0 0.216" quat="0.499998 -0.5 0.500002 -0.5">
+                      <inertial pos="1.42471e-08 0 0.0295" quat="0.707099 -7.44529e-06 7.44514e-06 0.707114" mass="0.0526857" diaginertia="1.65419e-05 1.14373e-05 1.14373e-05"/>
+                      <joint name="L_wrist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.63 0.63" armature="0.19"/>
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.752941 0.752941 0.752941 1" mesh="L_wrist_1"/>
+                      <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="convex_L_wrist_1"/>
+                      <body name="L_wrist_2" pos="0.025 0 0.0295" quat="0.707105 0 0.707108 0">
+                        <inertial pos="-0.00441217 -0.0734717 -0.0247965" quat="0.707678 0.699665 -0.0715441 -0.0673899" mass="0.415326" diaginertia="0.00060764 0.000485276 0.000235704"/>
+                        <joint name="L_wrist_2" pos="0 0 0" axis="0 0 1" limited="true" range="-0.73 0.73" armature="0.19"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_wrist_2"/>
+                        <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_wrist_2"/>
+                        <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_wrist_6_axis"/>
+                        <geom pos="0 -0.045 -0.025" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="L_wrist_6_axis"/>
+                        <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hand"/>
+                        <geom pos="1.10196e-07 -0.06 -0.0249999" quat="-0.707105 0.707108 2.59735e-06 -2.59734e-06" type="mesh" rgba="1 1 1 1" mesh="L_hand"/>
+                        <!-- Site for sensor -->
+                        <site name="lh_force" size="0.01" pos="0.0 0.0 0.0"/>
+                        <body name="L_gripper_1" pos="-0.0282495 -0.11 0.00300024" quat="6.74622e-12 -3.67321e-06 1 -1.8366e-06">
+                          <inertial pos="0.00259728 -4.17878e-08 0.0087294" quat="0.495527 0.495526 -0.504436 0.504431" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06"/>
+                          <joint name="L_gripper_1" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="-0.01 0.01" armature="0.19"/>
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_1"/>
+                          <geom class="L_gripper_1"/>
+                        </body>
+                        <body name="L_gripper_2" pos="-0.0282495 -0.11 -0.0529998" quat="-1 1.8366e-06 6.74783e-12 -3.67321e-06">
+                          <inertial pos="-0.00259728 4.17878e-08 0.0087294" quat="0.504436 0.504431 -0.495527 0.495526" mass="0.0307177" diaginertia="1.58376e-05 1.29754e-05 4.17906e-06"/>
+                          <joint name="L_gripper_2" pos="0 0 0" axis="0 0 -1" type="slide" limited="true" range="-0.01 0.01" armature="0.19"/>
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_gripper_2"/>
+                          <geom class="L_gripper_2"/>
+                        </body>
                       </body>
+                    </body>
                   </body>
+                </body>
               </body>
-          </body>
-          <body name="waist_0" pos="0 0.0751589 -0.075" quat="1.26918e-09 1.26918e-09 0.707107 0.707107">
-              <inertial pos="2.91281e-05 -0.00227502 -0.0651436" quat="0.995227 -0.0975805 -0.00028445 0.00105614" mass="0.356987" diaginertia="0.000608809 0.000575144 0.000345464" />
-              <joint name="waist_0" pos="0 0 0" axis="0 0 1" limited="true" range="-0.872 0.872" armature="0.19" />
-              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="waist_0" />
-              <geom type="mesh" rgba="1 1 1 1" mesh="convex_waist_0" />
-              <body name="waist_1" pos="0 -0.0460046 -0.0751889" quat="0.5 0.5 0.5 -0.5">
-                  <inertial pos="7.72786e-05 0.00716561 0.0426895" quat="0.0296363 0.706504 0.0295839 0.706469" mass="1.15005" diaginertia="0.00661239 0.00597924 0.00145167" />
-                  <joint name="waist_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.872 0.872" armature="0.19" />
-                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="waist_1" />
-                  <geom type="mesh" rgba="1 1 1 1" mesh="convex_waist_1" />
-                  <body name="R_hip_1" pos="0.0873497 5.91302e-05 0.0804843">
-                      <inertial pos="-0.0075155 0.0449272 0.0677735" quat="0.925221 -0.365959 0.0515566 0.0859168" mass="0.702512" diaginertia="0.00236363 0.00171926 0.00125016" />
-                      <joint name="R_hip_1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19" />
-                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hip_1" />
-                      <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_hip_1" />
-                      <body name="R_hip_2" pos="0.000120245 -0.0645591 0.119511" quat="0.707107 -0.707107 0 0">
-                          <inertial pos="0.00633061 0.00185602 0.0777442" quat="0.699887 -0.0926019 -0.0910388 0.70235" mass="0.734936" diaginertia="0.00145769 0.0010853 0.000827911" />
-                          <joint name="R_hip_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4188 0.4188" armature="0.19" />
-                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hip_2" />
-                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_hip_2" />
-                          <body name="R_hip_3" pos="0.0665384 0 0.0645" quat="0 0.707107 0 -0.707107">
-                              <inertial pos="0.0178487 0.19878 0.0572234" quat="0.738735 0.673718 0.00690228 -0.0180939" mass="2.22917" diaginertia="0.0259015 0.022815 0.00681884" />
-                              <joint name="R_hip_3" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.57 1.57" armature="0.19" />
-                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="R_hip_3" />
-                              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_R_hip_3" />
-                              <body name="R_knee_1" pos="0 0.36 0.123038">
-                                  <inertial pos="0.000103622 0.0318999 -0.0611263" quat="0.647743 0.761852 -0.000722019 0.00337155" mass="0.288733" diaginertia="0.000675195 0.000652944 0.000321238" />
-                                  <joint name="R_knee_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-2.7925 0.1919" armature="0.19" />
-                                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0392157 0.490196 0.709804 1" mesh="R_knee_1" />
-                                  <geom type="mesh" rgba="0.0392157 0.490196 0.709804 1" mesh="convex_R_knee_1" />
-                                  <body name="R_knee_2" pos="0 0.1225 -0.0565" quat="0.5 0.5 -0.5 0.5">
-                                      <inertial pos="-0.00218928 -0.007223 -0.116709" quat="0.767756 -0.0380741 0.0162123 0.639405" mass="0.227483" diaginertia="0.00117353 0.00114292 0.000343388" />
-                                      <joint name="R_knee_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.57 1.57" armature="0.19" />
-                                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="R_knee_2" />
-                                      <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_R_knee_2" />
-                                      <body name="R_ankle_1" pos="0.032578 -0.00025797 -0.23773" quat="0.499998 -0.5 -0.500002 0.5">
-                                          <inertial pos="0.0181641 -0.000498446 0.0315335" quat="0.506896 0.498507 0.492635 0.501855" mass="0.393585" diaginertia="0.000690886 0.000665495 0.000214255" />
-                                          <joint name="R_ankle_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.4014 1.5707" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_ankle_1" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_ankle_1" />
-                                          <body name="R_ankle_2" pos="-0.060668 -0.00022995 0.032578" quat="0.707105 0 0.707108 0">
-                                              <inertial pos="-0.0102624 0.0966091 0.0499253" quat="0.775971 0.0756494 -0.00272614 0.62621" mass="1.24787" diaginertia="0.00509728 0.00425762 0.00191524" />
-                                              <joint name="R_ankle_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4886 0.4886" armature="0.19" />
-                                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_ankle_2" />
-                                              <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_ankle_2" />
-                                              <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis" />
-                                              <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_R_ankle_6_axis" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot" />
-                                              <geom class="R_foot" />
-                                              <!-- Site for sensor -->
-                                              <site name="rf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0 0 -0.707107 0.707107" />
-                                          </body>
-                                      </body>
-                                  </body>
-                              </body>
-                          </body>
-                      </body>
-                  </body>
-                  <body name="L_hip_1" pos="-0.0874524 0 0.0804896">
-                      <inertial pos="0.0075266 0.044804 0.0674879" quat="0.926154 -0.363726 -0.0506623 -0.0858776" mass="0.705362" diaginertia="0.00237668 0.00173246 0.00125224" />
-                      <joint name="L_hip_1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" armature="0.19" />
-                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hip_1" />
-                      <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_hip_1" />
-                      <body name="L_hip_2" pos="-7.76037e-05 -0.0645 0.119506" quat="0.707107 -0.707107 0 0">
-                          <inertial pos="-0.00633069 0.00185559 0.0777443" quat="0.70235 0.0910385 0.0926022 0.699887" mass="0.734935" diaginertia="0.00145769 0.0010853 0.000827911" />
-                          <joint name="L_hip_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4188 0.4188" armature="0.19" />
-                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hip_2" />
-                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_hip_2" />
-                          <body name="L_hip_3" pos="-0.0665384 0 0.0645" quat="0 0.707107 0 -0.707107">
-                              <inertial pos="0.017848 0.198781 -0.0572237" quat="0.673714 0.738739 -0.0180975 0.00689646" mass="2.22918" diaginertia="0.0259011 0.0228146 0.00681879" />
-                              <joint name="L_hip_3" pos="0 0 0" axis="0 0 1" limited="true" range="-1.57 1.57" armature="0.19" />
-                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="L_hip_3" />
-                              <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_L_hip_3" />
-                              <body name="L_knee_1" pos="0 0.36 -0.123038">
-                                  <inertial pos="0.000103632 0.0318999 0.0611262" quat="0.761851 0.647743 0.00337795 -0.000730058" mass="0.811339" diaginertia="0.0018973 0.00183477 0.00090268" />
-                                  <joint name="L_knee_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-2.7925 0.1919" armature="0.19" />
-                                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0392157 0.490196 0.709804 1" mesh="L_knee_1" />
-                                  <geom type="mesh" rgba="0.0392157 0.490196 0.709804 1" mesh="convex_L_knee_1" />
-                                  <body name="L_knee_2" pos="0 0.1225 0.0565" quat="0.5 0.5 -0.5 0.5">
-                                      <inertial pos="0.00218732 -0.00722438 -0.116701" quat="0.638903 -0.0161701 0.0381296 0.768172" mass="0.227462" diaginertia="0.00117331 0.00114268 0.000343362" />
-                                      <joint name="L_knee_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.57 1.57" armature="0.19" />
-                                      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="L_knee_2" />
-                                      <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_L_knee_2" />
-                                      <body name="L_ankle_1" pos="-0.032578 -0.00025797 -0.23773" quat="0.499998 0.5 -0.500002 -0.5">
-                                          <inertial pos="-0.0181642 0.000498457 -0.0315335" quat="0.506896 0.498507 0.492635 0.501855" mass="0.393585" diaginertia="0.000690886 0.000665495 0.000214255" />
-                                          <joint name="L_ankle_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-1.5707 0.4014" armature="0.19" />
-                                          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_ankle_1" />
-                                          <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_ankle_1" />
-                                          <body name="L_ankle_2" pos="0.060668 0.00022995 -0.032578" quat="-2.59734e-06 0.707105 -2.59735e-06 -0.707108">
-                                              <inertial pos="0.0102623 0.0966088 0.0499254" quat="0.626208 0.0027272 -0.0756512 0.775973" mass="1.24787" diaginertia="0.00509731 0.00425766 0.00191527" />
-                                              <joint name="L_ankle_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4886 0.4886" armature="0.19" />
-                                              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_ankle_2" />
-                                              <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_ankle_2" />
-                                              <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107  -0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis" />
-                                              <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="convex_L_ankle_6_axis" />
-                                              <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot" />
-                                              <geom class="L_foot" />
-                                              <!-- Site for sensor -->
-                                              <site name="lf_force"  size="0.01" pos="0.0 0.0 0.0" quat="0 0 0.707107 -0.707107" />
-                                          </body>
-                                      </body>
-                                  </body>
-                              </body>
-                          </body>
-                      </body>
-                  </body>
-              </body>
+            </body>
           </body>
         </body>
-    </worldbody>
-
-    <actuator>
-      <motor name="R_shoulder_1_motor" joint="R_shoulder_1" />
-      <motor name="R_shoulder_2_motor" joint="R_shoulder_2" />
-      <motor name="R_shoulder_3_motor" joint="R_shoulder_3" />
-      <motor name="R_elbow_1_motor" joint="R_elbow_1" />
-      <motor name="R_elbow_2_motor" joint="R_elbow_2" />
-      <motor name="R_wrist_1_motor" joint="R_wrist_1" />
-      <motor name="R_wrist_2_motor" joint="R_wrist_2" />
-      <motor name="R_gripper_1_motor" joint="R_gripper_1" />
-      <motor name="R_gripper_2_motor" joint="R_gripper_2" />
-      <motor name="L_shoulder_1_motor" joint="L_shoulder_1" />
-      <motor name="L_shoulder_2_motor" joint="L_shoulder_2" />
-      <motor name="L_shoulder_3_motor" joint="L_shoulder_3" />
-      <motor name="L_elbow_1_motor" joint="L_elbow_1" />
-      <motor name="L_elbow_2_motor" joint="L_elbow_2" />
-      <motor name="L_wrist_1_motor" joint="L_wrist_1" />
-      <motor name="L_wrist_2_motor" joint="L_wrist_2" />
-      <motor name="L_gripper_1_motor" joint="L_gripper_1" />
-      <motor name="L_gripper_2_motor" joint="L_gripper_2" />
-      <motor name="waist_0_motor" joint="waist_0" />
-      <motor name="waist_1_motor" joint="waist_1" />
-      <motor name="R_hip_1_motor" joint="R_hip_1" />
-      <motor name="R_hip_2_motor" joint="R_hip_2" />
-      <motor name="R_hip_3_motor" joint="R_hip_3" />
-      <motor name="R_knee_1_motor" joint="R_knee_1" />
-      <motor name="R_knee_2_motor" joint="R_knee_2" />
-      <motor name="R_ankle_1_motor" joint="R_ankle_1" />
-      <motor name="R_ankle_2_motor" joint="R_ankle_2" />
-      <motor name="L_hip_1_motor" joint="L_hip_1" />
-      <motor name="L_hip_2_motor" joint="L_hip_2" />
-      <motor name="L_hip_3_motor" joint="L_hip_3" />
-      <motor name="L_knee_1_motor" joint="L_knee_1" />
-      <motor name="L_knee_2_motor" joint="L_knee_2" />
-      <motor name="L_ankle_1_motor" joint="L_ankle_1" />
-      <motor name="L_ankle_2_motor" joint="L_ankle_2" />
-    </actuator>
-
-    <sensor>
-      <force         name="RightFootForceSensor_fsensor"    site="rf_force" />
-      <torque        name="RightFootForceSensor_tsensor"    site="rf_force" />
-
-      <force         name="LeftFootForceSensor_fsensor"    site="lf_force" />
-      <torque        name="LeftFootForceSensor_tsensor"    site="lf_force" />
-
-      <force         name="RightHandForceSensor_fsensor"    site="rh_force" />
-      <torque        name="RightHandForceSensor_tsensor"    site="rh_force" />
-
-      <force         name="LeftHandForceSensor_fsensor"    site="lh_force" />
-      <torque        name="LeftHandForceSensor_tsensor"    site="lh_force" />
-
-      <gyro name="Accelerometer_gyro" site="imu" />
-      <accelerometer name="Accelerometer_accelerometer" site="imu" />
-    </sensor>
+      </body>
+      <body name="R_hip_1" pos="0 -0.0874524 -0.08049" quat="0 -0.707107 0.707107 0">
+        <inertial pos="-0.0075155 0.0449272 0.0677735" quat="0.925221 -0.365959 0.0515566 0.0859168" mass="0.702512" diaginertia="0.00236363 0.00171926 0.00125016"/>
+        <joint name="R_hip_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.64 0.82" armature="0.19"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hip_1"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_hip_1"/>
+        <body name="R_hip_2" pos="0.000120245 -0.0645591 0.119511" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0.00633061 0.00185602 0.0777442" quat="0.699887 -0.0926019 -0.0910388 0.70235" mass="0.734936" diaginertia="0.00145769 0.0010853 0.000827911"/>
+          <joint name="R_hip_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4188 0.4188" armature="0.19"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_hip_2"/>
+          <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_hip_2"/>
+          <body name="R_hip_3" pos="0.0665384 0 0.0645" quat="0 0.707107 0 -0.707107">
+            <inertial pos="0.0178487 0.19878 0.0572234" quat="0.738735 0.673718 0.00690228 -0.0180939" mass="2.22917" diaginertia="0.0259015 0.022815 0.00681884"/>
+            <joint name="R_hip_3" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.6 1.57" armature="0.19"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="R_hip_3"/>
+            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_R_hip_3"/>
+            <body name="R_knee_1" pos="0 0.36 0.123038">
+              <inertial pos="0.000103622 0.0318999 -0.0611263" quat="0.647743 0.761852 -0.000722019 0.00337155" mass="0.288733" diaginertia="0.000675195 0.000652944 0.000321238"/>
+              <joint name="R_knee_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-2.1 0.01" armature="0.19"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0392157 0.490196 0.709804 1" mesh="R_knee_1"/>
+              <geom type="mesh" rgba="0.0392157 0.490196 0.709804 1" mesh="convex_R_knee_1"/>
+              <body name="R_knee_2" pos="0 0.1225 -0.0565" quat="0.5 0.5 -0.5 0.5">
+                <inertial pos="-0.00218928 -0.007223 -0.116709" quat="0.767756 -0.0380741 0.0162123 0.639405" mass="0.227483" diaginertia="0.00117353 0.00114292 0.000343388"/>
+                <joint name="R_knee_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.71 0.71" armature="0.19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="R_knee_2"/>
+                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_R_knee_2"/>
+                <body name="R_ankle_1" pos="0.032578 -0.00025797 -0.23773" quat="0.499998 -0.5 -0.500002 0.5">
+                  <inertial pos="0.0181641 -0.000498446 0.0315335" quat="0.506896 0.498507 0.492635 0.501855" mass="0.393585" diaginertia="0.000690886 0.000665495 0.000214255"/>
+                  <joint name="R_ankle_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.436 0.6" armature="0.19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_ankle_1"/>
+                  <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_ankle_1"/>
+                  <body name="R_ankle_2" pos="-0.060668 -0.00022995 0.032578" quat="0.707105 0 0.707108 0">
+                    <inertial pos="-0.0102624 0.0966091 0.0499253" quat="0.775971 0.0756494 -0.00272614 0.62621" mass="1.24787" diaginertia="0.00509728 0.00425762 0.00191524"/>
+                    <joint name="R_ankle_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.35 0.35" armature="0.19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_ankle_2"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="convex_R_ankle_2"/>
+                    <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis"/>
+                    <geom pos="0 0.101738 0.0590749" quat="0 0 -0.707107 0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="R_ankle_6_axis"/>
+                    <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot"/>
+                    <geom class="R_foot"/>
+                    <!-- Site for sensor -->
+                    <site name="rf_force" size="0.01" pos="0.0 0.0 0.0" quat="0 0 -0.707107 0.707107"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="L_hip_1" pos="0 0.0874524 -0.08049" quat="0 -0.707107 0.707107 0">
+        <inertial pos="0.0075266 0.044804 0.0674879" quat="0.926154 -0.363726 -0.0506623 -0.0858776" mass="0.705362" diaginertia="0.00237668 0.00173246 0.00125224"/>
+        <joint name="L_hip_1" pos="0 0 0" axis="0 0 1" limited="true" range="-0.82 0.64" armature="0.19"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hip_1"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_hip_1"/>
+        <body name="L_hip_2" pos="-7.76037e-05 -0.0645 0.119506" quat="0.707107 -0.707107 0 0">
+          <inertial pos="-0.00633069 0.00185559 0.0777443" quat="0.70235 0.0910385 0.0926022 0.699887" mass="0.734935" diaginertia="0.00145769 0.0010853 0.000827911"/>
+          <joint name="L_hip_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.4188 0.4188" armature="0.19"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_hip_2"/>
+          <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_hip_2"/>
+          <body name="L_hip_3" pos="-0.0665384 0 0.0645" quat="0 0.707107 0 -0.707107">
+            <inertial pos="0.017848 0.198781 -0.0572237" quat="0.673714 0.738739 -0.0180975 0.00689646" mass="2.22918" diaginertia="0.0259011 0.0228146 0.00681879"/>
+            <joint name="L_hip_3" pos="0 0 0" axis="0 0 1" limited="true" range="-1.57 0.6" armature="0.19"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="L_hip_3"/>
+            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_L_hip_3"/>
+            <body name="L_knee_1" pos="0 0.36 -0.123038">
+              <inertial pos="0.000103632 0.0318999 0.0611262" quat="0.761851 0.647743 0.00337795 -0.000730058" mass="0.811339" diaginertia="0.0018973 0.00183477 0.00090268"/>
+              <joint name="L_knee_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-2.1 0.01" armature="0.19"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.0392157 0.490196 0.709804 1" mesh="L_knee_1"/>
+              <geom type="mesh" rgba="0.0392157 0.490196 0.709804 1" mesh="convex_L_knee_1"/>
+              <body name="L_knee_2" pos="0 0.1225 0.0565" quat="0.5 0.5 -0.5 0.5">
+                <inertial pos="0.00218732 -0.00722438 -0.116701" quat="0.638903 -0.0161701 0.0381296 0.768172" mass="0.227462" diaginertia="0.00117331 0.00114268 0.000343362"/>
+                <joint name="L_knee_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.71 0.71" armature="0.19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="L_knee_2"/>
+                <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="convex_L_knee_2"/>
+                <body name="L_ankle_1" pos="-0.032578 -0.00025797 -0.23773" quat="0.499998 0.5 -0.500002 -0.5">
+                  <inertial pos="-0.0181642 0.000498457 -0.0315335" quat="0.506896 0.498507 0.492635 0.501855" mass="0.393585" diaginertia="0.000690886 0.000665495 0.000214255"/>
+                  <joint name="L_ankle_1" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.6 0.436" armature="0.19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_ankle_1"/>
+                  <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_ankle_1"/>
+                  <body name="L_ankle_2" pos="0.060668 0.00022995 -0.032578" quat="-2.59734e-06 0.707105 -2.59735e-06 -0.707108">
+                    <inertial pos="0.0102623 0.0966088 0.0499254" quat="0.626208 0.0027272 -0.0756512 0.775973" mass="1.24787" diaginertia="0.00509731 0.00425766 0.00191527"/>
+                    <joint name="L_ankle_2" pos="0 0 0" axis="0 0 -1" limited="true" range="-0.35 0.35" armature="0.19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_ankle_2"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="convex_L_ankle_2"/>
+                    <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis"/>
+                    <geom pos="0 0.115722 0.0590749" quat="0 0 0.707107 -0.707107" type="mesh" rgba="0.647059 0.619608 0.588235 1" mesh="L_ankle_6_axis"/>
+                    <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot"/>
+                    <geom class="L_foot"/>
+                    <!-- Site for sensor -->
+                    <site name="lf_force" size="0.01" pos="0.0 0.0 0.0" quat="0 0 0.707107 -0.707107"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="R_shoulder_1_motor" joint="R_shoulder_1"/>
+    <motor name="R_shoulder_2_motor" joint="R_shoulder_2"/>
+    <motor name="R_shoulder_3_motor" joint="R_shoulder_3"/>
+    <motor name="R_elbow_1_motor" joint="R_elbow_1"/>
+    <motor name="R_elbow_2_motor" joint="R_elbow_2"/>
+    <motor name="R_wrist_1_motor" joint="R_wrist_1"/>
+    <motor name="R_wrist_2_motor" joint="R_wrist_2"/>
+    <motor name="R_gripper_1_motor" joint="R_gripper_1"/>
+    <motor name="R_gripper_2_motor" joint="R_gripper_2"/>
+    <motor name="L_shoulder_1_motor" joint="L_shoulder_1"/>
+    <motor name="L_shoulder_2_motor" joint="L_shoulder_2"/>
+    <motor name="L_shoulder_3_motor" joint="L_shoulder_3"/>
+    <motor name="L_elbow_1_motor" joint="L_elbow_1"/>
+    <motor name="L_elbow_2_motor" joint="L_elbow_2"/>
+    <motor name="L_wrist_1_motor" joint="L_wrist_1"/>
+    <motor name="L_wrist_2_motor" joint="L_wrist_2"/>
+    <motor name="L_gripper_1_motor" joint="L_gripper_1"/>
+    <motor name="L_gripper_2_motor" joint="L_gripper_2"/>
+    <motor name="waist_0_motor" joint="waist_0"/>
+    <motor name="waist_1_motor" joint="waist_1"/>
+    <motor name="R_hip_1_motor" joint="R_hip_1"/>
+    <motor name="R_hip_2_motor" joint="R_hip_2"/>
+    <motor name="R_hip_3_motor" joint="R_hip_3"/>
+    <motor name="R_knee_1_motor" joint="R_knee_1"/>
+    <motor name="R_knee_2_motor" joint="R_knee_2"/>
+    <motor name="R_ankle_1_motor" joint="R_ankle_1"/>
+    <motor name="R_ankle_2_motor" joint="R_ankle_2"/>
+    <motor name="L_hip_1_motor" joint="L_hip_1"/>
+    <motor name="L_hip_2_motor" joint="L_hip_2"/>
+    <motor name="L_hip_3_motor" joint="L_hip_3"/>
+    <motor name="L_knee_1_motor" joint="L_knee_1"/>
+    <motor name="L_knee_2_motor" joint="L_knee_2"/>
+    <motor name="L_ankle_1_motor" joint="L_ankle_1"/>
+    <motor name="L_ankle_2_motor" joint="L_ankle_2"/>
+  </actuator>
+  <sensor>
+    <force name="RightFootForceSensor_fsensor" site="rf_force"/>
+    <torque name="RightFootForceSensor_tsensor" site="rf_force"/>
+    <force name="LeftFootForceSensor_fsensor" site="lf_force"/>
+    <torque name="LeftFootForceSensor_tsensor" site="lf_force"/>
+    <force name="RightHandForceSensor_fsensor" site="rh_force"/>
+    <torque name="RightHandForceSensor_tsensor" site="rh_force"/>
+    <force name="LeftHandForceSensor_fsensor" site="lh_force"/>
+    <torque name="LeftHandForceSensor_tsensor" site="lh_force"/>
+    <gyro name="Accelerometer_gyro" site="imu"/>
+    <accelerometer name="Accelerometer_accelerometer" site="imu"/>
+  </sensor>
 </mujoco>
