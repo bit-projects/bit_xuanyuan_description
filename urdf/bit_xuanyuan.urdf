@@ -495,7 +495,7 @@
     <parent link="L_elbow_1"/>
     <child link="L_elbow_2"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-1.5075" upper="4.7728" effort="20" velocity="10.14"/>
+    <limit lower="-1.5075" upper="1.4835" effort="20" velocity="10.14"/>
   </joint>
   <link name="L_wrist_1">
     <inertial>
