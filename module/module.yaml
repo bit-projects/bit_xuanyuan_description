@@ -185,7 +185,7 @@ bodySensors:
       rotation: [3.14159265358979, 0, 0]
       translation: [-0.05, -0.025, 0.1]
   - name: FloatingBase
-    parentBody: torso
+    parentBody: waist_1
     X_b_s:
       rotation: [0, 0, 0]
       translation: [0, 0, 0]
