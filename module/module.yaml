@@ -10,7 +10,7 @@ ref_joint_order: [R_shoulder_1, R_shoulder_2, R_shoulder_3, R_elbow_1, R_wrist_1
 urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
 fixed: false
-default_attitude: [1, 0, 0, 0, 0, 0, 0.985]
+default_attitude: [1, 0, 0, 0, 0.0286237, 1.089885, 1.14055]
 stance:
   R_hip_3: [0.4]
   R_knee_1: [-0.8]
