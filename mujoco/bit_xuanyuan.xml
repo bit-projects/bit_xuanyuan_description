@@ -899,7 +899,7 @@
                     <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot"/>
                     <geom class="R_foot"/>
                     <!-- Site for sensor -->
-                    <site name="rf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.5000257 -0.5 0.4999743 0.5"/>
+                    <site name="rf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.7071249 -0.7070886 0 0"/>
                   </body>
                 </body>
               </body>
@@ -947,7 +947,7 @@
                     <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot"/>
                     <geom class="L_foot"/>
                     <!-- Site for sensor -->
-                    <site name="lf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.5000257 -0.5 0.4999743 0.5"/>
+                    <site name="lf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.7071249 -0.7070886 0 0"/>
                   </body>
                 </body>
               </body>
