@@ -14,18 +14,18 @@
     </default>
     <default class="L_foot">
       <!-- For the box, size is width/length/height pos offset is applied to match the visual shape -->
-      <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
+      <geom pos="0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6" priority="99" friction="0.5 0.005 0.0001"/>
     </default>
     <default class="R_foot">
-      <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6"/>
+      <geom pos="-0.0225 0.1126 0.0340749" quat="0.707107 0.707107 0 0" type="box" rgba="1 1 1 1" size="0.0725 0.115 0.01" condim="6" priority="99" friction="0.5 0.005 0.0001"/>
     </default>
     <default class="L_gripper_1">
       <!-- R_gripper_2 -->
-      <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
+      <geom pos="0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6" priority="99" solimp="0.1 0.95 0.005 0.5 2"/>
     </default>
     <default class="L_gripper_2">
       <!-- L_gripper_1 -->
-      <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6"/>
+      <geom pos="-0.035 0.0 0.00525" type="box" rgba="1 0 0 0.5" size="0.02 0.04 0.005" condim="6" priority="99" solimp="0.1 0.95 0.005 0.5 2"/>
     </default>
   </default>
   <visual>
@@ -899,7 +899,7 @@
                     <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="R_foot"/>
                     <geom class="R_foot"/>
                     <!-- Site for sensor -->
-                    <site name="rf_force" size="0.01" pos="0.0 0.0 0.0" quat="0 0 -0.707107 0.707107"/>
+                    <site name="rf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.7071249 -0.7070886 0 0"/>
                   </body>
                 </body>
               </body>
@@ -947,7 +947,7 @@
                     <geom pos="0 0.1026 0.0590749" quat="0.707107 0.707107 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="L_foot"/>
                     <geom class="L_foot"/>
                     <!-- Site for sensor -->
-                    <site name="lf_force" size="0.01" pos="0.0 0.0 0.0" quat="0 0 0.707107 -0.707107"/>
+                    <site name="lf_force" size="0.01" pos="0.0 0.0 0.0" quat="0.7071249 -0.7070886 0 0"/>
                   </body>
                 </body>
               </body>

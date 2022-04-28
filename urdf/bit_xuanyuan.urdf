@@ -906,7 +906,7 @@
     <parent link="R_knee_2"/>
     <child link="R_ankle_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.436" upper="0.6" effort="116" velocity="4.3"/>
+    <limit lower="-1.0" upper="1.0" effort="116" velocity="4.3"/>
   </joint>
   <link name="R_ankle_2">
     <inertial>
