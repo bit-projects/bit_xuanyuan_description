@@ -148,7 +148,7 @@
     <parent link="R_shoulder_3"/>
     <child link="R_elbow_1"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="0" upper="1.745" effort="200" velocity="2.14"/>
+    <limit lower="-0.1" upper="1.745" effort="200" velocity="2.14"/>
   </joint>
   <link name="R_elbow_2">
     <inertial>
@@ -320,7 +320,7 @@
     <parent link="R_hand"/>
     <child link="R_gripper_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.01" upper="0.01" effort="200" velocity="0.03"/>
+    <limit lower="-0.0135" upper="0.009" effort="200" velocity="0.03"/>
   </joint>
   <link name="R_gripper_2">
     <inertial>
@@ -349,7 +349,7 @@
     <parent link="R_hand"/>
     <child link="R_gripper_2"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.01" upper="0.01" effort="200" velocity="1"/>
+    <limit lower="-0.009" upper="0.0135" effort="200" velocity="1"/>
     <mimic joint="R_gripper_1" multiplier="-1" offset="0"/>
   </joint>
   <link name="L_shoulder_1">
@@ -379,7 +379,7 @@
     <parent link="torso"/>
     <child link="L_shoulder_1"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.7" upper="2.62" effort="150" velocity="3.14"/>
+    <limit lower="-1.04" upper="2.44" effort="150" velocity="3.14"/>
   </joint>
   <link name="L_shoulder_2">
     <inertial>
@@ -466,7 +466,7 @@
     <parent link="L_shoulder_3"/>
     <child link="L_elbow_1"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="0" upper="1.745" effort="200" velocity="2.14"/>
+    <limit lower="-0.1" upper="1.745" effort="200" velocity="2.14"/>
   </joint>
   <link name="L_elbow_2">
     <inertial>
@@ -638,7 +638,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.01" upper="0.01" effort="200" velocity="0.03"/>
+    <limit lower="-0.042" upper="0.012" effort="200" velocity="0.03"/>
   </joint>
   <link name="L_gripper_2">
     <inertial>
@@ -667,7 +667,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_2"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.01" upper="0.01" effort="200" velocity="1"/>
+    <limit lower="-0.012" upper="0.042" effort="200" velocity="1"/>
     <mimic joint="L_gripper_1" multiplier="-1" offset="0"/>
   </joint>
   <link name="waist_0">

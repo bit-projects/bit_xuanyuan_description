@@ -11,13 +11,6 @@ urdf_path: "@CMAKE_CURRENT_SOURCE_DIR@/urdf/bit_xuanyuan.urdf"
 # Not a fixed based robot
 fixed: false
 default_attitude: [1, 0, 0, 0, 0, 0, 0.985]
-stance:
-  R_hip_3: [0.4]
-  R_knee_1: [-0.8]
-  R_ankle_1: [0.4]
-  L_hip_3: [-0.4]
-  L_knee_1: [-0.8]
-  L_ankle_1: [-0.4]
 convexHulls:
   torso: [torso, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/torso-ch.txt"]
   L_ankle_1: [L_ankle_1, "@CMAKE_CURRENT_SOURCE_DIR@/convex/bit_xuanyuan/L_ankle_1-ch.txt"]
@@ -66,6 +59,10 @@ convexHulls:
 default-col: &default-col
   iDist: 0.1
   sDist: 0.05
+  damping: 0
+foot-leg-col: &foot-leg-col
+  iDist: 0.1
+  sDist: 0.01
   damping: 0
 minimalSelfCollisions:
   # Arm <-> Body collision
@@ -157,6 +154,15 @@ minimalSelfCollisions:
   - body1: R_foot
     body2: L_foot
     <<: *default-col
+  - body1: R_foot
+    body2: L_hip_3
+    <<: *foot-leg-col
+  - body1: R_foot
+    body2: L_knee_1
+    <<: *foot-leg-col
+  - body1: R_foot
+    body2: L_knee_2
+    <<: *foot-leg-col
 forceSensors:
   - name: RightFootForceSensor
     parentBody: R_ankle_6_axis
@@ -261,7 +267,7 @@ lipmStabilizer:
       stiffness: [1000.0, 1000.0, 100.0]
       weight: 1000.0
       dimWeight: [1.0, 1.0, 1.0]
-      height: 1.015
+      height: 1.0
     torso:
       pitch: 0.0
       stiffness: 10.0
