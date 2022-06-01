@@ -638,7 +638,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.042" upper="0.012" effort="200" velocity="0.03"/>
+    <limit lower="-0.042" upper="0.05" effort="200" velocity="0.03"/>
   </joint>
   <link name="L_gripper_2">
     <inertial>
@@ -667,7 +667,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_2"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.012" upper="0.042" effort="200" velocity="1"/>
+    <limit lower="-0.05" upper="0.042" effort="200" velocity="1"/>
     <mimic joint="L_gripper_1" multiplier="-1" offset="0"/>
   </joint>
   <link name="waist_0">
@@ -697,7 +697,7 @@
     <parent link="waist_0"/>
     <child link="torso_tf"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.68" upper="0.06" effort="300" velocity="2.8"/>
+    <limit lower="-0.88" upper="0.16" effort="300" velocity="2.8"/>
   </joint>
   <link name="torso_tf" />
   <joint name="torso_tf" type="fixed">
@@ -732,7 +732,7 @@
     <parent link="waist_1"/>
     <child link="waist_0"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.872" upper="0.872" effort="220" velocity="2.5"/>
+    <limit lower="-0.972" upper="0.972" effort="220" velocity="2.5"/>
   </joint>
   <link name="R_hip_1">
     <inertial>
@@ -1165,7 +1165,7 @@
     <parent link="L_knee_2"/>
     <child link="L_ankle_1"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.6" upper="0.436" effort="116" velocity="4.3"/>
+    <limit lower="-0.8" upper="0.436" effort="116" velocity="4.3"/>
   </joint>
   <link name="L_ankle_2">
     <inertial>
