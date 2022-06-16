@@ -62,7 +62,7 @@ default-col: &default-col
   damping: 0
 foot-leg-col: &foot-leg-col
   iDist: 0.1
-  sDist: 0.01
+  sDist: 0.02
   damping: 0
 minimalSelfCollisions:
   # Arm <-> Body collision

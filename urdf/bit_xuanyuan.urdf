@@ -638,7 +638,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.042" upper="0.012" effort="200" velocity="0.03"/>
+    <limit lower="-0.042" upper="0.032" effort="200" velocity="0.03"/>
   </joint>
   <link name="L_gripper_2">
     <inertial>
@@ -667,7 +667,7 @@
     <parent link="L_hand"/>
     <child link="L_gripper_2"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="-0.012" upper="0.042" effort="200" velocity="1"/>
+    <limit lower="-0.032" upper="0.042" effort="200" velocity="1"/>
     <mimic joint="L_gripper_1" multiplier="-1" offset="0"/>
   </joint>
   <link name="waist_0">
