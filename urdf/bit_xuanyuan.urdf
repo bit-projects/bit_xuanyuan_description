@@ -553,7 +553,7 @@
     <parent link="L_wrist_1"/>
     <child link="L_wrist_2"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.73" upper="0.73" effort="50" velocity="3.14"/>
+    <limit lower="-1.5" upper="0.73" effort="50" velocity="3.14"/>
   </joint>
   <link name="L_wrist_6_axis">
     <inertial>
@@ -606,7 +606,7 @@
     </collision>
   </link>
   <joint name="L_hand" type="fixed">
-    <origin xyz="0 0 -0.0150000000000001" rpy="0 0 3.14159265358979"/>
+    <origin xyz="0 0 -0.0150000000000001" rpy="0 0 1.57"/>
     <parent link="L_wrist_6_axis"/>
     <child link="L_hand"/>
     <axis xyz="0 0 0"/>
