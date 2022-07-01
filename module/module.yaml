@@ -64,6 +64,24 @@ foot-leg-col: &foot-leg-col
   iDist: 0.1
   sDist: 0.02
   damping: 0
+_compoundJoints:
+  - j1: L_wrist_1
+    j2: L_wrist_2
+    p1: [0,-1.74]
+    p2: [0.419,-1.152]
+  - j1: L_wrist_1
+    j2: L_wrist_2
+    p1: [-0.3141,-1.361]
+    p2: [0,-1.74]
+  - j1: L_wrist_1
+    j2: L_wrist_2
+    p1: [0.436,0.907]
+    p2: [0,1.344]
+  - j1: L_wrist_1
+    j2: L_wrist_2
+    p1: [0,1.344]
+    p2: [-0.175,1.047]
+
 minimalSelfCollisions:
   # Arm <-> Body collision
   - body1: R_shoulder_2
